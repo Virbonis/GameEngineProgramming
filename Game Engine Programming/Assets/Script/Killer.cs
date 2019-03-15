@@ -12,11 +12,10 @@ public class Killer : Enemy
 {
     // Start is called before the first frame update
     public EnemyState currentState;
-    private Rigidbody2D myRigidBody;
+    public Rigidbody2D myRigidBody;
     public Transform target;
     public float chaseRadius;
     public float attackRadius;
-    public Transform homePosition;
     public Animator killerAnim;
 
     void Start()
@@ -46,9 +45,14 @@ public class Killer : Enemy
                 killerAnim.SetBool("walking", true);
             }
         }
-        else
+        else if (Vector3.Distance(target.position,
+                 transform.position) <= chaseRadius
+                 && Vector3.Distance(target.position, transform.position) <= attackRadius)
         {
-            killerAnim.SetBool("walking", false);
+            if (currentState == EnemyState.walk)
+            {
+                StartCoroutine(attack());
+            }
         }
     }
 
@@ -86,4 +90,12 @@ public class Killer : Enemy
         }
     }
 
+    public IEnumerator attack()
+    {
+        currentState = EnemyState.attack;
+        killerAnim.SetBool("Attacking", true);
+        yield return new WaitForEndOfFrame();
+        currentState = EnemyState.walk;
+        killerAnim.SetBool("Attacking", false);
+    }
 }

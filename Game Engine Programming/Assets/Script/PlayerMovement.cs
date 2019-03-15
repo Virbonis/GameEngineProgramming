@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D myRigidbody;
     private Vector3 change;
     private Animator animator;
+    public GameObject Blood;
 
     void Start()
     {
@@ -44,5 +45,13 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody.MovePosition(
             transform.position + change * speed * Time.deltaTime    
         );
+    }
+
+    private void BloodEffect() {
+        if (Blood != null) {
+            GameObject effect = Instantiate(Blood, transform.position, Quaternion.identity);
+            Destroy(effect, 1f);
+        }
+
     }
 }

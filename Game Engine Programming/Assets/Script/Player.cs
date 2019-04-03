@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
+        Debug.Log("Shit");
     }
 
     // Update is called once per frame

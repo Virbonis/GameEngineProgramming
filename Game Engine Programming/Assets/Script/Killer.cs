@@ -17,6 +17,11 @@ public class Killer : Enemy
     public float chaseRadius;
     public float attackRadius;
     public Animator killerAnim;
+    public Transform[] path;
+    public int currPoint;
+    public Transform currGoal;
+    public float roundingDistance;
+    public float distance;
 
     void Start()
     {
@@ -25,8 +30,7 @@ public class Killer : Enemy
         target = GameObject.FindWithTag("Player").transform;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         checkDistance();
     }
@@ -36,13 +40,28 @@ public class Killer : Enemy
             transform.position) <= chaseRadius
             && Vector3.Distance(target.position, transform.position) > attackRadius)
         {
-            if (currentState == EnemyState.idle || currentState == EnemyState.walk)
+            if (currentState == EnemyState.walk)
             {
                 Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
                 changeAnim(temp - transform.position);
                 myRigidBody.MovePosition(temp);
                 ChangeState(EnemyState.walk);
                 killerAnim.SetBool("walking", true);
+            }
+        }
+        else if (Vector3.Distance(target.position,
+            transform.position) > chaseRadius)
+        {
+            if (Vector3.Distance(transform.position, path[currPoint].position) > roundingDistance)
+            {
+                Vector3 temp = Vector3.MoveTowards(transform.position, path[currPoint].position, moveSpeed * Time.deltaTime);
+                changeAnim(temp - transform.position);
+                myRigidBody.MovePosition(temp);
+                ChangeState(EnemyState.walk);
+                killerAnim.SetBool("walking", true);
+            }
+            else {
+                ChangeGoal();
             }
         }
         else if (Vector3.Distance(target.position,
@@ -97,5 +116,17 @@ public class Killer : Enemy
         yield return new WaitForEndOfFrame();
         currentState = EnemyState.walk;
         killerAnim.SetBool("Attacking", false);
+    }
+
+    private void ChangeGoal() {
+        if (currPoint == path.Length - 1)
+        {
+            currPoint = 0;
+            currGoal = path[0];
+        }
+        else {
+            currPoint++;
+            currGoal = path[currPoint];
+        }
     }
 }

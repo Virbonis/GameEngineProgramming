@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     public float moveSpeed;
     void Start()
     {
-        Debug.Log("Shit");
+
     }
 
     // Update is called once per frame

@@ -28,7 +28,6 @@ public class Killer : Enemy
         myRigidBody = GetComponent<Rigidbody2D>();
         killerAnim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
-        Debug.Log("Shit");
     }
 
     void Update()

@@ -273,11 +273,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseAttack: 4
-  moveSpeed: 4.6
+  moveSpeed: 4
   currentState: 0
   myRigidBody: {fileID: 0}
-  target: {fileID: 0}
-  chaseRadius: 5
+  target: {fileID: 738709744}
+  chaseRadius: 8.08
   attackRadius: 0.6
   killerAnim: {fileID: 0}
   path:
@@ -288,6 +288,13 @@ MonoBehaviour:
   currGoal: {fileID: 0}
   roundingDistance: 0
   distance: 50
+  maxAngle: -45
+  player:
+    serializedVersion: 2
+    m_Bits: 256
+  obstacle:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!61 &289612838
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -722,7 +729,7 @@ GameObject:
   - component: {fileID: 738709745}
   - component: {fileID: 738709741}
   - component: {fileID: 738709746}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1102,6 +1109,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Overworld
       objectReference: {fileID: 0}
+    - target: {fileID: 4398947953492595712, guid: a551e994c588bc74b8d7721c5709aac5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3522585808325690321, guid: a551e994c588bc74b8d7721c5709aac5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1167,6 +1179,66 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2029803306043848191, guid: a551e994c588bc74b8d7721c5709aac5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211544007308610681, guid: a551e994c588bc74b8d7721c5709aac5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 422473455357515625, guid: a551e994c588bc74b8d7721c5709aac5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3543236424584534962, guid: a551e994c588bc74b8d7721c5709aac5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082742384589679720, guid: a551e994c588bc74b8d7721c5709aac5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5895652237959792882, guid: a551e994c588bc74b8d7721c5709aac5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 124209827232954432, guid: a551e994c588bc74b8d7721c5709aac5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5734835932415023075, guid: a551e994c588bc74b8d7721c5709aac5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1709596014350193428, guid: a551e994c588bc74b8d7721c5709aac5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736527359750301943, guid: a551e994c588bc74b8d7721c5709aac5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7207306509747580659, guid: a551e994c588bc74b8d7721c5709aac5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945980433750733905, guid: a551e994c588bc74b8d7721c5709aac5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a551e994c588bc74b8d7721c5709aac5, type: 3}
 --- !u!1001 &7813470009609220936
@@ -1194,7 +1266,7 @@ PrefabInstance:
     - target: {fileID: 7813470009856874349, guid: f558b83c8425b444da0800a0524b1ed6,
         type: 3}
       propertyPath: moveSpeed
-      value: 4.6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7813470009856874349, guid: f558b83c8425b444da0800a0524b1ed6,
         type: 3}
@@ -1215,6 +1287,31 @@ PrefabInstance:
         type: 3}
       propertyPath: distance
       value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813470009856874349, guid: f558b83c8425b444da0800a0524b1ed6,
+        type: 3}
+      propertyPath: maxAngle
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813470009856874349, guid: f558b83c8425b444da0800a0524b1ed6,
+        type: 3}
+      propertyPath: roundingDistance
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813470009856874349, guid: f558b83c8425b444da0800a0524b1ed6,
+        type: 3}
+      propertyPath: chaseRadius
+      value: 8.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813470009856874349, guid: f558b83c8425b444da0800a0524b1ed6,
+        type: 3}
+      propertyPath: player.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813470009856874349, guid: f558b83c8425b444da0800a0524b1ed6,
+        type: 3}
+      propertyPath: obstacle.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 7813470009856874351, guid: f558b83c8425b444da0800a0524b1ed6,
         type: 3}

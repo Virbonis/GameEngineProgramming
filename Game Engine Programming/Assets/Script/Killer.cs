@@ -12,11 +12,12 @@ public enum EnemyState
 public class Killer : Enemy
 {
     // Start is called before the first frame update
+    public float chaseRadius;
+    public float attackRadius;
+    public float chaseSmallDistance;
     public EnemyState currentState;
     public Rigidbody2D myRigidBody;
     public Transform target;
-    public float chaseRadius;
-    public float attackRadius;
     public Animator killerAnim;
     public Transform[] path;
     public int currPoint;
@@ -24,11 +25,12 @@ public class Killer : Enemy
     public float roundingDistance;
     public float distance;
     public float maxAngle;
-    private bool onSight = false;
+    public static bool onSight;
     private bool drawChase;
     public LayerMask player;
     public LayerMask obstacle;
-    private bool move;
+    private int position;
+    private bool tierUp = false;
 
     void Start()
     {
@@ -48,7 +50,10 @@ public class Killer : Enemy
         Collider2D[] overlaps = new Collider2D[20];
         int count = Physics2D.OverlapCircleNonAlloc(transform.position, chaseRadius, overlaps);
 
-        for (int x = 0; x < count - 1; x++)
+        Collider2D[] overlaps_closerChase = new Collider2D[20];
+        int countChaseValid = Physics2D.OverlapCircleNonAlloc(transform.position, chaseSmallDistance, overlaps_closerChase);
+
+        for (int x = 0; x < count; x++)
         {
             if (overlaps[x] != null)
             {
@@ -57,18 +62,99 @@ public class Killer : Enemy
                     Vector3 directionBetween = (target.position - transform.position).normalized;
                     directionBetween.z *= 0;
 
-                    float angle = Vector3.Angle(transform.forward, directionBetween);
-                    angle = angle - 135;
-                    Debug.Log(angle);
-                    Debug.Log(maxAngle);
-                    if (angle <= maxAngle)
+                    if (position == 4)
                     {
-                        Debug.Log("Not Caught");
-                        Vector3 dir = (target.position - transform.position).normalized;
-                        if (!Physics2D.Raycast(transform.position, dir, chaseRadius, obstacle))
+                        float angle = Vector3.Angle(directionBetween, -transform.up);
+                        angle = angle - 90;
+                        if (angle <= maxAngle)
+                        {
+                            Debug.Log("Not Caught");
+                            float distanceToTarget = Vector3.Distance(target.position, transform.position);
+                            if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
+                            {
+                                onSight = true;
+
+                                Debug.Log("Caught");
+                            }
+                            else
+                            {
+                                onSight = false;
+                            }
+                        }
+                    }
+                    else if (position == 3)
+                    {
+                        float angle = Vector3.Angle(directionBetween, transform.up);
+                        angle = angle - 90;
+                        if (angle <= maxAngle)
+                        {
+                            Debug.Log("Not Caught");
+                            float distanceToTarget = Vector3.Distance(target.position, transform.position);
+                            if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
+                            {
+                                onSight = true;
+                                Debug.Log(onSight);
+                                Debug.Log("Caught");
+                            }
+                            else
+                            {
+                                onSight = false;
+                            }
+                        }
+                    }
+                    else if (position == 1) {
+                        float angle = Vector3.Angle(directionBetween, transform.right);
+                        angle = angle - 90;
+                        if (angle <= maxAngle)
+                        {
+                            Debug.Log("Not Caught");
+                            float distanceToTarget = Vector3.Distance(target.position, transform.position);
+                            if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
+                            {
+                                onSight = true;
+                                Debug.Log(onSight);
+                                Debug.Log("Caught");
+                            }
+                            else
+                            {
+                                onSight = false;
+                            }
+                        }
+                    }
+                    else if (position == 2)
+                    {
+                        float angle = Vector3.Angle(directionBetween, -transform.right);
+                        angle = angle - 90;
+                        if (angle <= maxAngle)
+                        {
+                            Debug.Log("Not Caught");
+                            float distanceToTarget = Vector3.Distance(target.position, transform.position);
+                            if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
+                            {
+                                onSight = true;
+                                Debug.Log(onSight);
+                                Debug.Log("Caught");
+                            }
+                            else
+                            {
+                                onSight = false;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        for (int x = 0; x < countChaseValid; x++) {
+            if (overlaps_closerChase[x] != null) {
+                if (overlaps_closerChase[x].transform == target) {
+                    Vector3 directionBetween = (target.position - transform.position).normalized;
+                    directionBetween.z *= 0;
+                    if (Vector3.Distance(transform.position, target.position) <= chaseSmallDistance) {
+                        float distanceToTarget = Vector3.Distance(target.position, transform.position);
+                        if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
                         {
                             onSight = true;
-                            Debug.Log(onSight);
+
                             Debug.Log("Caught");
                         }
                     }
@@ -77,6 +163,10 @@ public class Killer : Enemy
         }
         if (onSight == true)
         {
+            if (!tierUp) {
+                SoundManager.PlaySound("Evil3");
+                tierUp = true;
+            }
             drawChase = true;
             if (Vector3.Distance(target.position, transform.position) >= attackRadius)
             {
@@ -84,7 +174,8 @@ public class Killer : Enemy
                 changeAnim(temp - transform.position);
                 myRigidBody.MovePosition(temp);
             }
-            else {
+            else
+            {
                 if (currentState == EnemyState.walk)
                 {
                     StartCoroutine(attack());
@@ -109,7 +200,6 @@ public class Killer : Enemy
                 ChangeGoal();
             }
         }
-        onSight = false;
     }
 
     private void SetAnimFloat(Vector2 setVector)
@@ -125,10 +215,13 @@ public class Killer : Enemy
             if (direction.x > 0)
             {
                 SetAnimFloat(Vector2.right);
+                position = 1;
+                
             }
             else
             {
                 SetAnimFloat(Vector2.left);
+                position = 2;
             }
         }
         else if (Mathf.Abs(direction.x) < Mathf.Abs(direction.y))
@@ -136,10 +229,12 @@ public class Killer : Enemy
             if (direction.y > 0)
             {
                 SetAnimFloat(Vector2.up);
+                position = 3;
             }
             else
             {
                 SetAnimFloat(Vector2.down);
+                position = 4;
             }
         }
     }
@@ -180,13 +275,39 @@ public class Killer : Enemy
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, chaseRadius);
         Gizmos.DrawWireSphere(transform.position, attackRadius);
+        Gizmos.DrawWireSphere(transform.position, chaseSmallDistance);
 
-        Vector3 fowLine1 = Quaternion.AngleAxis(maxAngle, transform.forward) * transform.right * chaseRadius;
-        Vector3 fowLine2 = Quaternion.AngleAxis(-maxAngle, transform.forward) * -transform.right * chaseRadius;
-
-        Gizmos.color = Color.blue;
-        Gizmos.DrawRay(transform.position, fowLine1);
-        Gizmos.DrawRay(transform.position, fowLine2);
+        if (position == 4)
+        {
+            Vector3 fowLine1 = Quaternion.AngleAxis(maxAngle, transform.forward) * transform.right * chaseRadius;
+            Vector3 fowLine2 = Quaternion.AngleAxis(-maxAngle, transform.forward) * -transform.right * chaseRadius;
+            Gizmos.color = Color.blue;
+            Gizmos.DrawRay(transform.position, fowLine1);
+            Gizmos.DrawRay(transform.position, fowLine2);
+        }
+        else if (position == 3)
+        {
+            Vector3 fowLine1 = Quaternion.AngleAxis(-maxAngle, transform.forward) * transform.right * chaseRadius;
+            Vector3 fowLine2 = Quaternion.AngleAxis(maxAngle, transform.forward) * -transform.right * chaseRadius;
+            Gizmos.color = Color.blue;
+            Gizmos.DrawRay(transform.position, fowLine1);
+            Gizmos.DrawRay(transform.position, fowLine2);
+        }
+        else if (position == 1)
+        {
+            Vector3 fowLine1 = Quaternion.AngleAxis(maxAngle, -transform.forward) * transform.right * chaseRadius;
+            Vector3 fowLine2 = Quaternion.AngleAxis(maxAngle, transform.forward) * transform.right * chaseRadius;
+            Gizmos.color = Color.blue;
+            Gizmos.DrawRay(transform.position, fowLine1);
+            Gizmos.DrawRay(transform.position, fowLine2);
+        }
+        else if (position == 2) {
+            Vector3 fowLine1 = Quaternion.AngleAxis(maxAngle, transform.forward) * -transform.right * chaseRadius;
+            Vector3 fowLine2 = Quaternion.AngleAxis(maxAngle, -transform.forward) * -transform.right * chaseRadius;
+            Gizmos.color = Color.blue;
+            Gizmos.DrawRay(transform.position, fowLine1);
+            Gizmos.DrawRay(transform.position, fowLine2);
+        }
 
         if (drawChase == false)
         {

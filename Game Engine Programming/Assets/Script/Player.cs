@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
     public float speed;
     private Rigidbody2D myRigidbody;
     private Vector3 change;
     private Animator animator;
     public GameObject Blood;
+    public GameObject wayPoint;
+    public float timer = 0.5f;
 
     void Start()
     {
@@ -18,7 +19,6 @@ public class Player : MonoBehaviour
         Debug.Log("Shit");
     }
 
-    // Update is called once per frame
     void Update()
     {
         change = Vector3.zero;

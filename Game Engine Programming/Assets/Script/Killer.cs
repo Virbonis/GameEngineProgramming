@@ -21,6 +21,7 @@ public class Killer : Enemy
     public Animator killerAnim;
     public Transform[] path;
     public int currPoint;
+    public int wayPointIndexChase;
     public Transform currGoal;
     public float roundingDistance;
     public float distance;
@@ -31,6 +32,8 @@ public class Killer : Enemy
     public LayerMask obstacle;
     private int position;
     private bool tierUp = false;
+    public static bool reachWaypoint = false;
+
 
     void Start()
     {
@@ -73,11 +76,9 @@ public class Killer : Enemy
                             if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
                             {
                                 onSight = true;
-
                                 Debug.Log("Caught");
                             }
-                            else
-                            {
+                            else {
                                 onSight = false;
                             }
                         }
@@ -96,8 +97,7 @@ public class Killer : Enemy
                                 Debug.Log(onSight);
                                 Debug.Log("Caught");
                             }
-                            else
-                            {
+                            else {
                                 onSight = false;
                             }
                         }
@@ -112,11 +112,8 @@ public class Killer : Enemy
                             if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
                             {
                                 onSight = true;
-                                Debug.Log(onSight);
-                                Debug.Log("Caught");
                             }
-                            else
-                            {
+                            else {
                                 onSight = false;
                             }
                         }
@@ -132,8 +129,6 @@ public class Killer : Enemy
                             if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
                             {
                                 onSight = true;
-                                Debug.Log(onSight);
-                                Debug.Log("Caught");
                             }
                             else
                             {
@@ -154,25 +149,34 @@ public class Killer : Enemy
                         if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
                         {
                             onSight = true;
-
-                            Debug.Log("Caught");
+                        }
+                        else
+                        {
+                            onSight = false;
                         }
                     }
                 }
             }
         }
+
         if (onSight == true)
         {
-            if (!tierUp) {
+            if (!tierUp)
+            {
                 SoundManager.PlaySound("Evil3");
                 tierUp = true;
             }
             drawChase = true;
             if (Vector3.Distance(target.position, transform.position) >= attackRadius)
             {
-                Vector3 temp = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+                Vector3 temp = Vector3.MoveTowards(transform.position, Player.paths[wayPointIndexChase],
+                               moveSpeed * Time.deltaTime);
                 changeAnim(temp - transform.position);
                 myRigidBody.MovePosition(temp);
+                if (transform.position == Player.paths[wayPointIndexChase])
+                {
+                    wayPointIndexChase++;
+                }
             }
             else
             {
@@ -187,6 +191,7 @@ public class Killer : Enemy
         else
         {
             drawChase = false;
+            wayPointIndexChase = 0;
             if (Vector3.Distance(transform.position, path[currPoint].position) > roundingDistance)
             {
                 Vector3 temp = Vector3.MoveTowards(transform.position, path[currPoint].position, moveSpeed * Time.deltaTime);

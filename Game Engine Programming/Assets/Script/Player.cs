@@ -9,8 +9,11 @@ public class Player : MonoBehaviour
     private Vector3 change;
     private Animator animator;
     public GameObject Blood;
-    public GameObject wayPoint;
-    public float timer = 0.5f;
+    public static List<Vector3> paths = new List<Vector3>();
+    public Vector3 path;
+    Transform[] theArray;
+    private float timer = 0.2f;
+    private bool spawningWaypoint = false;
 
     void Start()
     {
@@ -25,6 +28,41 @@ public class Player : MonoBehaviour
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
         UpdateAnimationAndMove();
+        SpawnWayPoint();
+    }
+
+    void SpawnWayPoint() {
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        else
+        {
+            if (Killer.onSight == true)
+            {
+                paths.Add(transform.position);
+                Debug.Log(paths);
+                if (paths != null)
+                {
+                    for (int x = paths.Count - 1; x > 0; x--)
+                    {
+                        if (paths[x] == paths[x - 1])
+                        {
+                            paths.Remove(paths[x]);
+                            spawningWaypoint = false;
+                        }
+                        else
+                        {
+                            spawningWaypoint = true;
+                        }
+                    }
+                }
+                timer = 0.2f;
+            }
+            else {
+                paths.Clear();
+            }
+        }
     }
 
     void UpdateAnimationAndMove() {
@@ -53,6 +91,20 @@ public class Player : MonoBehaviour
             GameObject effect = Instantiate(Blood, transform.position, Quaternion.identity);
             Destroy(effect, 1f);
         }
+    }
 
+    void OnDrawGizmosSelected()
+    {
+        if (Killer.onSight == true)
+        {
+            if (spawningWaypoint == true)
+            {
+                for (int x = 0; x < paths.Count; x++)
+                {
+                    Gizmos.color = Color.red;
+                    Gizmos.DrawSphere(paths[x], 0.2f);
+                }
+            }
+        }
     }
 }

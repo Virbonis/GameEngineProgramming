@@ -33,6 +33,11 @@ public class Killer : Enemy
     private int position;
     private bool tierUp = false;
     public static bool reachWaypoint = false;
+    private bool tierDown = false;
+    private bool countDown;
+    private float timer = 5f;
+    public static bool resetWaypoint;
+    private int tierUpTrigger = 0;
 
 
     void Start()
@@ -76,10 +81,8 @@ public class Killer : Enemy
                             if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
                             {
                                 onSight = true;
-                                Debug.Log("Caught");
-                            }
-                            else {
-                                onSight = false;
+                                timer = 5f;
+                                countDown = false;
                             }
                         }
                     }
@@ -94,11 +97,8 @@ public class Killer : Enemy
                             if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
                             {
                                 onSight = true;
-                                Debug.Log(onSight);
-                                Debug.Log("Caught");
-                            }
-                            else {
-                                onSight = false;
+                                timer = 5f;
+                                countDown = false;
                             }
                         }
                     }
@@ -112,9 +112,8 @@ public class Killer : Enemy
                             if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
                             {
                                 onSight = true;
-                            }
-                            else {
-                                onSight = false;
+                                timer = 5f;
+                                countDown = false;
                             }
                         }
                     }
@@ -129,16 +128,23 @@ public class Killer : Enemy
                             if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
                             {
                                 onSight = true;
-                            }
-                            else
-                            {
-                                onSight = false;
+                                timer = 5f;
+                                countDown = false;
                             }
                         }
                     }
                 }
             }
         }
+
+        if (Vector3.Distance(transform.position, target.position) >= chaseRadius)
+        {
+            countDown = true;
+        }
+        else {
+            countDown = false;
+        }
+
         for (int x = 0; x < countChaseValid; x++) {
             if (overlaps_closerChase[x] != null) {
                 if (overlaps_closerChase[x].transform == target) {
@@ -149,10 +155,8 @@ public class Killer : Enemy
                         if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
                         {
                             onSight = true;
-                        }
-                        else
-                        {
-                            onSight = false;
+                            timer = 5f;
+                            countDown = false;
                         }
                     }
                 }
@@ -161,21 +165,76 @@ public class Killer : Enemy
 
         if (onSight == true)
         {
-            if (!tierUp)
+            if (tierUpTrigger == 0 && onSight == true)
             {
+                tierUpTrigger++;
                 SoundManager.PlaySound("Evil3");
-                tierUp = true;
             }
             drawChase = true;
+            if (countDown == true) {
+                if (timer >= 0) {
+                    timer -= Time.deltaTime;
+                    Debug.Log(timer);
+                }
+                else
+                {
+                    onSight = false;
+                    tierDown = true;
+                }
+            }
             if (Vector3.Distance(target.position, transform.position) >= attackRadius)
             {
-                Vector3 temp = Vector3.MoveTowards(transform.position, Player.paths[wayPointIndexChase],
-                               moveSpeed * Time.deltaTime);
-                changeAnim(temp - transform.position);
-                myRigidBody.MovePosition(temp);
-                if (transform.position == Player.paths[wayPointIndexChase])
+                for (int x = 0; x < countChaseValid; x++)
                 {
-                    wayPointIndexChase++;
+                    if (overlaps_closerChase[x] != null)
+                    {
+                        if (overlaps_closerChase[x].transform == target)
+                        {
+                            Vector3 directionBetween = (target.position - transform.position).normalized;
+                            directionBetween.z *= 0;
+                            if (Vector3.Distance(transform.position, target.position) <= chaseSmallDistance)
+                            {
+                                float distanceToTarget = Vector3.Distance(target.position, transform.position);
+                                if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
+                                {
+                                    Vector3 temp = Vector3.MoveTowards(transform.position, target.position,
+                                    moveSpeed * Time.deltaTime);
+                                    changeAnim(temp - transform.position);
+                                    myRigidBody.MovePosition(temp);
+                                    timer = 5f;
+                                    countDown = false;
+                                    resetWaypoint = true;
+                                    wayPointIndexChase = 0;
+                                }
+                                else
+                                {
+                                    onSight = true;
+                                    countDown = true;
+                                    Vector3 temp = Vector3.MoveTowards(transform.position, Player.paths[wayPointIndexChase],
+                                    moveSpeed * Time.deltaTime);
+                                    changeAnim(temp - transform.position);
+                                    myRigidBody.MovePosition(temp);
+                                    if (transform.position == Player.paths[wayPointIndexChase])
+                                    {
+                                        wayPointIndexChase++;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (Vector3.Distance(target.position, transform.position) >= chaseSmallDistance)
+                {
+                    Debug.Log("Search");
+                    resetWaypoint = false;
+                    Vector3 temp = Vector3.MoveTowards(transform.position, Player.paths[wayPointIndexChase],
+                                   moveSpeed * Time.deltaTime);
+                    changeAnim(temp - transform.position);
+                    myRigidBody.MovePosition(temp);
+                    if (transform.position == Player.paths[wayPointIndexChase])
+                    {
+                        wayPointIndexChase++;
+                    }
                 }
             }
             else
@@ -190,6 +249,12 @@ public class Killer : Enemy
         }
         else
         {
+            tierUpTrigger = 0;
+            if (timer <= 0 && tierDown == true)
+            {
+                SoundManager.PlaySound("Evil2");
+                tierDown = false;
+            }
             drawChase = false;
             wayPointIndexChase = 0;
             if (Vector3.Distance(transform.position, path[currPoint].position) > roundingDistance)

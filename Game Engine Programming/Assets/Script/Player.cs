@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     private Animator animator;
     public GameObject Blood;
     public static List<Vector3> paths = new List<Vector3>();
-    public Vector3 path;
     Transform[] theArray;
     private float timer = 0.2f;
     private bool spawningWaypoint = false;
@@ -50,6 +49,7 @@ public class Player : MonoBehaviour
                         {
                             paths.Remove(paths[x]);
                             spawningWaypoint = false;
+                            Debug.Log("Remove");
                         }
                         else
                         {
@@ -58,6 +58,31 @@ public class Player : MonoBehaviour
                     }
                 }
                 timer = 0.2f;
+                if (Killer.resetWaypoint == true)
+                {
+                    paths.Clear();
+                }
+                else
+                {
+                    paths.Add(transform.position);
+                    Debug.Log(paths);
+                    if (paths != null)
+                    {
+                        for (int x = paths.Count - 1; x > 0; x--)
+                        {
+                            if (paths[x] == paths[x - 1])
+                            {
+                                paths.Remove(paths[x]);
+                                spawningWaypoint = false;
+                                Debug.Log("Remove");
+                            }
+                            else
+                            {
+                                spawningWaypoint = true;
+                            }
+                        }
+                    }
+                }
             }
             else {
                 paths.Clear();
@@ -84,13 +109,6 @@ public class Player : MonoBehaviour
         myRigidbody.MovePosition(
             transform.position + change * speed * Time.deltaTime    
         );
-    }
-
-    private void BloodEffect() {
-        if (Blood != null) {
-            GameObject effect = Instantiate(Blood, transform.position, Quaternion.identity);
-            Destroy(effect, 1f);
-        }
     }
 
     void OnDrawGizmosSelected()

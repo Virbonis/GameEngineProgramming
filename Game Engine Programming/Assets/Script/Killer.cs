@@ -40,21 +40,30 @@ public class Killer : Enemy
     private float speedTemp;
     private float timerAnimKicking = 3.45f;
     private bool timerAnimKickingTrigger = false;
+    private bool canAttack = true;
 
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
         killerAnim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
-        Debug.Log("Shit");
         speedTemp = moveSpeed;
     }
 
     void Update()
     {
+        if (KillerHit.hit == true)
+        {
+            moveSpeed = 0;
+            canAttack = false;
+            Debug.Log("Can attack : " + canAttack);
+            killerAnim.SetBool("Laughing", true);
+            StartCoroutine(FinishesLaughingAnim());
+        }
+
         if (timerAnimKickingTrigger == true) {
             killerAnim.SetBool("Kicking", true);
-            StartCoroutine(FinishesAnim());
+            StartCoroutine(FinishesAnimKicking());
         }
         checkDistance();
     }
@@ -82,7 +91,6 @@ public class Killer : Enemy
                         angle = angle - 90;
                         if (angle <= maxAngle)
                         {
-                            Debug.Log("Not Caught");
                             float distanceToTarget = Vector3.Distance(target.position, transform.position);
                             if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
                             {
@@ -98,7 +106,6 @@ public class Killer : Enemy
                         angle = angle - 90;
                         if (angle <= maxAngle)
                         {
-                            Debug.Log("Not Caught");
                             float distanceToTarget = Vector3.Distance(target.position, transform.position);
                             if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
                             {
@@ -113,7 +120,6 @@ public class Killer : Enemy
                         angle = angle - 90;
                         if (angle <= maxAngle)
                         {
-                            Debug.Log("Not Caught");
                             float distanceToTarget = Vector3.Distance(target.position, transform.position);
                             if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
                             {
@@ -129,7 +135,6 @@ public class Killer : Enemy
                         angle = angle - 90;
                         if (angle <= maxAngle)
                         {
-                            Debug.Log("Not Caught");
                             float distanceToTarget = Vector3.Distance(target.position, transform.position);
                             if (!Physics2D.Raycast(transform.position, directionBetween, distanceToTarget, obstacle))
                             {
@@ -230,7 +235,6 @@ public class Killer : Enemy
                 }
                 if (Vector3.Distance(target.position, transform.position) >= chaseSmallDistance)
                 {
-                    Debug.Log("Search");
                     resetWaypoint = false;
                     Vector3 temp = Vector3.MoveTowards(transform.position, Player.paths[wayPointIndexChase],
                                    moveSpeed * Time.deltaTime);
@@ -244,9 +248,10 @@ public class Killer : Enemy
             }
             else
             {
-                if (currentState == EnemyState.walk)
+                if (currentState == EnemyState.walk && canAttack == true)
                 {
                     StartCoroutine(attack());
+                    Debug.Log("Can attack : " + canAttack);
                 }
             }
             ChangeState(EnemyState.walk);
@@ -326,7 +331,7 @@ public class Killer : Enemy
     {
         currentState = EnemyState.attack;
         killerAnim.SetBool("Attacking", true);
-        yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(1f);
         currentState = EnemyState.walk;
         killerAnim.SetBool("Attacking", false);
     }
@@ -409,10 +414,18 @@ public class Killer : Enemy
         }
     }
 
-    IEnumerator FinishesAnim() {
+    IEnumerator FinishesAnimKicking() {
         yield return new WaitForSeconds(timerAnimKicking);
         moveSpeed = speedTemp;
         killerAnim.SetBool("Kicking", false);
         timerAnimKickingTrigger = false;
+    }
+
+    IEnumerator FinishesLaughingAnim() {
+        yield return new WaitForSeconds(2.15f);
+        moveSpeed = speedTemp;
+        killerAnim.SetBool("Laughing", false);
+        KillerHit.hit = false;
+        canAttack = true;
     }
 }

@@ -22,7 +22,6 @@ public class BloodEffect : MonoBehaviour
         if (KillerHit.hit == true)
         {
             BloodAnim.SetBool("Splatter", true);
-            Debug.Log("blood is comin' out");
             if (timer >= 0)
             {
                 timer -= Time.deltaTime;

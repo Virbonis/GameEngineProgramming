@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
-        Debug.Log("Shit");
     }
 
     void Update()
@@ -48,7 +47,6 @@ public class Player : MonoBehaviour
                         {
                             paths.Remove(paths[x]);
                             spawningWaypoint = false;
-                            Debug.Log("Remove");
                         }
                         else
                         {
@@ -73,7 +71,6 @@ public class Player : MonoBehaviour
                             {
                                 paths.Remove(paths[x]);
                                 spawningWaypoint = false;
-                                Debug.Log("Remove");
                             }
                             else
                             {

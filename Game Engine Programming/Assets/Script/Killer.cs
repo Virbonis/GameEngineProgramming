@@ -38,9 +38,8 @@ public class Killer : Enemy
     public static bool resetWaypoint;
     private int tierUpTrigger = 0;
     private float speedTemp;
-    private float timerAnim = 3.45f;
-    private bool timerAnimTrigger;
-
+    private float timerAnimKicking = 3.45f;
+    private bool timerAnimKickingTrigger = false;
 
     void Start()
     {
@@ -53,6 +52,10 @@ public class Killer : Enemy
 
     void Update()
     {
+        if (timerAnimKickingTrigger == true) {
+            killerAnim.SetBool("Kicking", true);
+            StartCoroutine(FinishesAnim());
+        }
         checkDistance();
     }
 
@@ -402,19 +405,14 @@ public class Killer : Enemy
             var door = other.gameObject.GetComponent<DoorHealth>();
             door.doorHealth -= 1;
             moveSpeed = 0;
-            killerAnim.SetBool("Kicking", true);
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Door")) {
-            moveSpeed = speedTemp;
-            killerAnim.SetBool("Kicking", false);
+            timerAnimKickingTrigger = true;
         }
     }
 
     IEnumerator FinishesAnim() {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(timerAnimKicking);
+        moveSpeed = speedTemp;
+        killerAnim.SetBool("Kicking", false);
+        timerAnimKickingTrigger = false;
     }
 }

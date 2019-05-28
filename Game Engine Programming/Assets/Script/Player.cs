@@ -10,7 +10,6 @@ public class Player : MonoBehaviour
     private Animator animator;
     public GameObject Blood;
     public static List<Vector3> paths = new List<Vector3>();
-    Transform[] theArray;
     private float timer = 0.2f;
     private bool spawningWaypoint = false;
 

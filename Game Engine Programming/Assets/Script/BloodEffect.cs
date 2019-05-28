@@ -6,6 +6,7 @@ public class BloodEffect : MonoBehaviour
 {
     private Animator BloodAnim;
     private float timer = 1.5f;
+    public static bool delay;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class BloodEffect : MonoBehaviour
         if (KillerHit.hit == true)
         {
             BloodAnim.SetBool("Splatter", true);
+            Debug.Log("blood is comin' out");
             if (timer >= 0)
             {
                 timer -= Time.deltaTime;

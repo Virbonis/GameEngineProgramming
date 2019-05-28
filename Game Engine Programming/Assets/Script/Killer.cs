@@ -24,7 +24,6 @@ public class Killer : Enemy
     public int wayPointIndexChase;
     public Transform currGoal;
     public float roundingDistance;
-    public float distance;
     public float maxAngle;
     public static bool onSight;
     private bool drawChase;
@@ -38,6 +37,9 @@ public class Killer : Enemy
     private float timer = 5f;
     public static bool resetWaypoint;
     private int tierUpTrigger = 0;
+    private float speedTemp;
+    private float timerAnim = 3.45f;
+    private bool timerAnimTrigger;
 
 
     void Start()
@@ -46,6 +48,7 @@ public class Killer : Enemy
         killerAnim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
         Debug.Log("Shit");
+        speedTemp = moveSpeed;
     }
 
     void Update()
@@ -174,7 +177,6 @@ public class Killer : Enemy
             if (countDown == true) {
                 if (timer >= 0) {
                     timer -= Time.deltaTime;
-                    Debug.Log(timer);
                 }
                 else
                 {
@@ -391,5 +393,28 @@ public class Killer : Enemy
 
         Gizmos.color = Color.black;
         Gizmos.DrawRay(transform.position, -transform.up * chaseRadius);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Door"))
+        {
+            var door = other.gameObject.GetComponent<DoorHealth>();
+            door.doorHealth -= 1;
+            moveSpeed = 0;
+            killerAnim.SetBool("Kicking", true);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Door")) {
+            moveSpeed = speedTemp;
+            killerAnim.SetBool("Kicking", false);
+        }
+    }
+
+    IEnumerator FinishesAnim() {
+        yield return new WaitForSeconds(5f);
     }
 }

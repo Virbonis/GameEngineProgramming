@@ -44,6 +44,8 @@ public class Killer : Enemy
     private bool animTrigger;
     private bool animTriggerKicking;
     private float timerDelay = 2.15f;
+    public bool kicking;
+    public int counter = 0;
 
     void Start()
     {
@@ -55,6 +57,12 @@ public class Killer : Enemy
 
     void Update()
     {
+        if (kicking == true) {
+            if (counter == 0) {
+                KillerSound.PlaySoundEnemy("Wood Sound Effect");
+                counter++;
+            }
+        }
         checkDelay();
         checkDistance();
     }
@@ -409,8 +417,11 @@ public class Killer : Enemy
 
     IEnumerator FinishesAnimKicking() {
         killerAnim.SetBool("Kicking", true);
+        kicking = true;
         animTrigger = true;
         yield return new WaitForSeconds(timerAnimKicking);
+        counter = 0;
+        kicking = false;
         killerAnim.SetBool("Kicking", false);
         animTrigger = false;
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KillerSound : MonoBehaviour
 {
-    public static AudioClip Laughing1, Laughing2, Laughing3, Laughing4, knifeSoundEffect;
+    public static AudioClip Laughing1, Laughing2, Laughing3, Laughing4, knifeSoundEffect, kicking;
     static AudioSource audioSourceEnemy;
 
     void Start()
@@ -14,6 +14,7 @@ public class KillerSound : MonoBehaviour
         Laughing3 = Resources.Load<AudioClip>("Laughing 3");
         Laughing4 = Resources.Load<AudioClip>("Laughing 4");
         knifeSoundEffect = Resources.Load<AudioClip>("Knife Sound Effect");
+        kicking = Resources.Load<AudioClip>("Wood Sound Effect");
 
         audioSourceEnemy = GetComponent<AudioSource>();
     }
@@ -36,6 +37,9 @@ public class KillerSound : MonoBehaviour
                 break;
             case "Knife Sound Effect":
                 audioSourceEnemy.PlayOneShot(knifeSoundEffect);
+                break;
+            case "Wood Sound Effect":
+                audioSourceEnemy.PlayOneShot(kicking);
                 break;
         }
     }

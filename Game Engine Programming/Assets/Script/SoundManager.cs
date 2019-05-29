@@ -5,13 +5,14 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
 
-    public static AudioClip EvilWithin2, EvilWithin3;
+    public static AudioClip EvilWithin2, EvilWithin3, playerBlood;
     static AudioSource audioSource;
 
     void Start()
     {
         EvilWithin2 = Resources.Load<AudioClip>("Evil2");
         EvilWithin3 = Resources.Load<AudioClip>("Evil3");
+        playerBlood = Resources.Load<AudioClip>("Blood Sounfeffect");
 
         audioSource = GetComponent<AudioSource>();
     }
@@ -28,6 +29,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case "Evil3":
                 audioSource.PlayOneShot(EvilWithin3);
+                break;
+            case "Blood Sounfeffect":
+                audioSource.PlayOneShot(playerBlood);
                 break;
         }
     }

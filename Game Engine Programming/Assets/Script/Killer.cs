@@ -42,6 +42,7 @@ public class Killer : Enemy
     private float timerAnimLaughing = 2.15f;
     private bool canAttack = true;
     private bool animTrigger;
+    private bool animTriggerKicking;
 
     void Start()
     {
@@ -53,6 +54,12 @@ public class Killer : Enemy
 
     void Update()
     {
+        if (KillerHit.hit == true)
+        {
+            canAttack = false;
+            StartCoroutine(FinishesLaughingAnim());
+            Debug.Log("Can attack : " + canAttack);
+        }
         checkDelay();
         checkDistance();
     }
@@ -240,12 +247,6 @@ public class Killer : Enemy
                 if (currentState == EnemyState.walk && canAttack == true)
                 {
                     StartCoroutine(attack());
-                    if (KillerHit.hit == true)
-                    {
-                        canAttack = false;
-                        StartCoroutine(FinishesLaughingAnim());
-                        Debug.Log("Can attack : " + canAttack);
-                    }
                 }
             }
             ChangeState(EnemyState.walk);
@@ -323,9 +324,12 @@ public class Killer : Enemy
 
     public IEnumerator attack()
     {
+        KillerSound.PlaySoundEnemy("Knife Sound Effect");
         currentState = EnemyState.attack;
+        canAttack = false;
         killerAnim.SetBool("Attacking", true);
         yield return new WaitForSeconds(1f);
+        canAttack = true;
         currentState = EnemyState.walk;
         killerAnim.SetBool("Attacking", false);
     }
@@ -416,20 +420,22 @@ public class Killer : Enemy
     }
 
     IEnumerator FinishesLaughingAnim() {
-        canAttack = false;
+        moveSpeed = 0;
+        animTriggerKicking = true;
         killerAnim.SetBool("Laughing", true);
         yield return new WaitForSeconds(timerAnimLaughing);
         killerAnim.SetBool("Laughing", false);
+        animTriggerKicking = false;
         KillerHit.hit = false;
         canAttack = true;
     }
 
     void checkDelay() {
-        if (animTrigger == true || canAttack == false)
+        if (animTrigger == true || canAttack == false || animTriggerKicking == true)
         {
             moveSpeed = 0;
         }
-        else if (animTrigger == false || canAttack == true)
+        else if (animTrigger == false || canAttack == true || animTriggerKicking == false)
         {
             moveSpeed = speedTemp;
         }

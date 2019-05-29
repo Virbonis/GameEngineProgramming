@@ -12,7 +12,7 @@ public class KillerHit : MonoBehaviour
         if (other.CompareTag("Player")) {
             hit = true;
             SoundManager.PlaySound("Blood Sounfeffect");
-            number = Random.Range(1, 4);
+            number = Random.Range(1, 5);
             if (number == 1)
             {
                 KillerSound.PlaySoundEnemy("Laughing 1");

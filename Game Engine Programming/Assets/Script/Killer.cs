@@ -43,6 +43,7 @@ public class Killer : Enemy
     private bool canAttack = true;
     private bool animTrigger;
     private bool animTriggerKicking;
+    private float timerDelay = 2.15f;
 
     void Start()
     {
@@ -54,12 +55,6 @@ public class Killer : Enemy
 
     void Update()
     {
-        if (KillerHit.hit == true)
-        {
-            canAttack = false;
-            StartCoroutine(FinishesLaughingAnim());
-            Debug.Log("Can attack : " + canAttack);
-        }
         checkDelay();
         checkDistance();
     }
@@ -247,6 +242,7 @@ public class Killer : Enemy
                 if (currentState == EnemyState.walk && canAttack == true)
                 {
                     StartCoroutine(attack());
+                    StartCoroutine(FinishesLaughingAnim());
                 }
             }
             ChangeState(EnemyState.walk);
@@ -328,7 +324,7 @@ public class Killer : Enemy
         currentState = EnemyState.attack;
         canAttack = false;
         killerAnim.SetBool("Attacking", true);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2.15f);
         canAttack = true;
         currentState = EnemyState.walk;
         killerAnim.SetBool("Attacking", false);
@@ -422,11 +418,11 @@ public class Killer : Enemy
     IEnumerator FinishesLaughingAnim() {
         moveSpeed = 0;
         animTriggerKicking = true;
+        canAttack = false;
         killerAnim.SetBool("Laughing", true);
         yield return new WaitForSeconds(timerAnimLaughing);
         killerAnim.SetBool("Laughing", false);
         animTriggerKicking = false;
-        KillerHit.hit = false;
         canAttack = true;
     }
 

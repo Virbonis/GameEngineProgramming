@@ -43,6 +43,8 @@ public class Killer : Enemy
     private bool canAttack = true;
     private bool animTrigger;
     private bool animTriggerKicking;
+    public static bool doorSFX;
+    public static int counter;
 
     void Start()
     {
@@ -413,8 +415,11 @@ public class Killer : Enemy
 
     IEnumerator FinishesAnimKicking() {
         killerAnim.SetBool("Kicking", true);
+        doorSFX = true;
         animTrigger = true;
         yield return new WaitForSeconds(timerAnimKicking);
+        doorSFX = false;
+        counter = 0;
         killerAnim.SetBool("Kicking", false);
         animTrigger = false;
     }

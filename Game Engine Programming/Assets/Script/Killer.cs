@@ -39,8 +39,9 @@ public class Killer : Enemy
     private int tierUpTrigger = 0;
     private float speedTemp;
     private float timerAnimKicking = 3.45f;
-    private bool timerAnimKickingTrigger = false;
+    private float timerAnimLaughing = 2.15f;
     private bool canAttack = true;
+    private bool animTrigger;
 
     void Start()
     {
@@ -52,10 +53,7 @@ public class Killer : Enemy
 
     void Update()
     {
-        if (timerAnimKickingTrigger == true) {
-            killerAnim.SetBool("Kicking", true);
-            StartCoroutine(FinishesAnimKicking());
-        }
+        checkDelay();
         checkDistance();
     }
 
@@ -244,11 +242,9 @@ public class Killer : Enemy
                     StartCoroutine(attack());
                     if (KillerHit.hit == true)
                     {
-                        moveSpeed = 0;
                         canAttack = false;
-                        Debug.Log("Can attack : " + canAttack);
-                        killerAnim.SetBool("Laughing", true);
                         StartCoroutine(FinishesLaughingAnim());
+                        Debug.Log("Can attack : " + canAttack);
                     }
                 }
             }
@@ -405,25 +401,37 @@ public class Killer : Enemy
     {
         if (other.CompareTag("Door"))
         {
+            StartCoroutine(FinishesAnimKicking());
             var door = other.gameObject.GetComponent<DoorHealth>();
             door.doorHealth -= 1;
-            moveSpeed = 0;
-            timerAnimKickingTrigger = true;
         }
     }
 
     IEnumerator FinishesAnimKicking() {
+        killerAnim.SetBool("Kicking", true);
+        animTrigger = true;
         yield return new WaitForSeconds(timerAnimKicking);
-        moveSpeed = speedTemp;
         killerAnim.SetBool("Kicking", false);
-        timerAnimKickingTrigger = false;
+        animTrigger = false;
     }
 
     IEnumerator FinishesLaughingAnim() {
-        yield return new WaitForSeconds(2.15f);
-        moveSpeed = speedTemp;
+        canAttack = false;
+        killerAnim.SetBool("Laughing", true);
+        yield return new WaitForSeconds(timerAnimLaughing);
         killerAnim.SetBool("Laughing", false);
         KillerHit.hit = false;
         canAttack = true;
+    }
+
+    void checkDelay() {
+        if (animTrigger == true || canAttack == false)
+        {
+            moveSpeed = 0;
+        }
+        else if (animTrigger == false || canAttack == true)
+        {
+            moveSpeed = speedTemp;
+        }
     }
 }

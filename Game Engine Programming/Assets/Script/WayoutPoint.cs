@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WayoutPoint : MonoBehaviour
 {
-
+    public Transform[] Waypoints;
     void Update()
     {
         
@@ -12,6 +12,8 @@ public class WayoutPoint : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D room)
     {
-        
+        if (room.CompareTag("Killer")) {
+            print("Please, FUCK MY ASS");
+        }   
     }
 }

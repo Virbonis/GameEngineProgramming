@@ -23,6 +23,7 @@ public class Killer : Enemy
     public int currPoint;
     public int wayPointIndexChase;
     public Transform currGoal;
+    public Transform currDest;
     public float roundingDistance;
     public float maxAngle;
     public static bool onSight;
@@ -46,6 +47,8 @@ public class Killer : Enemy
     private float timerDelay = 2.15f;
     public bool kicking;
     public int counter = 0;
+    public GameObject TriggerRoom;
+    public int WayoutPointindex = 0;
 
     void Start()
     {
@@ -175,6 +178,7 @@ public class Killer : Enemy
 
         if (onSight == true)
         {
+            TriggerRoom.SetActive(false);
             if (tierUpTrigger == 0 && onSight == true)
             {
                 tierUpTrigger++;
@@ -258,6 +262,7 @@ public class Killer : Enemy
         }
         else
         {
+            TriggerRoom.SetActive(true);
             tierUpTrigger = 0;
             if (timer <= 0 && tierDown == true)
             {
@@ -266,17 +271,45 @@ public class Killer : Enemy
             }
             drawChase = false;
             wayPointIndexChase = 0;
-            if (Vector3.Distance(transform.position, path[currPoint].position) > roundingDistance)
+            if (WayoutPoint.Active == true)
             {
-                Vector3 temp = Vector3.MoveTowards(transform.position, path[currPoint].position, moveSpeed * Time.deltaTime);
-                changeAnim(temp - transform.position);
-                myRigidBody.MovePosition(temp);
-                ChangeState(EnemyState.walk);
-                killerAnim.SetBool("walking", true);
+                var wayout = GameObject.FindGameObjectWithTag("Room 1").GetComponent<WayoutPoint>();
+                if (WayoutPointindex <= wayout.Waypoints.Length - 1)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, wayout.Waypoints[WayoutPointindex].transform.position,
+                                   moveSpeed * Time.deltaTime);
+                    changeAnim(temp - transform.position);
+                    myRigidBody.MovePosition(temp);
+                    ChangeState(EnemyState.walk);
+                    killerAnim.SetBool("walking", true);
+                    Debug.Log(transform.position);
+                    if (transform.position == wayout.Waypoints[WayoutPointindex].transform.position)
+                    {
+                        WayoutPointindex++;
+                    }
+
+                    if (WayoutPointindex == wayout.Waypoints.Length)
+                    {
+                        WayoutPoint.Active = false;
+                    }
+                }
             }
             else
             {
-                ChangeGoal();
+                {
+                    if (Vector3.Distance(transform.position, path[currPoint].position) > roundingDistance)
+                    {
+                        Vector3 temp = Vector3.MoveTowards(transform.position, path[currPoint].position, moveSpeed * Time.deltaTime);
+                        changeAnim(temp - transform.position);
+                        myRigidBody.MovePosition(temp);
+                        ChangeState(EnemyState.walk);
+                        killerAnim.SetBool("walking", true);
+                    }
+                    else
+                    {
+                        ChangeGoal();
+                    }
+                }
             }
         }
     }
@@ -349,6 +382,14 @@ public class Killer : Enemy
         {
             currPoint++;
             currGoal = path[currPoint];
+        }
+    }
+
+    private void ChangeDestination() {
+        var wayout = GameObject.FindGameObjectWithTag("Room 1").GetComponent<WayoutPoint>();
+        if (WayoutPointindex != wayout.Waypoints.Length - 1) {
+            WayoutPointindex++;
+            currDest = wayout.Waypoints[WayoutPointindex];
         }
     }
 

@@ -5,15 +5,18 @@ using UnityEngine;
 public class WayoutPoint : MonoBehaviour
 {
     public Transform[] Waypoints;
+    public GameObject Waypoint;
+    public static bool Active = false;
     void Update()
     {
-        
+
     }
 
     void OnTriggerEnter2D(Collider2D room)
     {
         if (room.CompareTag("Killer")) {
-            print("Please, FUCK MY ASS");
+            Waypoint.SetActive(true);
+            Active = true;
         }   
     }
 }

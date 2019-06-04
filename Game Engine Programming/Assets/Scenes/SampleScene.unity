@@ -393,8 +393,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseAttack: 0
-  moveSpeed: 4
-  chaseRadius: 5
+  moveSpeed: 7
+  chaseRadius: 12
   attackRadius: 0.4
   chaseSmallDistance: 3
   currentState: 0
@@ -2339,7 +2339,7 @@ PrefabInstance:
     - target: {fileID: 7813470009856874349, guid: f558b83c8425b444da0800a0524b1ed6,
         type: 3}
       propertyPath: moveSpeed
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7813470009856874349, guid: f558b83c8425b444da0800a0524b1ed6,
         type: 3}
@@ -2374,7 +2374,7 @@ PrefabInstance:
     - target: {fileID: 7813470009856874349, guid: f558b83c8425b444da0800a0524b1ed6,
         type: 3}
       propertyPath: chaseRadius
-      value: 5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7813470009856874349, guid: f558b83c8425b444da0800a0524b1ed6,
         type: 3}

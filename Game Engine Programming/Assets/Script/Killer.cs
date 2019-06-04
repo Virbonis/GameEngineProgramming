@@ -296,19 +296,17 @@ public class Killer : Enemy
             }
             else
             {
+                if (Vector3.Distance(transform.position, path[currPoint].position) > roundingDistance)
                 {
-                    if (Vector3.Distance(transform.position, path[currPoint].position) > roundingDistance)
-                    {
                         Vector3 temp = Vector3.MoveTowards(transform.position, path[currPoint].position, moveSpeed * Time.deltaTime);
                         changeAnim(temp - transform.position);
                         myRigidBody.MovePosition(temp);
                         ChangeState(EnemyState.walk);
                         killerAnim.SetBool("walking", true);
-                    }
-                    else
-                    {
+                }
+                else
+                {
                         ChangeGoal();
-                    }
                 }
             }
         }

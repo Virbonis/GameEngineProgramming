@@ -55,7 +55,7 @@ public class Killer : Enemy
         myRigidBody = GetComponent<Rigidbody2D>();
         killerAnim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
-        speedTemp = moveSpeed;
+        speedTemp = moveSpeed - 2f;
     }
 
     void Update()
@@ -181,6 +181,7 @@ public class Killer : Enemy
             TriggerRoom.SetActive(false);
             if (tierUpTrigger == 0 && onSight == true)
             {
+                speedTemp = speedTemp + 3f;
                 tierUpTrigger++;
                 SoundManager.PlaySound("Evil3");
             }
@@ -266,6 +267,7 @@ public class Killer : Enemy
             tierUpTrigger = 0;
             if (timer <= 0 && tierDown == true)
             {
+                speedTemp = speedTemp - 3f;
                 SoundManager.PlaySound("Evil2");
                 tierDown = false;
             }

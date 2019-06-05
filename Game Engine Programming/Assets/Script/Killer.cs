@@ -47,7 +47,7 @@ public class Killer : Enemy
     private float timerDelay = 2.15f;
     public bool kicking;
     public int counter = 0;
-    public GameObject TriggerRoom;
+    public GameObject[] WayoutTriggerRooms;
     public int WayoutPointindex = 0;
 
     void Start()
@@ -178,7 +178,9 @@ public class Killer : Enemy
 
         if (onSight == true)
         {
-            TriggerRoom.SetActive(false);
+            for (int x = 0; x < WayoutTriggerRooms.Length; x++) {
+                WayoutTriggerRooms[x].SetActive(false);
+            }
             if (tierUpTrigger == 0 && onSight == true)
             {
                 speedTemp = speedTemp + 3f;
@@ -263,7 +265,10 @@ public class Killer : Enemy
         }
         else
         {
-            TriggerRoom.SetActive(true);
+            for (int x = 0; x < WayoutTriggerRooms.Length; x++)
+            {
+                WayoutTriggerRooms[x].SetActive(true);
+            }
             tierUpTrigger = 0;
             if (timer <= 0 && tierDown == true)
             {
@@ -296,19 +301,41 @@ public class Killer : Enemy
                     }
                 }
             }
+            else if (WayoutPoint_2.Active2 == true) {
+                var wayout2 = GameObject.FindGameObjectWithTag("Room 2").GetComponent<WayoutPoint_2>();
+                if (WayoutPointindex <= wayout2.Waypoints_2.Length - 1)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, wayout2.Waypoints_2[WayoutPointindex].transform.position,
+                                   moveSpeed * Time.deltaTime);
+                    changeAnim(temp - transform.position);
+                    myRigidBody.MovePosition(temp);
+                    ChangeState(EnemyState.walk);
+                    killerAnim.SetBool("walking", true);
+                    Debug.Log(transform.position);
+                    if (transform.position == wayout2.Waypoints_2[WayoutPointindex].transform.position)
+                    {
+                        WayoutPointindex++;
+                    }
+
+                    if (WayoutPointindex == wayout2.Waypoints_2.Length)
+                    {
+                        WayoutPoint_2.Active2 = false;
+                    }
+                }
+            }
             else
             {
                 if (Vector3.Distance(transform.position, path[currPoint].position) > roundingDistance)
                 {
-                        Vector3 temp = Vector3.MoveTowards(transform.position, path[currPoint].position, moveSpeed * Time.deltaTime);
-                        changeAnim(temp - transform.position);
-                        myRigidBody.MovePosition(temp);
-                        ChangeState(EnemyState.walk);
-                        killerAnim.SetBool("walking", true);
+                    Vector3 temp = Vector3.MoveTowards(transform.position, path[currPoint].position, moveSpeed * Time.deltaTime);
+                    changeAnim(temp - transform.position);
+                    myRigidBody.MovePosition(temp);
+                    ChangeState(EnemyState.walk);
+                    killerAnim.SetBool("walking", true);
                 }
                 else
                 {
-                        ChangeGoal();
+                    ChangeGoal();
                 }
             }
         }

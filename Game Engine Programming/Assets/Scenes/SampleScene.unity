@@ -421,7 +421,9 @@ MonoBehaviour:
     m_Bits: 512
   kicking: 0
   counter: 0
-  TriggerRoom: {fileID: 192934365}
+  WayoutTriggerRooms:
+  - {fileID: 192934365}
+  - {fileID: 2065834527}
   WayoutPointindex: 0
 --- !u!61 &289612838
 BoxCollider2D:
@@ -549,7 +551,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289612836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.51, y: -2.36, z: 0}
+  m_LocalPosition: {x: -7.63, y: -3.04, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 134525904}
@@ -605,7 +607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &496183347
 Transform:
   m_ObjectHideFlags: 0
@@ -2077,7 +2079,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &907025194
 Transform:
   m_ObjectHideFlags: 0
@@ -2427,7 +2429,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245683347}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.3537447, y: -1.0232278, z: -0.125}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2138254833}
@@ -2973,17 +2975,17 @@ PrefabInstance:
     - target: {fileID: 1562863409214875607, guid: beab6b31d6eebbd4093d01e5ce3e9e75,
         type: 3}
       propertyPath: m_Name
-      value: Door (1)
+      value: Door 2
       objectReference: {fileID: 0}
     - target: {fileID: 1562863409214875592, guid: beab6b31d6eebbd4093d01e5ce3e9e75,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.91
+      value: -7.57
       objectReference: {fileID: 0}
     - target: {fileID: 1562863409214875592, guid: beab6b31d6eebbd4093d01e5ce3e9e75,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.08
+      value: 14.89
       objectReference: {fileID: 0}
     - target: {fileID: 1562863409214875592, guid: beab6b31d6eebbd4093d01e5ce3e9e75,
         type: 3}
@@ -3071,15 +3073,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2065834530}
-  - component: {fileID: 2065834529}
   - component: {fileID: 2065834528}
+  - component: {fileID: 2065834531}
   m_Layer: 0
   m_Name: Trigger Room 2
   m_TagString: Room 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &2065834528
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3106,23 +3108,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10.024407, y: 10.005383}
   m_EdgeRadius: 0
---- !u!114 &2065834529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2065834527}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0474c5a663898fd47bd26bba814a9a65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Waypoints:
-  - {fileID: 1556850814}
-  - {fileID: 1910828343}
-  - {fileID: 1984377383}
-  Waypoint: {fileID: 496183346}
 --- !u!4 &2065834530
 Transform:
   m_ObjectHideFlags: 0
@@ -3138,6 +3123,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2065834531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065834527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53202f28290373e489b4e534160ac4bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Waypoints_2:
+  - {fileID: 1556850814}
+  - {fileID: 1910828343}
+  - {fileID: 1984377383}
+  Waypoint2: {fileID: 496183346}
 --- !u!1 &2074332555
 GameObject:
   m_ObjectHideFlags: 0
@@ -3277,12 +3279,12 @@ PrefabInstance:
     - target: {fileID: 1562863409214875592, guid: beab6b31d6eebbd4093d01e5ce3e9e75,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.44
+      value: -7.72
       objectReference: {fileID: 0}
     - target: {fileID: 1562863409214875592, guid: beab6b31d6eebbd4093d01e5ce3e9e75,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.91
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 1562863409214875592, guid: beab6b31d6eebbd4093d01e5ce3e9e75,
         type: 3}
@@ -3367,6 +3369,11 @@ PrefabInstance:
         type: 3}
       propertyPath: TriggerRooms.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7813470009856874349, guid: f558b83c8425b444da0800a0524b1ed6,
+        type: 3}
+      propertyPath: WayoutTriggerRooms.Array.size
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7813470009856874349, guid: f558b83c8425b444da0800a0524b1ed6,
         type: 3}
@@ -3461,12 +3468,12 @@ PrefabInstance:
     - target: {fileID: 7813470009856874338, guid: f558b83c8425b444da0800a0524b1ed6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.51
+      value: -7.63
       objectReference: {fileID: 0}
     - target: {fileID: 7813470009856874338, guid: f558b83c8425b444da0800a0524b1ed6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.36
+      value: -3.04
       objectReference: {fileID: 0}
     - target: {fileID: 7813470009856874338, guid: f558b83c8425b444da0800a0524b1ed6,
         type: 3}

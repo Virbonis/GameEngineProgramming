@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Door
+  - Room 1
+  - Killer
+  - Room 2
   layers:
   - Default
   - TransparentFX

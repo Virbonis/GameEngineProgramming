@@ -15,6 +15,7 @@ public class Killer : Enemy
     public float chaseRadius;
     public float attackRadius;
     public float chaseSmallDistance;
+    public float TerrorRadius;
     public EnemyState currentState;
     public Rigidbody2D myRigidBody;
     public Transform target;
@@ -49,6 +50,7 @@ public class Killer : Enemy
     public int counter = 0;
     public GameObject[] WayoutTriggerRooms;
     public int WayoutPointindex = 0;
+    private int counterTrigger = 0;
 
     void Start()
     {
@@ -289,7 +291,6 @@ public class Killer : Enemy
                     myRigidBody.MovePosition(temp);
                     ChangeState(EnemyState.walk);
                     killerAnim.SetBool("walking", true);
-                    Debug.Log(transform.position);
                     if (transform.position == wayout.Waypoints[WayoutPointindex].transform.position)
                     {
                         WayoutPointindex++;
@@ -426,6 +427,7 @@ public class Killer : Enemy
         Gizmos.DrawWireSphere(transform.position, chaseRadius);
         Gizmos.DrawWireSphere(transform.position, attackRadius);
         Gizmos.DrawWireSphere(transform.position, chaseSmallDistance);
+        Gizmos.DrawWireSphere(transform.position, TerrorRadius);
 
         if (position == 4)
         {

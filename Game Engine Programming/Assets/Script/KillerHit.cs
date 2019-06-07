@@ -28,7 +28,6 @@ public class KillerHit : MonoBehaviour
             {
                 KillerSound.PlaySoundEnemy("Laughing 4");
             }
-            Debug.Log("The player got hit");
         }
     }
 }

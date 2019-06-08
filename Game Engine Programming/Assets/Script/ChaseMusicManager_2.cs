@@ -10,7 +10,7 @@ public class ChaseMusicManager_2 : MonoBehaviour
     public GameObject player;
     public GameObject killer;
     private bool played2 = true;
-    private float fadeOut = 0.5f;
+    private float fadeOut = 0.4f;
     private float fadeIn = 0.3f;
     private bool fadeIncheck;
 
@@ -24,7 +24,8 @@ public class ChaseMusicManager_2 : MonoBehaviour
     {
         var killer = GameObject.FindGameObjectWithTag("Killer").GetComponent<Killer>();
 
-        if (Vector3.Distance(player.transform.position, killer.transform.position) <= killer.TerrorRadius - 4 && played2 == true)
+        if (Vector3.Distance(player.transform.position, killer.transform.position) <= killer.TerrorRadius - 6 &&
+            Vector3.Distance(player.transform.position, killer.transform.position) >= killer.TerrorRadius - 10 && played2 == true && Killer.onSight == false)
         {
             played2 = false;
             audioSource2.clip = phase2;
@@ -32,14 +33,16 @@ public class ChaseMusicManager_2 : MonoBehaviour
             fadeIncheck = true;
             Debug.Log("Change");
         }
-        else if (Vector3.Distance(player.transform.position, killer.transform.position) >= killer.TerrorRadius - 4) {
+        else if (Vector3.Distance(player.transform.position, killer.transform.position) >= killer.TerrorRadius - 6 ||
+                Vector3.Distance(player.transform.position, killer.transform.position) <= killer.TerrorRadius - 10 || Killer.onSight == true)
+        {
             fadeIncheck = false;
             played2 = true;
         }
 
         if (fadeIncheck == true)
         {
-            if (audioSource2.volume <= 0.7f)
+            if (audioSource2.volume <= 0.4f)
             {
                 audioSource2.volume += Time.deltaTime * fadeIn;
             }

@@ -61,7 +61,6 @@ public class Player : MonoBehaviour
                 else
                 {
                     paths.Add(transform.position);
-                    Debug.Log(paths);
                     if (paths != null)
                     {
                         for (int x = paths.Count - 1; x > 0; x--)

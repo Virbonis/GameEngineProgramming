@@ -267,6 +267,7 @@ public class Killer : Enemy
         }
         else
         {
+            ChaseMusicManager_4.timer = 5f;
             for (int x = 0; x < WayoutTriggerRooms.Length; x++)
             {
                 WayoutTriggerRooms[x].SetActive(true);

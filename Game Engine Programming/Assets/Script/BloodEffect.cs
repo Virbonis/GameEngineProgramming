@@ -19,7 +19,7 @@ public class BloodEffect : MonoBehaviour
     }
 
     public void BloodSplattering() {
-        if (KillerHit.hit == true)
+        if (KillerHit.blood == true)
         {
             BloodAnim.SetBool("Splatter", true);
             if (timer >= 0)
@@ -27,7 +27,7 @@ public class BloodEffect : MonoBehaviour
                 timer -= Time.deltaTime;
             }
             else {
-                KillerHit.hit = false;
+                KillerHit.blood = false;
             }
         }
         else {

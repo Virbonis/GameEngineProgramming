@@ -5,14 +5,15 @@ using UnityEngine;
 public class KillerHit : MonoBehaviour
 {
     public static bool hit;
+    public static bool blood;
     private int number;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player")) {
             hit = true;
+            blood = true;
             SoundManager.PlaySound("Blood Sounfeffect");
-            Health.health -= 1;
             number = Random.Range(1, 5);
             if (number == 1)
             {

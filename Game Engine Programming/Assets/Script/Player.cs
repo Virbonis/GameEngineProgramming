@@ -22,6 +22,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         change = Vector3.zero;
+        if (KillerHit.hit == true) {
+            Health.health -= 1;
+            KillerHit.hit = false;
+        }
         change.x = Input.GetAxisRaw("Horizontal");
         change.y = Input.GetAxisRaw("Vertical");
         UpdateAnimationAndMove();

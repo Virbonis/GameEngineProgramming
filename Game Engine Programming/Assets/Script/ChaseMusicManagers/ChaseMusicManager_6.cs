@@ -44,18 +44,18 @@ public class ChaseMusicManager_6 : MonoBehaviour
                 fadeIncheck = false;
                 played6 = true;
             }
+        }
 
-            if (fadeIncheck == true)
+        if (fadeIncheck == true)
+        {
+            if (audioSource6.volume <= 0.8f)
             {
-                if (audioSource6.volume <= 0.8f)
-                {
-                    audioSource6.volume += Time.deltaTime * fadeIn;
-                }
+                audioSource6.volume += Time.deltaTime * fadeIn;
             }
-            else
-            {
-                audioSource6.volume -= Time.deltaTime * fadeOut;
-            }
+        }
+        else
+        {
+            audioSource6.volume -= Time.deltaTime * fadeOut;
         }
     }
 

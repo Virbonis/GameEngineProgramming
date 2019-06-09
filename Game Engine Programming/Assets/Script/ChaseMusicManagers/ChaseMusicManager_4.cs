@@ -10,7 +10,7 @@ public class ChaseMusicManager_4 : MonoBehaviour
     public GameObject player;
     public GameObject killer;
     private bool played4 = true;
-    private float fadeOut = 0.6f;
+    private float fadeOut = 0.5f;
     private float fadeIn = 0.4f;
     private bool fadeIncheck;
     public static float timer = 5f;
@@ -31,32 +31,31 @@ public class ChaseMusicManager_4 : MonoBehaviour
         }
         else if (timer < 0)
         {
-            if (Vector3.Distance(player.transform.position, killer.transform.position) <= killer.TerrorRadius &&
-            Vector3.Distance(player.transform.position, killer.transform.position) >= killer.TerrorRadius - 6 && played4 == true && Killer.onSight == true)
+            if (Vector3.Distance(player.transform.position, killer.transform.position) >= killer.TerrorRadius - 6 && played4 == true && 
+            Killer.onSight == true)
             {
                 played4 = false;
                 audioSource4.clip = phase4;
                 audioSource4.Play();
                 fadeIncheck = true;
             }
-            else if (Vector3.Distance(player.transform.position, killer.transform.position) >= killer.TerrorRadius ||
-            Vector3.Distance(player.transform.position, killer.transform.position) <= killer.TerrorRadius - 6 || Killer.onSight == false)
+            else if (Vector3.Distance(player.transform.position, killer.transform.position) <= killer.TerrorRadius - 6 || Killer.onSight == false)
             {
                 fadeIncheck = false;
                 played4 = true;
             }
+        }
 
-            if (fadeIncheck == true)
+        if (fadeIncheck == true)
+        {
+            if (audioSource4.volume <= 0.6f)
             {
-                if (audioSource4.volume <= 0.6f)
-                {
-                    audioSource4.volume += Time.deltaTime * fadeIn;
-                }
+                audioSource4.volume += Time.deltaTime * fadeIn;
             }
-            else
-            {
-                audioSource4.volume -= Time.deltaTime * fadeOut;
-            }
+        }
+        else if (fadeIncheck == false || Killer.onSight == false)
+        {
+            audioSource4.volume -= Time.deltaTime * fadeOut;
         }
     }
 

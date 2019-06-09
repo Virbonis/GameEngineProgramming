@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
     public static List<Vector3> paths = new List<Vector3>();
     private float timer = 0.2f;
     private bool spawningWaypoint = false;
+    private float timerBoost = 3f;
+    private bool speedBoost;
+    private bool Boost;
 
     void Start()
     {
@@ -22,7 +25,9 @@ public class Player : MonoBehaviour
     void Update()
     {
         change = Vector3.zero;
-        if (KillerHit.hit == true) {
+        if (KillerHit.hit == true)
+        {
+            speedBoost = true;
             Health.health -= 1;
             KillerHit.hit = false;
         }
@@ -103,6 +108,26 @@ public class Player : MonoBehaviour
     }
 
     void Movement() {
+        if (speedBoost == true)
+        {
+            Boost = true;
+            speed = speed + 4f;
+            speedBoost = false;
+        }
+        if (Boost == true) {
+            if (timerBoost >= 0)
+            {
+                timerBoost -= Time.deltaTime;
+                Debug.Log(timerBoost);
+            }
+            else
+            {
+                speed = speed - 3f;
+                timerBoost = 3f;
+                Boost = false;
+            }
+        }
+
         change.Normalize();
         myRigidbody.MovePosition(
             transform.position + change * speed * Time.deltaTime    

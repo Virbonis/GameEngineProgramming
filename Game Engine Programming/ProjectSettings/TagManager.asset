@@ -8,6 +8,9 @@ TagManager:
   - Room 1
   - Killer
   - Room 2
+  - InterObject
+  - CloseDoor
+  - OpenDoor
   layers:
   - Default
   - TransparentFX

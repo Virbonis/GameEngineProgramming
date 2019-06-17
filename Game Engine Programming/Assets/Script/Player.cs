@@ -12,9 +12,10 @@ public class Player : MonoBehaviour
     public static List<Vector3> paths = new List<Vector3>();
     private float timer = 0.2f;
     private bool spawningWaypoint = false;
-    private float timerBoost = 3f;
+    private float timerBoost;
     private bool speedBoost;
     private bool Boost;
+    private float speedTemp;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour
         if (KillerHit.hit == true)
         {
             speedBoost = true;
+            timerBoost = 3f;
             Health.health -= 1;
             KillerHit.hit = false;
         }
@@ -35,6 +37,10 @@ public class Player : MonoBehaviour
         change.y = Input.GetAxisRaw("Vertical");
         UpdateAnimationAndMove();
         SpawnWayPoint();
+
+        if (Health.health < 1) {
+            Destroy(this.gameObject);
+        }
     }
 
     void SpawnWayPoint() {
@@ -112,6 +118,9 @@ public class Player : MonoBehaviour
         {
             Boost = true;
             speed = speed + 4f;
+            if (speed > 9f) {
+                speed = 9f;
+            }
             speedBoost = false;
         }
         if (Boost == true) {
@@ -122,7 +131,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                speed = speed - 3f;
+                speed = speed - 4f;
                 timerBoost = 3f;
                 Boost = false;
             }
@@ -132,6 +141,15 @@ public class Player : MonoBehaviour
         myRigidbody.MovePosition(
             transform.position + change * speed * Time.deltaTime    
         );
+    }
+
+    public void LeftFootsteps() {
+        Footsteps.PlaySound("Left Footstep");
+    }
+
+    public void RightFootsteps()
+    {
+        Footsteps.PlaySound("Right Footstep");
     }
 
     void OnDrawGizmosSelected()

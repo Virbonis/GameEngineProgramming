@@ -27,7 +27,6 @@ public class ChaseMusicManager_6 : MonoBehaviour
         if (ChaseMusicManager_4.timer >= 0 && Killer.onSight == true)
         {
             waitChangeAudio();
-            Debug.Log(ChaseMusicManager_4.timer);
         }
         else if (ChaseMusicManager_4.timer < 0)
         {

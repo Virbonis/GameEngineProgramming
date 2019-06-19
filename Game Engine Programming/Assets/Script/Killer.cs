@@ -327,6 +327,7 @@ public class Killer : Enemy
             }
             else
             {
+                WayoutPointindex = 0;
                 if (Vector3.Distance(transform.position, path[currPoint].position) > roundingDistance)
                 {
                     Vector3 temp = Vector3.MoveTowards(transform.position, path[currPoint].position, moveSpeed * Time.deltaTime);
@@ -478,7 +479,7 @@ public class Killer : Enemy
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Door"))
+        if (other.CompareTag("CloseDoor"))
         {
             StartCoroutine(FinishesAnimKicking());
             var door = other.gameObject.GetComponent<DoorHealth>();

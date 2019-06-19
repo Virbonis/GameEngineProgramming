@@ -8,7 +8,6 @@ public class SoundAmbienceManager : MonoBehaviour
     public static AudioClip Ambience;
     private AudioSource audioSource;
     private bool played = true;
-    private bool fadeIncheck;
 
     void Start()
     {
@@ -23,7 +22,6 @@ public class SoundAmbienceManager : MonoBehaviour
             played = false;
             audioSource.clip = Ambience;
             audioSource.Play();
-            fadeIncheck = true;
         }
     }
 }

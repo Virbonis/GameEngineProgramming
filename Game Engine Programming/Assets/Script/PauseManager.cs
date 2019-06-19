@@ -19,7 +19,7 @@ public class PauseManager : MonoBehaviour
             }
             else
             {
-                if (Input.GetKeyDown("f"))
+                if (Input.GetKeyDown("e"))
                 {
                     InteractionObject.GUI_pause = false;
                     keyGUI.SetActive(false);
@@ -27,7 +27,8 @@ public class PauseManager : MonoBehaviour
                 }
             }
         }
-        else {
+        else
+        {
             Time.timeScale = 1;
         }
     }

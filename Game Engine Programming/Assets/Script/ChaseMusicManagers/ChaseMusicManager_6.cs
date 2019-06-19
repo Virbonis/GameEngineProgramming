@@ -6,7 +6,7 @@ public class ChaseMusicManager_6 : MonoBehaviour
 {
 
     public static AudioClip phase6;
-    private AudioSource audioSource6;
+    public AudioSource audioSource6;
     public GameObject player;
     public GameObject killer;
     private bool played6 = true;

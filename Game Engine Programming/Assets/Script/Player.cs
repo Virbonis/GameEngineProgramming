@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     private bool speedBoost;
     private bool Boost;
     private float speedTemp;
+    public static bool DeathScene;
+    public GameObject DeathSceneActivator;
+    public GameObject DeathFontActivator;
 
     void Start()
     {
@@ -39,7 +42,11 @@ public class Player : MonoBehaviour
         SpawnWayPoint();
 
         if (Health.health < 1) {
+
             Destroy(this.gameObject);
+            DeathSceneActivator.SetActive(true);
+            DeathFontActivator.SetActive(true);
+            DeathScene = true;
         }
     }
 

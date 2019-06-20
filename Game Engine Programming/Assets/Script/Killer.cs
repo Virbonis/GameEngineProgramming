@@ -313,7 +313,6 @@ public class Killer : Enemy
                     myRigidBody.MovePosition(temp);
                     ChangeState(EnemyState.walk);
                     killerAnim.SetBool("walking", true);
-                    Debug.Log(transform.position);
                     if (transform.position == wayout2.Waypoints_2[WayoutPointindex].transform.position)
                     {
                         WayoutPointindex++;

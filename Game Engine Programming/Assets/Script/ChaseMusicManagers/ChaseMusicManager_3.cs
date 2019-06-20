@@ -30,7 +30,6 @@ public class ChaseMusicManager_3 : MonoBehaviour
             audioSource3.clip = phase3;
             audioSource3.Play();
             fadeIncheck = true;
-            Debug.Log("Change");
         }
         else if (Vector3.Distance(player.transform.position, killer.transform.position) >= killer.TerrorRadius - 10 || Killer.onSight == true)
         {

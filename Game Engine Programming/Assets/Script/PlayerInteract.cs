@@ -7,14 +7,26 @@ public class PlayerInteract : MonoBehaviour
     public GameObject currentInterObj = null;
     public GameObject DoorClose = null;
     public GameObject DoorOpen = null;
+    public GameObject DoorLock = null;
+    public InteractionObject currentInterScript = null;
+    public Inventory inventory;
+    public InteractionDoor key;
     public bool pressed_Open;
+    public bool pressed_Locked;
     public bool pressed_Close;
+
+    void Start()
+    {
+        key = GameObject.FindWithTag("LockedDoor").GetComponent<InteractionDoor>();
+    }
 
     void Update()
     {
         if (Input.GetButtonDown("Interact") && currentInterObj)
         {
+            inventory.addItem(currentInterObj);
             currentInterObj.SendMessage("DoInteraction");
+            currentInterObj = null;
         }
 
         if (Input.GetButtonDown("Interact") && pressed_Open == true)
@@ -28,6 +40,12 @@ public class PlayerInteract : MonoBehaviour
             DoorOpen.SendMessage("DoorInteractionClose");
             pressed_Close = false;
         }
+
+        if (Input.GetButtonDown("Interact") && pressed_Locked == true)
+        {
+            DoorLock.SendMessage("DoorInteractionLocked");
+            pressed_Open = false;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -35,6 +53,7 @@ public class PlayerInteract : MonoBehaviour
         if (other.CompareTag("InterObject"))
         {
             currentInterObj = other.gameObject;
+            currentInterScript = currentInterObj.GetComponent<InteractionObject>();
         }
 
         if (other.CompareTag("CloseDoor")) {
@@ -46,6 +65,11 @@ public class PlayerInteract : MonoBehaviour
         {
             pressed_Close = true;
             DoorOpen = other.gameObject;
+        }
+
+        if (other.CompareTag("LockedDoor")) {
+            pressed_Locked = true;
+            DoorLock = other.gameObject;
         }
     }
 
@@ -74,6 +98,15 @@ public class PlayerInteract : MonoBehaviour
             if (other.gameObject == DoorOpen)
             {
                 DoorOpen = null;
+            }
+        }
+
+        if (other.CompareTag("LockedDoor"))
+        {
+            pressed_Locked = false;
+            if (other.gameObject == DoorLock)
+            {
+                DoorLock = null;
             }
         }
     }

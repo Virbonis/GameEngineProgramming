@@ -2,14 +2,14 @@
 # Wavefront file for 'NewMansion_mesh_0098.obj'
 
 # Vertices (Count = 8)
-v -6 -1 0
-v -7 -1 0
-v -7 0 0
-v -6 0 0
-v -9 -1 0
-v -10 -1 0
-v -10 0 0
-v -9 0 0
+v -8 -5 0
+v -9 -5 0
+v -9 -4 0
+v -8 -4 0
+v -11 -5 0
+v -12 -5 0
+v -12 -4 0
+v -11 -4 0
 
 # Texture cooridinates (Count = 4)
 vt 0.46875 0.3125

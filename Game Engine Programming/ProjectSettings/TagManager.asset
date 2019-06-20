@@ -12,6 +12,7 @@ TagManager:
   - CloseDoor
   - OpenDoor
   - ChaseMusic
+  - LockedDoor
   layers:
   - Default
   - TransparentFX

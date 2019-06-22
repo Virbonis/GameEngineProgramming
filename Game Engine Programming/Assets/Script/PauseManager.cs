@@ -2,34 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseManager : MonoBehaviour
+public class PauseManager: MonoBehaviour
 {
-    public GameObject keyGUI;
-    public GameObject player;
+    GameObject pause;
+    public GameObject Player;
+    private bool keyGUI;
 
-    void Update()
+    private void Start()
     {
-        if (InteractionObject.GUI_pause == true)
+        pause = GameObject.FindWithTag("GUI");
+    }
+
+    private void Update()
+    {
+        if (pause.activeSelf)
         {
-            if (Time.timeScale == 1)
-            {
-                keyGUI.SetActive(true);
-                player.SetActive(false);
-                Time.timeScale = 0;
-            }
-            else
-            {
-                if (Input.GetKeyDown("e"))
-                {
-                    InteractionObject.GUI_pause = false;
-                    keyGUI.SetActive(false);
-                    player.SetActive(true);
-                }
-            }
+            Time.timeScale = 0;
+            keyGUI = true;
         }
-        else
+        if (Input.GetButtonDown("Interact") && keyGUI == true)
         {
+            pause.SetActive(false);
+            Player.SetActive(true);
             Time.timeScale = 1;
+            keyGUI = false;
         }
     }
 }

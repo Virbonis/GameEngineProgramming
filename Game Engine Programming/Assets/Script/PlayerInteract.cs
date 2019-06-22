@@ -11,6 +11,7 @@ public class PlayerInteract : MonoBehaviour
     public InteractionObject currentInterScript = null;
     public Inventory inventory;
     public InteractionDoor key;
+    public InteractionObject keyGUI;
     public bool pressed_Open;
     public bool pressed_Locked;
     public bool pressed_Close;

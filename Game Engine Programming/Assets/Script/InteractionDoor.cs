@@ -39,6 +39,7 @@ public class InteractionDoor : MonoBehaviour
             {
                 finding.inventory[x] = null;
                 find = true;
+                SoundManager.PlaySound("Unlock");
             }
         }
 

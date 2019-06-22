@@ -13,6 +13,7 @@ public class KillerHit : MonoBehaviour
         if (other.CompareTag("Player")) {
             hit = true;
             blood = true;
+            other.gameObject.SendMessage("TakeDamage");
             SoundManager.PlaySound("Blood Sounfeffect");
             number = Random.Range(1, 5);
             if (number == 1)

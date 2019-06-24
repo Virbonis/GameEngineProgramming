@@ -300,6 +300,8 @@ public class Killer : Enemy
                     if (WayoutPointindex == wayout.Waypoints.Length)
                     {
                         WayoutPoint.Active = false;
+                        currPoint = 0;
+                        currGoal = path[0];
                     }
                 }
             }
@@ -321,6 +323,276 @@ public class Killer : Enemy
                     if (WayoutPointindex == wayout2.Waypoints_2.Length)
                     {
                         WayoutPoint_2.Active2 = false;
+                        currPoint = 0;
+                        currGoal = path[0];
+                    }
+                }
+            }
+            else if (WayoutPoint_3.Active3 == true)
+            {
+                var wayout3 = GameObject.FindGameObjectWithTag("Room 3").GetComponent<WayoutPoint_3>();
+                if (WayoutPointindex <= wayout3.Waypoints_3.Length - 1)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, wayout3.Waypoints_3[WayoutPointindex].transform.position,
+                                   moveSpeed * Time.deltaTime);
+                    changeAnim(temp - transform.position);
+                    myRigidBody.MovePosition(temp);
+                    ChangeState(EnemyState.walk);
+                    killerAnim.SetBool("walking", true);
+                    if (transform.position == wayout3.Waypoints_3[WayoutPointindex].transform.position)
+                    {
+                        WayoutPointindex++;
+                    }
+
+                    if (WayoutPointindex == wayout3.Waypoints_3.Length)
+                    {
+                        WayoutPoint_3.Active3 = false;
+                        currPoint = 0;
+                        currGoal = path[0];
+                    }
+                }
+            }
+            else if (WayoutPoint_3_1.Active3_1 == true)
+            {
+                var wayout3_1 = GameObject.FindGameObjectWithTag("Room 3 Middle").GetComponent<WayoutPoint_3_1>();
+                if (WayoutPointindex <= wayout3_1.Waypoints_3_1.Length - 1)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, wayout3_1.Waypoints_3_1[WayoutPointindex].transform.position,
+                                   moveSpeed * Time.deltaTime);
+                    changeAnim(temp - transform.position);
+                    myRigidBody.MovePosition(temp);
+                    ChangeState(EnemyState.walk);
+                    killerAnim.SetBool("walking", true);
+                    if (transform.position == wayout3_1.Waypoints_3_1[WayoutPointindex].transform.position)
+                    {
+                        WayoutPointindex++;
+                    }
+
+                    if (WayoutPointindex == wayout3_1.Waypoints_3_1.Length)
+                    {
+                        WayoutPoint_3_1.Active3_1 = false;
+                        currPoint = 0;
+                        currGoal = path[0];
+                    }
+                }
+            }
+            else if (WayoutPoint_3_2.Active3_2 == true)
+            {
+                var wayout3_2 = GameObject.FindGameObjectWithTag("Room 3 Right").GetComponent<WayoutPoint_3_2>();
+                if (WayoutPointindex <= wayout3_2.Waypoints_3_2.Length - 1)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, wayout3_2.Waypoints_3_2[WayoutPointindex].transform.position,
+                                   moveSpeed * Time.deltaTime);
+                    changeAnim(temp - transform.position);
+                    myRigidBody.MovePosition(temp);
+                    ChangeState(EnemyState.walk);
+                    killerAnim.SetBool("walking", true);
+                    if (transform.position == wayout3_2.Waypoints_3_2[WayoutPointindex].transform.position)
+                    {
+                        WayoutPointindex++;
+                    }
+
+                    if (WayoutPointindex == wayout3_2.Waypoints_3_2.Length)
+                    {
+                        WayoutPoint_3_2.Active3_2 = false;
+                        currPoint = 0;
+                        currGoal = path[0];
+                    }
+                }
+            }
+            else if (WayoutPoint_4.Active4 == true)
+            {
+                var wayout4 = GameObject.FindGameObjectWithTag("Room 4").GetComponent<WayoutPoint_4>();
+                if (WayoutPointindex <= wayout4.Waypoints_4.Length - 1)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, wayout4.Waypoints_4[WayoutPointindex].transform.position,
+                                   moveSpeed * Time.deltaTime);
+                    changeAnim(temp - transform.position);
+                    myRigidBody.MovePosition(temp);
+                    ChangeState(EnemyState.walk);
+                    killerAnim.SetBool("walking", true);
+                    if (transform.position == wayout4.Waypoints_4[WayoutPointindex].transform.position)
+                    {
+                        WayoutPointindex++;
+                    }
+
+                    if (WayoutPointindex == wayout4.Waypoints_4.Length)
+                    {
+                        WayoutPoint_4.Active4 = false;
+                        currPoint = 0;
+                        currGoal = path[0];
+                    }
+                }
+            }
+            else if (WayoutPoint_5.Active5 == true)
+            {
+                var wayout5 = GameObject.FindGameObjectWithTag("Room 5").GetComponent<WayoutPoint_5>();
+                if (WayoutPointindex <= wayout5.Waypoints_5.Length - 1)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, wayout5.Waypoints_5[WayoutPointindex].transform.position,
+                                   moveSpeed * Time.deltaTime);
+                    changeAnim(temp - transform.position);
+                    myRigidBody.MovePosition(temp);
+                    ChangeState(EnemyState.walk);
+                    killerAnim.SetBool("walking", true);
+                    if (transform.position == wayout5.Waypoints_5[WayoutPointindex].transform.position)
+                    {
+                        WayoutPointindex++;
+                    }
+
+                    if (WayoutPointindex == wayout5.Waypoints_5.Length)
+                    {
+                        WayoutPoint_5.Active5 = false;
+                        currPoint = 0;
+                        currGoal = path[0];
+                    }
+                }
+            }
+            else if (WayoutPoint_6.Active6 == true)
+            {
+                var wayout6 = GameObject.FindGameObjectWithTag("Room 6").GetComponent<WayoutPoint_6>();
+                if (WayoutPointindex <= wayout6.Waypoints_6.Length - 1)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, wayout6.Waypoints_6[WayoutPointindex].transform.position,
+                                   moveSpeed * Time.deltaTime);
+                    changeAnim(temp - transform.position);
+                    myRigidBody.MovePosition(temp);
+                    ChangeState(EnemyState.walk);
+                    killerAnim.SetBool("walking", true);
+                    if (transform.position == wayout6.Waypoints_6[WayoutPointindex].transform.position)
+                    {
+                        WayoutPointindex++;
+                    }
+
+                    if (WayoutPointindex == wayout6.Waypoints_6.Length)
+                    {
+                        WayoutPoint_6.Active6 = false;
+                        currPoint = 0;
+                        currGoal = path[0];
+                    }
+                }
+            }
+            else if (WayoutPoint_7.Active7 == true)
+            {
+                var wayout7 = GameObject.FindGameObjectWithTag("Room 7").GetComponent<WayoutPoint_7>();
+                if (WayoutPointindex <= wayout7.Waypoints_7.Length - 1)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, wayout7.Waypoints_7[WayoutPointindex].transform.position,
+                                   moveSpeed * Time.deltaTime);
+                    changeAnim(temp - transform.position);
+                    myRigidBody.MovePosition(temp);
+                    ChangeState(EnemyState.walk);
+                    killerAnim.SetBool("walking", true);
+                    if (transform.position == wayout7.Waypoints_7[WayoutPointindex].transform.position)
+                    {
+                        WayoutPointindex++;
+                    }
+
+                    if (WayoutPointindex == wayout7.Waypoints_7.Length)
+                    {
+                        WayoutPoint_7.Active7 = false;
+                        currPoint = 0;
+                        currGoal = path[0];
+                    }
+                }
+            }
+            else if (WayoutPoint_8.Active8 == true)
+            {
+                var wayout8 = GameObject.FindGameObjectWithTag("Room 8").GetComponent<WayoutPoint_8>();
+                if (WayoutPointindex <= wayout8.Waypoints_8.Length - 1)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, wayout8.Waypoints_8[WayoutPointindex].transform.position,
+                                   moveSpeed * Time.deltaTime);
+                    changeAnim(temp - transform.position);
+                    myRigidBody.MovePosition(temp);
+                    ChangeState(EnemyState.walk);
+                    killerAnim.SetBool("walking", true);
+                    if (transform.position == wayout8.Waypoints_8[WayoutPointindex].transform.position)
+                    {
+                        WayoutPointindex++;
+                    }
+
+                    if (WayoutPointindex == wayout8.Waypoints_8.Length)
+                    {
+                        WayoutPoint_8.Active8 = false;
+                        wayout8.Waypoint8.SetActive(false);
+                        currPoint = 0;
+                        currGoal = path[0];
+                    }
+                }
+            }
+            else if (WayoutPoint_9.Active9 == true)
+            {
+                var wayout9 = GameObject.FindGameObjectWithTag("Room 9").GetComponent<WayoutPoint_9>();
+                if (WayoutPointindex <= wayout9.Waypoints_9.Length - 1)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, wayout9.Waypoints_9[WayoutPointindex].transform.position,
+                                   moveSpeed * Time.deltaTime);
+                    changeAnim(temp - transform.position);
+                    myRigidBody.MovePosition(temp);
+                    ChangeState(EnemyState.walk);
+                    killerAnim.SetBool("walking", true);
+                    if (transform.position == wayout9.Waypoints_9[WayoutPointindex].transform.position)
+                    {
+                        WayoutPointindex++;
+                    }
+
+                    if (WayoutPointindex == wayout9.Waypoints_9.Length)
+                    {
+                        WayoutPoint_9.Active9 = false;
+                        wayout9.Waypoint9.SetActive(false);
+                        currPoint = 0;
+                        currGoal = path[0];
+                    }
+                }
+            }
+            else if (WayoutPoint_9_1.Active9_1 == true)
+            {
+                var wayout9_1 = GameObject.FindGameObjectWithTag("Room 9 Middle").GetComponent<WayoutPoint_9_1>();
+                if (WayoutPointindex <= wayout9_1.Waypoints_9_1.Length - 1)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, wayout9_1.Waypoints_9_1[WayoutPointindex].transform.position,
+                                   moveSpeed * Time.deltaTime);
+                    changeAnim(temp - transform.position);
+                    myRigidBody.MovePosition(temp);
+                    ChangeState(EnemyState.walk);
+                    killerAnim.SetBool("walking", true);
+                    if (transform.position == wayout9_1.Waypoints_9_1[WayoutPointindex].transform.position)
+                    {
+                        WayoutPointindex++;
+                    }
+
+                    if (WayoutPointindex == wayout9_1.Waypoints_9_1.Length)
+                    {
+                        WayoutPoint_9_1.Active9_1 = false;
+                        wayout9_1.Waypoint9_1.SetActive(false);
+                        currPoint = 0;
+                        currGoal = path[0];
+                    }
+                }
+            }
+            else if (WayoutPoint_9_2.Active9_2 == true)
+            {
+                var wayout9_2 = GameObject.FindGameObjectWithTag("Room 9 Right").GetComponent<WayoutPoint_9_2>();
+                if (WayoutPointindex <= wayout9_2.Waypoints_9_2.Length - 1)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, wayout9_2.Waypoints_9_2[WayoutPointindex].transform.position,
+                                   moveSpeed * Time.deltaTime);
+                    changeAnim(temp - transform.position);
+                    myRigidBody.MovePosition(temp);
+                    ChangeState(EnemyState.walk);
+                    killerAnim.SetBool("walking", true);
+                    if (transform.position == wayout9_2.Waypoints_9_2[WayoutPointindex].transform.position)
+                    {
+                        WayoutPointindex++;
+                    }
+
+                    if (WayoutPointindex == wayout9_2.Waypoints_9_2.Length)
+                    {
+                        WayoutPoint_9_2.Active9_2 = false;
+                        wayout9_2.Waypoint9_2.SetActive(false);
+                        currPoint = 0;
+                        currGoal = path[0];
                     }
                 }
             }

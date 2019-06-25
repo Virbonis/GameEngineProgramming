@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Tiled2Unity generated xml data-->
 <!--Do not modify by hand-->
-<!--Last exported: 24/06/2019 1:21:56-->
+<!--Last exported: 26/06/2019 4:51:29-->
 <Tiled2Unity version="1.0.13.2">
   <AssignMaterial mesh="NewMansion2ndFloor_mesh_0001" material="Interior" />
   <AssignMaterial mesh="NewMansion2ndFloor_mesh_0002" material="Interior" />
@@ -190,6 +190,219 @@
     <GameObject name="Cover" x="0" y="0" z="0">
       <TileLayer offsetX="0" offsetY="0" />
       <GameObject name="obj_misk_atlas" x="-16" y="16" mesh="NewMansion2ndFloor_mesh_0086" sortingLayerName="" sortingOrder="4" opacity="1" />
+    </GameObject>
+    <GameObject name="Collision Mask" x="0" y="0" z="0">
+      <ObjectLayer offsetX="0" offsetY="0" color="#ff808080" />
+      <GameObject name="PolygonObject" x="-32" y="34" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="33" tmx-object-name="" tmx-object-type="" tmx-object-x="-1024" tmx-object-y="-1088" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>0,0 64,0 64,-2 0,-2</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-31" y="32" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="15" tmx-object-name="" tmx-object-type="" tmx-object-x="-992" tmx-object-y="-1024" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>0,-34 3,-34 3,-35 -1,-35 -1,0 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-28.0006866" y="29.84375" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="16" tmx-object-name="" tmx-object-type="" tmx-object-x="-896.022" tmx-object-y="-955" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>12.00069,0 12.00069,-9.84375 10.00069,-9.84375 10.00266,-7.998063 11.00069,-8.001968 10.99288,-2.15625 9.996781,-2.15625 10.00069,-1.84375 9.000688,-1.84375 8.996781,-2.152344 8.004594,-2.152344 8.000688,-2.84375 7.000688,-2.84375 7.000688,-3.84375 5.000688,-3.84375 5.000688,-2.84375 4.000688,-2.84375 3.99875,-2.155275 1.002053,-2.157609 1.000694,-7.342781 2.003534,-7.340906 2.000694,-7.84375 2.000694,-8 9.003531,-7.997156 9.000688,-9.84375 0.0006944438,-9.84375 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-16" y="29.84375" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="34" tmx-object-name="" tmx-object-type="" tmx-object-x="-512" tmx-object-y="-955" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>0,0 14,0 14.00012,0.875 14.0935,0.875 14.09103,-1.84375 17.90353,-1.842391 17.90759,0.875 17.99866,0.875 18,0.09375 18,0.001358697 44,-0.002840909 44,-1.84375 0,-1.84375</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-14" y="28" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="17" tmx-object-name="" tmx-object-type="" tmx-object-x="-448" tmx-object-y="-896" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>2,0 2,-0.4971594 1.002841,-0.4914781 1,-6.15625 2,-6.154906 2,-8 0,-8 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-8" y="28" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="18" tmx-object-name="" tmx-object-type="" tmx-object-x="-256" tmx-object-y="-896" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>16,0 15.99806,-0.3085938 10.00391,-0.3125 10,-1 9,-1 9,-2 7,-2 7,-1 6,-1 5.998063,-0.3085938 0,-0.3118056 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="12" y="28" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="19" tmx-object-name="" tmx-object-type="" tmx-object-x="384" tmx-object-y="-896" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>2,0 2,-8 0,-8 0,-6.15625 1,-6.153406 1,-6 1,-0.5019531 0.001358697,-0.4986406 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="16" y="28" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="21" tmx-object-name="" tmx-object-type="" tmx-object-x="512" tmx-object-y="-896" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>1,0 1,-6.153406 2.002841,-6.15625 2,-8 0,-8 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="19" y="28" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="22" tmx-object-name="" tmx-object-type="" tmx-object-x="608" tmx-object-y="-896" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>9,0 9,-8 0,-8 0.00390625,-6.15625 7,-6.158219 7,-6 7,-5.5 8,-5.5 8,-0.3105469 5.001344,-0.3111413 5,-1 4,-1 4,-2 2,-2 2,-1 1,-1 0.9980469,-0.3105469 0.0003472219,-0.3114584 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="17" y="28" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="35" tmx-object-name="" tmx-object-type="" tmx-object-x="544" tmx-object-y="-896" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>1,0 1,-0.3128469 -0.0002441406,-0.3122559 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-6.8203125" y="26.0039063" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="23" tmx-object-name="" tmx-object-type="" tmx-object-x="-218.25" tmx-object-y="-832.125" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>3.632813,-0.001065341 3.632813,-2.001066 2.632813,-2.005859 2.630859,-2.625 1.007813,-2.628906 1.007813,-2.003906 0.8203125,-2.003906 0,-2 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="3.18656254" y="26" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="24" tmx-object-name="" tmx-object-type="" tmx-object-x="101.97" tmx-object-y="-832" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>3.625969,0.002840909 3.623125,-2 2.813478,-2 2.626672,-1.999306 2.624025,-2.625 1.000978,-2.625 1.000487,-1.999513 0.8134781,-2 0.001671006,-2 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-11" y="21.84375" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="20" tmx-object-name="" tmx-object-type="" tmx-object-x="-352" tmx-object-y="-699" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>0,0 21.99806,0.005859375 22,-1.84375 0,-1.84375</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="3.95843744" y="17.8541565" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="3" tmx-object-name="" tmx-object-type="" tmx-object-x="126.67" tmx-object-y="-571.333" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>0.01041666,-2.145834 -0.96875,-2.15625 -0.96875,-8.010406 0.02083334,-8 0.02083334,-9.84375 -1.979166,-9.84375 -1.96875,0 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-5" y="17.84425" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="12" tmx-object-name="" tmx-object-type="" tmx-object-x="-160" tmx-object-y="-571.016" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>0.001953125,-2.158691 -0.9980469,-2.158691 -1,-2.844238 -2,-2.844238 -2,-3.84425 -4,-3.84425 -4,-2.844238 -5,-2.844238 -5.001969,-2.158691 -7.998063,-2.158691 -7.998063,-7.34425 -7,-7.345594 -7,-8.0005 0.001953125,-8.0005 0,-9.84425 -9,-9.84425 -9,0.0008704156 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-28" y="17.84375" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="25" tmx-object-name="" tmx-object-type="" tmx-object-x="-896" tmx-object-y="-571" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>0,0 12,0.002840909 12,-4.84375 11,-4.84375 11,-2.84375 1,-2.84375 1,-4.84375 0,-4.84375</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="16.0006256" y="17.828125" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="29" tmx-object-name="" tmx-object-type="" tmx-object-x="512.02" tmx-object-y="-570.5" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>0,0 12,0.002840909 12,-4.84375 11,-4.84375 11,-2.84375 1,-2.84375 1,-4.84375 0,-4.84375</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-24.015625" y="12.7734375" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="26" tmx-object-name="" tmx-object-type="" tmx-object-x="-768.5" tmx-object-y="-408.75" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>1.015625,-0.0078125 1.015625,-0.7734375 0.015625,-0.7734375 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="19.985" y="12.7578125" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="30" tmx-object-name="" tmx-object-type="" tmx-object-x="639.52" tmx-object-y="-408.25" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>1.015625,-0.0078125 1.015625,-0.7734375 0.015625,-0.7734375 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-21" y="12.75" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="27" tmx-object-name="" tmx-object-type="" tmx-object-x="-672" tmx-object-y="-408" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>1,0 1,-0.75 0,-0.75 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="23.0006256" y="12.734375" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="31" tmx-object-name="" tmx-object-type="" tmx-object-x="736.02" tmx-object-y="-407.5" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>1,0 1,-0.75 0,-0.75 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-28.0005" y="11.84375" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="28" tmx-object-name="" tmx-object-type="" tmx-object-x="-896.016" tmx-object-y="-379" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>0,0 1,-0.0004882813 1.002441,-1.90625 10.99659,-1.910156 11.00441,0 11.99659,-0.00390625 12.0005,-3.84375 0.0004882813,-3.84375</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="16" y="11.828125" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="32" tmx-object-name="" tmx-object-type="" tmx-object-x="512" tmx-object-y="-378.5" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>0,0 1,-0.0004882813 1.002441,-1.90625 10.99659,-1.910156 11.00441,0 11.99659,-0.00390625 12.0005,-3.84375 0.0004882813,-3.84375</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-4" y="8" rotation="180" layer="">
+        <PolygonObjectComponent tmx-object-id="2" tmx-object-name="" tmx-object-type="" tmx-object-x="-128" tmx-object-y="-256" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="180" />
+        <PolygonCollider2D>
+          <Path>0,-9.84375 -1.96875,-9.84375 -1.979166,0 0.02083334,0 0.02083334,-1.84375 -0.96875,-1.833344 -0.96875,-7.6875 0.01041666,-7.697906</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="5.001875" y="7.97384357" rotation="180" layer="">
+        <PolygonObjectComponent tmx-object-id="13" tmx-object-name="" tmx-object-type="" tmx-object-x="160.06" tmx-object-y="-255.163" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="180" />
+        <PolygonCollider2D>
+          <Path>0,-9.843375 -9,-9.84425 -9,0.0008704156 0,0.0008704156 0.001953125,-1.842878 -7,-1.842878 -7,-2.497784 -7.998063,-2.499128 -7.998063,-7.684688 -5.001969,-7.684688 -5,-6.999156 -4,-6.999156 -4,-5.999125 -2,-5.999125 -2,-6.999156 -1,-6.999156 -0.9980469,-7.684688 0.001953125,-7.684688</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-18" y="5.84765625" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="5" tmx-object-name="" tmx-object-type="" tmx-object-x="-576" tmx-object-y="-187.125" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>0,0 2,-0.002929688 2,-8.847656 -8,-8.847656 -8,-7.847656 0,-7.847656 0.002840909,-7.336281 1,-7.339125 1,-2.157316 0.002840909,-2.154475</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="17.9981251" y="5.84375" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="6" tmx-object-name="" tmx-object-type="" tmx-object-x="575.94" tmx-object-y="-187" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>0,-2.152344 -0.9960938,-2.154297 -0.9980469,-7.341813 0,-7.339844 0.001953125,-7.84375 -1.998047,-7.84375 -1.998047,0.01136362 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="14.0040627" y="5.83790636" rotation="180" layer="">
+        <PolygonObjectComponent tmx-object-id="11" tmx-object-name="" tmx-object-type="" tmx-object-x="448.13" tmx-object-y="-186.813" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="180" />
+        <PolygonCollider2D>
+          <Path>1,7.845719 1.000347,2.158562 11,2.158219 11,6.845719 12,6.845719 11.99609,0.01759375 0,0 0,7.845719</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-4.15625" y="2.50390625" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="10" tmx-object-name="" tmx-object-type="" tmx-object-x="-133" tmx-object-y="-80.125" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>-0.00390625,-3.003906 -1.097656,-3.007813 -1.101563,-3.507813 -2.597656,-3.503906 -2.59375,-0.00390625 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-11.8476563" y="2.50193739" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="9" tmx-object-name="" tmx-object-type="" tmx-object-x="-379.125" tmx-object-y="-80.062" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>2.603338,-0.004794031 2.597656,-3.501969 1.085938,-3.5 1.089844,-3.001953 0,-3.001953 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-23" y="2" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="1" tmx-object-name="" tmx-object-type="" tmx-object-x="-736" tmx-object-y="-64" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>0,1 -1,1 -1.015625,1.6875 -3.984375,1.671875 -3.96875,-3.46875 -2.984375,-3.5 -3,-5 -5,-5 -5,3.840906 3,3.835219 4.005688,3.829531 3.994313,1.693181 3,1.693181 3,1 2,1 2,0 0,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="23" y="0.833343744" rotation="180" layer="">
+        <PolygonObjectComponent tmx-object-id="4" tmx-object-name="" tmx-object-type="" tmx-object-x="736" tmx-object-y="-26.667" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="180" />
+        <PolygonCollider2D>
+          <Path>0,-1.159094 2,-1.159094 2,-2.159094 3,-2.159094 3,-2.852275 3.994313,-2.852275 4.005688,-4.988625 3,-4.994312 -5,-5 -5,3.840906 -3,3.840906 -2.984375,2.340906 -3.96875,2.309656 -3.984375,-2.830969 -1.015625,-2.846594 -1,-2.159094 0,-2.159094</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-16" y="-2" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="7" tmx-object-name="" tmx-object-type="" tmx-object-x="-512" tmx-object-y="64" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>0,0 42,0 42,-1 0,-1</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="-14" y="-2" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="8" tmx-object-name="" tmx-object-type="" tmx-object-x="-448" tmx-object-y="64" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>0,0 0,7.845719 11.99609,7.828125 12,1 11,1 11,5.6875 1.000347,5.687156 1,0</Path>
+        </PolygonCollider2D>
+      </GameObject>
+      <GameObject name="PolygonObject" x="28" y="-2" rotation="0" layer="">
+        <PolygonObjectComponent tmx-object-id="14" tmx-object-name="" tmx-object-type="" tmx-object-x="896" tmx-object-y="64" tmx-object-width="0" tmx-object-height="0" tmx-object-rotation="0" />
+        <PolygonCollider2D>
+          <Path>0,0 3,0 3,34 4,34 4,-1 0,-1</Path>
+        </PolygonCollider2D>
+      </GameObject>
     </GameObject>
   </Prefab>
   <ImportMesh filename="NewMansion2ndFloor_mesh_0001.obj">IyBUaWxlZDJVbml0eSBnZW5lcmF0ZWQgZmlsZS4gRG8gbm90IG1vZGlmeSBieSBoYW5kLg0KIyBXYXZlZnJvbnQgZmlsZSBmb3IgJ05ld01hbnNpb24ybmRGbG9vcl9tZXNoXzAwMDEub2JqJw0KDQojIFZlcnRpY2VzIChDb3VudCA9IDEyOCkNCnYgMCAtMTUgMA0KdiAtMSAtMTUgMA0KdiAtMSAtMTQgMA0KdiAwIC0xNCAwDQp2IC0xIC0xNSAwDQp2IC0yIC0xNSAwDQp2IC0yIC0xNCAwDQp2IC0xIC0xNCAwDQp2IC0yIC0xNSAwDQp2IC0zIC0xNSAwDQp2IC0zIC0xNCAwDQp2IC0yIC0xNCAwDQp2IC0zIC0xNSAwDQp2IC00IC0xNSAwDQp2IC00IC0xNCAwDQp2IC0zIC0xNCAwDQp2IC00IC0xNSAwDQp2IC01IC0xNSAwDQp2IC01IC0xNCAwDQp2IC00IC0xNCAwDQp2IC01IC0xNSAwDQp2IC02IC0xNSAwDQp2IC02IC0xNCAwDQp2IC01IC0xNCAwDQp2IC02IC0xNSAwDQp2IC03IC0xNSAwDQp2IC03IC0xNCAwDQp2IC02IC0xNCAwDQp2IC03IC0xNSAwDQp2IC04IC0xNSAwDQp2IC04IC0xNCAwDQp2IC03IC0xNCAwDQp2IC04IC0xNSAwDQp2IC05IC0xNSAwDQp2IC05IC0xNCAwDQp2IC04IC0xNCAwDQp2IC05IC0xNSAwDQp2IC0xMCAtMTUgMA0KdiAtMTAgLTE0IDANCnYgLTkgLTE0IDANCnYgLTEwIC0xNSAwDQp2IC0xMSAtMTUgMA0KdiAtMTEgLTE0IDANCnYgLTEwIC0xNCAwDQp2IC0xMSAtMTUgMA0KdiAtMTIgLTE1IDANCnYgLTEyIC0xNCAwDQp2IC0xMSAtMTQgMA0KdiAtMTIgLTE1IDANCnYgLTEzIC0xNSAwDQp2IC0xMyAtMTQgMA0KdiAtMTIgLTE0IDANCnYgLTEzIC0xNSAwDQp2IC0xNCAtMTUgMA0KdiAtMTQgLTE0IDANCnYgLTEzIC0xNCAwDQp2IC0xNCAtMTUgMA0KdiAtMTUgLTE1IDANCnYgLTE1IC0xNCAwDQp2IC0xNCAtMTQgMA0KdiAtMTUgLTE1IDANCnYgLTE2IC0xNSAwDQp2IC0xNiAtMTQgMA0KdiAtMTUgLTE0IDANCnYgMCAtMTYgMA0KdiAtMSAtMTYgMA0KdiAtMSAtMTUgMA0KdiAwIC0xNSAwDQp2IC0xIC0xNiAwDQp2IC0yIC0xNiAwDQp2IC0yIC0xNSAwDQp2IC0xIC0xNSAwDQp2IC0yIC0xNiAwDQp2IC0zIC0xNiAwDQp2IC0zIC0xNSAwDQp2IC0yIC0xNSAwDQp2IC0zIC0xNiAwDQp2IC00IC0xNiAwDQp2IC00IC0xNSAwDQp2IC0zIC0xNSAwDQp2IC00IC0xNiAwDQp2IC01IC0xNiAwDQp2IC01IC0xNSAwDQp2IC00IC0xNSAwDQp2IC01IC0xNiAwDQp2IC02IC0xNiAwDQp2IC02IC0xNSAwDQp2IC01IC0xNSAwDQp2IC02IC0xNiAwDQp2IC03IC0xNiAwDQp2IC03IC0xNSAwDQp2IC02IC0xNSAwDQp2IC03IC0xNiAwDQp2IC04IC0xNiAwDQp2IC04IC0xNSAwDQp2IC03IC0xNSAwDQp2IC04IC0xNiAwDQp2IC05IC0xNiAwDQp2IC05IC0xNSAwDQp2IC04IC0xNSAwDQp2IC05IC0xNiAwDQp2IC0xMCAtMTYgMA0KdiAtMTAgLTE1IDANCnYgLTkgLTE1IDANCnYgLTEwIC0xNiAwDQp2IC0xMSAtMTYgMA0KdiAtMTEgLTE1IDANCnYgLTEwIC0xNSAwDQp2IC0xMSAtMTYgMA0KdiAtMTIgLTE2IDANCnYgLTEyIC0xNSAwDQp2IC0xMSAtMTUgMA0KdiAtMTIgLTE2IDANCnYgLTEzIC0xNiAwDQp2IC0xMyAtMTUgMA0KdiAtMTIgLTE1IDANCnYgLTEzIC0xNiAwDQp2IC0xNCAtMTYgMA0KdiAtMTQgLTE1IDANCnYgLTEzIC0xNSAwDQp2IC0xNCAtMTYgMA0KdiAtMTUgLTE2IDANCnYgLTE1IC0xNSAwDQp2IC0xNCAtMTUgMA0KdiAtMTUgLTE2IDANCnYgLTE2IC0xNiAwDQp2IC0xNiAtMTUgMA0KdiAtMTUgLTE1IDANCg0KIyBUZXh0dXJlIGNvb3JpZGluYXRlcyAoQ291bnQgPSA0KQ0KdnQgMC43NSAwLjIyMjIyMjINCnZ0IDAuODc1IDAuMjIyMjIyMg0KdnQgMC44NzUgMC4zMzMzMzMzDQp2dCAwLjc1IDAuMzMzMzMzMw0KDQojIE5vcm1hbA0Kdm4gMCAwIC0xDQoNCiMgTWVzaCBkZXNjcmlwdGlvbg0KZyBOZXdNYW5zaW9uMm5kRmxvb3JfbWVzaF8wMDAxDQoNCiMgRmFjZXMNCmYgMS8xLzEgMi8yLzEgMy8zLzEgNC80LzEKZiA1LzEvMSA2LzIvMSA3LzMvMSA4LzQvMQpmIDkvMS8xIDEwLzIvMSAxMS8zLzEgMTIvNC8xCmYgMTMvMS8xIDE0LzIvMSAxNS8zLzEgMTYvNC8xCmYgMTcvMS8xIDE4LzIvMSAxOS8zLzEgMjAvNC8xCmYgMjEvMS8xIDIyLzIvMSAyMy8zLzEgMjQvNC8xCmYgMjUvMS8xIDI2LzIvMSAyNy8zLzEgMjgvNC8xCmYgMjkvMS8xIDMwLzIvMSAzMS8zLzEgMzIvNC8xCmYgMzMvMS8xIDM0LzIvMSAzNS8zLzEgMzYvNC8xCmYgMzcvMS8xIDM4LzIvMSAzOS8zLzEgNDAvNC8xCmYgNDEvMS8xIDQyLzIvMSA0My8zLzEgNDQvNC8xCmYgNDUvMS8xIDQ2LzIvMSA0Ny8zLzEgNDgvNC8xCmYgNDkvMS8xIDUwLzIvMSA1MS8zLzEgNTIvNC8xCmYgNTMvMS8xIDU0LzIvMSA1NS8zLzEgNTYvNC8xCmYgNTcvMS8xIDU4LzIvMSA1OS8zLzEgNjAvNC8xCmYgNjEvMS8xIDYyLzIvMSA2My8zLzEgNjQvNC8xCmYgNjUvMS8xIDY2LzIvMSA2Ny8zLzEgNjgvNC8xCmYgNjkvMS8xIDcwLzIvMSA3MS8zLzEgNzIvNC8xCmYgNzMvMS8xIDc0LzIvMSA3NS8zLzEgNzYvNC8xCmYgNzcvMS8xIDc4LzIvMSA3OS8zLzEgODAvNC8xCmYgODEvMS8xIDgyLzIvMSA4My8zLzEgODQvNC8xCmYgODUvMS8xIDg2LzIvMSA4Ny8zLzEgODgvNC8xCmYgODkvMS8xIDkwLzIvMSA5MS8zLzEgOTIvNC8xCmYgOTMvMS8xIDk0LzIvMSA5NS8zLzEgOTYvNC8xCmYgOTcvMS8xIDk4LzIvMSA5OS8zLzEgMTAwLzQvMQpmIDEwMS8xLzEgMTAyLzIvMSAxMDMvMy8xIDEwNC80LzEKZiAxMDUvMS8xIDEwNi8yLzEgMTA3LzMvMSAxMDgvNC8xCmYgMTA5LzEvMSAxMTAvMi8xIDExMS8zLzEgMTEyLzQvMQpmIDExMy8xLzEgMTE0LzIvMSAxMTUvMy8xIDExNi80LzEKZiAxMTcvMS8xIDExOC8yLzEgMTE5LzMvMSAxMjAvNC8xCmYgMTIxLzEvMSAxMjIvMi8xIDEyMy8zLzEgMTI0LzQvMQpmIDEyNS8xLzEgMTI2LzIvMSAxMjcvMy8xIDEyOC80LzEKDQo=</ImportMesh>

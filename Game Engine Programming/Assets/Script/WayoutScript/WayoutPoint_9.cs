@@ -17,14 +17,25 @@ public class WayoutPoint_9 : MonoBehaviour
                 Waypoints[x].SetActive(true);
             }
         }
+        else {
+            for (int x = 0; x < Waypoints.Length; x++)
+            {
+                Waypoints[x].SetActive(false);
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D room)
     {
         if (room.CompareTag("Killer"))
         {
+            Debug.Log("true");
             Waypoint9.SetActive(true);
             Active9 = true;
+            for (int x = 0; x < Waypoints.Length; x++)
+            {
+                Waypoints[x].SetActive(false);
+            }
         }
     }
 }

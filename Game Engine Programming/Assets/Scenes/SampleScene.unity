@@ -392,9 +392,21 @@ MonoBehaviour:
   - {fileID: 1182308704}
   - {fileID: 2134192006}
   Waypoint9_1: {fileID: 1567897906}
-  way: {fileID: 910593183}
---- !u!61 &39653191
-BoxCollider2D:
+  Waypoints:
+  - {fileID: 192934365}
+  - {fileID: 2065834527}
+  - {fileID: 1414012827}
+  - {fileID: 1519977614}
+  - {fileID: 2013559231}
+  - {fileID: 1158046425}
+  - {fileID: 126031335}
+  - {fileID: 145008583}
+  - {fileID: 1822054542}
+  - {fileID: 649727158}
+  - {fileID: 1980244474}
+  - {fileID: 910593183}
+--- !u!60 &39653191
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -406,7 +418,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.3904791, y: -1.0016613}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -416,9 +428,25 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 6.670439, y: 4.9726944}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 3.685627, y: 2.425394}
+      - {x: 2.6038952, y: 2.3655357}
+      - {x: 2.5320587, y: 1.6542587}
+      - {x: 1.4176998, y: 1.6499233}
+      - {x: 1.4030323, y: 0.6995716}
+      - {x: -0.42202568, y: 0.75455093}
+      - {x: -0.55750275, y: 1.5736446}
+      - {x: -1.3714771, y: 1.7274513}
+      - {x: -1.70537, y: 0.6088371}
+      - {x: -3.7299156, y: 0.5823879}
+      - {x: -3.6963882, y: -1.9232273}
+      - {x: -5.082857, y: -1.958519}
+      - {x: -5.0473585, y: -3.3874054}
+      - {x: -0.3007164, y: -3.2778206}
+      - {x: 5.447674, y: -3.361681}
+      - {x: 5.4543076, y: -1.9198437}
+      - {x: 4.1275826, y: 0.88700485}
 --- !u!1 &53327519
 GameObject:
   m_ObjectHideFlags: 0
@@ -1328,8 +1356,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192934365}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.77, y: -0.46, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.9, y: -0.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 907025194}
@@ -1933,7 +1961,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289612836}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.92, y: 8.43, z: 0}
+  m_LocalPosition: {x: 30.02, y: 21.25, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 134525904}
@@ -4112,6 +4140,8 @@ MonoBehaviour:
   - {fileID: 192934365}
   - {fileID: 2065834527}
   - {fileID: 1414012827}
+  - {fileID: 1519977614}
+  - {fileID: 2013559231}
   - {fileID: 1158046425}
   - {fileID: 126031335}
   - {fileID: 145008583}
@@ -6383,6 +6413,14 @@ MonoBehaviour:
   - {fileID: 2065834527}
   - {fileID: 1519977614}
   - {fileID: 2013559231}
+  - {fileID: 1158046425}
+  - {fileID: 126031335}
+  - {fileID: 145008583}
+  - {fileID: 1822054542}
+  - {fileID: 649727158}
+  - {fileID: 1980244474}
+  - {fileID: 39653188}
+  - {fileID: 910593183}
 --- !u!60 &1414012830
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -6408,8 +6446,8 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.4134007, y: 0.5150366}
-      - {x: 2.4033303, y: 2.8896408}
+    - - {x: 2.2817452, y: 0.46237373}
+      - {x: 2.2321777, y: 2.8896408}
       - {x: -1.5014377, y: 2.822424}
       - {x: -2.517095, y: 0.5918493}
       - {x: -2.5008883, y: -0.40375805}
@@ -6836,8 +6874,9 @@ PolygonCollider2D:
       - {x: -1.5014377, y: 2.822424}
       - {x: -1.5404832, y: 0.38024998}
       - {x: -1.5405531, y: -0.3874817}
-      - {x: -2.4876, y: -0.41077614}
-      - {x: -2.5021143, y: -2.4356074}
+      - {x: -2.2770667, y: -0.37130117}
+      - {x: -2.316865, y: -2.3047442}
+      - {x: -2.3310556, y: -2.461924}
       - {x: 1.4867406, y: -2.386776}
       - {x: 1.470746, y: -0.32251883}
       - {x: 1.4463995, y: 0.19894028}
@@ -8169,14 +8208,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca2f43013a7c86f4d826ef2a0e022e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Waypoints_9: []
+  Waypoints_9:
+  - {fileID: 1123875597}
+  - {fileID: 726687435}
+  - {fileID: 1178281431}
   Waypoint9: {fileID: 1988516961}
   Waypoints:
-  - {fileID: 1822054542}
-  - {fileID: 910593183}
-  - {fileID: 1822054542}
-  - {fileID: 1158046425}
+  - {fileID: 192934365}
+  - {fileID: 2065834527}
   - {fileID: 1414012827}
+  - {fileID: 1519977614}
+  - {fileID: 2013559231}
+  - {fileID: 1158046425}
+  - {fileID: 126031335}
+  - {fileID: 145008583}
+  - {fileID: 1822054542}
+  - {fileID: 649727158}
+  - {fileID: 39653188}
+  - {fileID: 910593183}
 --- !u!60 &1980244477
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -8501,10 +8550,10 @@ PolygonCollider2D:
       - {x: 0.6497147, y: 2.8087683}
       - {x: 0.48266, y: 2.8570871}
       - {x: -2.282056, y: 2.7893677}
-      - {x: -2.3186243, y: 0.42333508}
-      - {x: -1.5405531, y: -0.3874817}
-      - {x: -1.5311985, y: -0.3904271}
-      - {x: -1.5355383, y: -2.3949099}
+      - {x: -2.1020298, y: 0.4810934}
+      - {x: -1.4105967, y: -0.3874817}
+      - {x: -1.3256807, y: -0.45893288}
+      - {x: -1.3985262, y: -2.429163}
       - {x: 1.4867406, y: -2.386776}
       - {x: 2.4596045, y: -0.37956858}
       - {x: 2.5135114, y: 0.2127533}
@@ -9290,12 +9339,12 @@ PrefabInstance:
     - target: {fileID: 7813470009856874338, guid: f558b83c8425b444da0800a0524b1ed6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.92
+      value: 30.02
       objectReference: {fileID: 0}
     - target: {fileID: 7813470009856874338, guid: f558b83c8425b444da0800a0524b1ed6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.43
+      value: 21.25
       objectReference: {fileID: 0}
     - target: {fileID: 7813470009856874338, guid: f558b83c8425b444da0800a0524b1ed6,
         type: 3}

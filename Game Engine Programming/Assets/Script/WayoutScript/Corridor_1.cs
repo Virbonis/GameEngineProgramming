@@ -8,9 +8,22 @@ public class Corridor_1 : MonoBehaviour
     public GameObject Waypoint;
     public GameObject[] Waypoints;
     public static bool ActiveCorridor = false;
+
     void Update()
     {
-        if (ActiveCorridor == true) {
+        if (Killer.patrol == false)
+        {
+            if (ActiveCorridor == true)
+            {
+                for (int x = 0; x < Waypoints.Length; x++)
+                {
+                    Waypoints[x].SetActive(false);
+                }
+            }
+        }
+        else
+        {
+            gameObject.SetActive(false);
             for (int x = 0; x < Waypoints.Length; x++)
             {
                 Waypoints[x].SetActive(false);

@@ -48,16 +48,18 @@ public class Killer : Enemy
     private float timerDelay = 2.15f;
     public bool kicking;
     public int counter = 0;
-    public GameObject[] WayoutTriggerRooms;
+    public GameObject WayoutTriggerRooms;
     public int WayoutPointindex = 0;
     private int counterTrigger = 0;
     public static bool patrol;
-
+    CorridorManager WaypointManage;
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
         killerAnim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
+        WaypointManage = GameObject.Find("Corridor").GetComponent<CorridorManager>();
+
         speedTemp = moveSpeed - 2f;
     }
 
@@ -181,10 +183,12 @@ public class Killer : Enemy
 
         if (onSight == true)
         {
+            WayoutTriggerRooms.SetActive(false);
             if (tierUpTrigger == 0 && onSight == true)
             {
                 speedTemp = speedTemp + 3f;
                 tierUpTrigger++;
+                patrol = false;
                 SoundManager.PlaySound("Evil3");
             }
             drawChase = true;
@@ -265,6 +269,7 @@ public class Killer : Enemy
         }
         else
         {
+            WayoutTriggerRooms.SetActive(true);
             ChaseMusicManager_4.timer = 5f;
             tierUpTrigger = 0;
             if (timer <= 0 && tierDown == true)

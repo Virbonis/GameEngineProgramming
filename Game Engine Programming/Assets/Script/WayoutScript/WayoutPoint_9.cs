@@ -17,12 +17,6 @@ public class WayoutPoint_9 : MonoBehaviour
                 Waypoints[x].SetActive(true);
             }
         }
-        else {
-            for (int x = 0; x < Waypoints.Length; x++)
-            {
-                Waypoints[x].SetActive(false);
-            }
-        }
     }
 
     void OnTriggerEnter2D(Collider2D room)

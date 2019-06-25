@@ -6,7 +6,7 @@ public class WayoutPoint_4 : MonoBehaviour
 {
     public Transform[] Waypoints_4;
     public GameObject Waypoint4;
-    public static bool Active4 = false;
+    public static bool Active4;
     void Update()
     {
 

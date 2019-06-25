@@ -6,7 +6,7 @@ public class WayoutPoint_9_2 : MonoBehaviour
 {
     public Transform[] Waypoints_9_2;
     public GameObject Waypoint9_2;
-    public static bool Active9_2 = false;
+    public static bool Active9_2;
     public GameObject[] Waypoints;
     void Update()
     {
@@ -25,10 +25,6 @@ public class WayoutPoint_9_2 : MonoBehaviour
         {
             Waypoint9_2.SetActive(true);
             Active9_2 = true;
-            for (int x = 0; x < Waypoints.Length; x++)
-            {
-                Waypoints[x].SetActive(false);
-            }
         }
     }
 }

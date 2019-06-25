@@ -6,7 +6,6 @@ public class CorridorManager : MonoBehaviour
 {
     public GameObject[] Waypoints;
 
-    // Update is called once per frame
     void Update()
     {
         if (Killer.patrol == false)

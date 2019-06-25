@@ -25,10 +25,6 @@ public class WayoutPoint_9 : MonoBehaviour
         {
             Waypoint9.SetActive(true);
             Active9 = true;
-            for (int x = 0; x < Waypoints.Length; x++)
-            {
-                Waypoints[x].SetActive(false);
-            }
         }
     }
 }

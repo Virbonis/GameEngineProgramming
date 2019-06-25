@@ -181,9 +181,6 @@ public class Killer : Enemy
 
         if (onSight == true)
         {
-            for (int x = 0; x < WayoutTriggerRooms.Length; x++) {
-                WayoutTriggerRooms[x].SetActive(false);
-            }
             if (tierUpTrigger == 0 && onSight == true)
             {
                 speedTemp = speedTemp + 3f;
@@ -269,10 +266,6 @@ public class Killer : Enemy
         else
         {
             ChaseMusicManager_4.timer = 5f;
-            for (int x = 0; x < WayoutTriggerRooms.Length; x++)
-            {
-                WayoutTriggerRooms[x].SetActive(true);
-            }
             tierUpTrigger = 0;
             if (timer <= 0 && tierDown == true)
             {
@@ -542,7 +535,6 @@ public class Killer : Enemy
                     if (WayoutPointindex == wayout9.Waypoints_9.Length)
                     {
                         WayoutPoint_9.Active9 = false;
-                        wayout9.Waypoint9.SetActive(false);
                         currPoint = 0;
                         currGoal = path[0];
                     }
@@ -567,7 +559,6 @@ public class Killer : Enemy
                     if (WayoutPointindex == wayout9_1.Waypoints_9_1.Length)
                     {
                         WayoutPoint_9_1.Active9_1 = false;
-                        wayout9_1.Waypoint9_1.SetActive(false);
                         currPoint = 0;
                         currGoal = path[0];
                     }
@@ -592,7 +583,6 @@ public class Killer : Enemy
                     if (WayoutPointindex == wayout9_2.Waypoints_9_2.Length)
                     {
                         WayoutPoint_9_2.Active9_2 = false;
-                        wayout9_2.Waypoint9_2.SetActive(false);
                         currPoint = 0;
                         currGoal = path[0];
                     }

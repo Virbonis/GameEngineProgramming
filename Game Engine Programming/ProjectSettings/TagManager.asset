@@ -25,6 +25,8 @@ TagManager:
   - Room 9 Right
   - Room 3 Middle
   - Room 3 Right
+  - Corridor 1
+  - Corridor 2
   layers:
   - Default
   - TransparentFX

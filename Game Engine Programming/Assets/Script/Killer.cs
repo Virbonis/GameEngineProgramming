@@ -51,6 +51,7 @@ public class Killer : Enemy
     public GameObject[] WayoutTriggerRooms;
     public int WayoutPointindex = 0;
     private int counterTrigger = 0;
+    public static bool patrol;
 
     void Start()
     {
@@ -275,6 +276,7 @@ public class Killer : Enemy
             tierUpTrigger = 0;
             if (timer <= 0 && tierDown == true)
             {
+                patrol = false;
                 speedTemp = speedTemp - 3f;
                 SoundManager.PlaySound("Evil2");
                 tierDown = false;
@@ -596,6 +598,58 @@ public class Killer : Enemy
                     }
                 }
             }
+            else if (Corridor_1.ActiveCorridor == true)
+            {
+                var wayoutCorridor = GameObject.FindGameObjectWithTag("Corridor 1").GetComponent<Corridor_1>();
+                Debug.Log(patrol);
+                if (WayoutPointindex <= wayoutCorridor.WaypointsCorridor.Length - 1)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, wayoutCorridor.WaypointsCorridor[WayoutPointindex].transform.position,
+                                   moveSpeed * Time.deltaTime);
+                    changeAnim(temp - transform.position);
+                    myRigidBody.MovePosition(temp);
+                    ChangeState(EnemyState.walk);
+                    killerAnim.SetBool("walking", true);
+                    if (transform.position == wayoutCorridor.WaypointsCorridor[WayoutPointindex].transform.position)
+                    {
+                        WayoutPointindex++;
+                    }
+
+                    if (WayoutPointindex == wayoutCorridor.WaypointsCorridor.Length)
+                    {
+                        Corridor_1.ActiveCorridor = false;
+                        wayoutCorridor.Waypoint.SetActive(false);
+                        currPoint = 0;
+                        currGoal = path[0];
+                    }
+                }
+            }
+            else if (Corridor_2.ActiveCorridor_2 == true)
+            {
+                var wayoutCorridor_2 = GameObject.FindGameObjectWithTag("Corridor 2").GetComponent<Corridor_2>();
+                Debug.Log(patrol);
+                if (WayoutPointindex <= wayoutCorridor_2.WaypointsCorridor_2.Length - 1)
+                {
+                    Vector3 temp = Vector3.MoveTowards(transform.position, wayoutCorridor_2.WaypointsCorridor_2[WayoutPointindex].transform.position,
+                                   moveSpeed * Time.deltaTime);
+                    changeAnim(temp - transform.position);
+                    myRigidBody.MovePosition(temp);
+                    ChangeState(EnemyState.walk);
+                    killerAnim.SetBool("walking", true);
+                    if (transform.position == wayoutCorridor_2.WaypointsCorridor_2[WayoutPointindex].transform.position)
+                    {
+                        WayoutPointindex++;
+                    }
+
+                    if (WayoutPointindex == wayoutCorridor_2.WaypointsCorridor_2.Length)
+                    {
+                        Corridor_2.ActiveCorridor_2 = false;
+                        wayoutCorridor_2.Waypoint_2.SetActive(false);
+                        currPoint = 0;
+                        currGoal = path[0];
+                    }
+                }
+            }
             else
             {
                 WayoutPointindex = 0;
@@ -612,6 +666,9 @@ public class Killer : Enemy
                     ChangeGoal();
                 }
             }
+        }
+        if (transform.position == path[0].position) {
+            patrol = true;
         }
     }
 

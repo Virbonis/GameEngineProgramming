@@ -11,8 +11,19 @@ public class Corridor_2 : MonoBehaviour
 
     void Update()
     {
-        if (ActiveCorridor_2 == true)
+        if (Killer.patrol == false)
         {
+            if (ActiveCorridor_2 == true)
+            {
+                for (int x = 0; x < Waypoints.Length; x++)
+                {
+                    Waypoints[x].SetActive(false);
+                }
+            }
+        }
+        else
+        {
+            gameObject.SetActive(false);
             for (int x = 0; x < Waypoints.Length; x++)
             {
                 Waypoints[x].SetActive(false);

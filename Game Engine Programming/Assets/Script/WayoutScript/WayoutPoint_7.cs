@@ -10,7 +10,13 @@ public class WayoutPoint_7 : MonoBehaviour
     public GameObject[] Waypoints;
     void Update()
     {
-
+        if (Active7 == false)
+        {
+            for (int x = 0; x < Waypoints.Length; x++)
+            {
+                Waypoints[x].SetActive(true);
+            }
+        }
     }
 
     void OnTriggerEnter2D(Collider2D room)

@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WayoutPoint_6 : MonoBehaviour
+public class WayoutPoint_10_2 : MonoBehaviour
 {
-    public Transform[] Waypoints_6;
-    public GameObject Waypoint6;
-    public static bool Active6;
+    public Transform[] Waypoints_10_2;
+    public GameObject Waypoint10_2;
+    public static bool Active10_2;
     public GameObject[] Waypoints;
     void Update()
     {
-        if (Active6 == false)
+        if (Active10_2 == false)
         {
             for (int x = 0; x < Waypoints.Length; x++)
             {
@@ -23,8 +23,8 @@ public class WayoutPoint_6 : MonoBehaviour
     {
         if (room.CompareTag("Killer"))
         {
-            Waypoint6.SetActive(true);
-            Active6 = true;
+            Waypoint10_2.SetActive(true);
+            Active10_2 = true;
             for (int x = 0; x < Waypoints.Length; x++)
             {
                 Waypoints[x].SetActive(false);

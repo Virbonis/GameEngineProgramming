@@ -31,7 +31,7 @@ public class DeathSceneFade : MonoBehaviour
     IEnumerator Wait() {
         yield return new WaitForSeconds(timer);
         SoundManager.PlaySound("You Are Dead");
-        for (int x = 0; x < 3; x++) {
+        for (int x = 0; x < 6; x++) {
             soundMute[x].SetActive(false);
         }
         FadeIn();

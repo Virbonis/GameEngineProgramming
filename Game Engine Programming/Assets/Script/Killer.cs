@@ -502,7 +502,6 @@ public class Killer : Enemy
             }
             else if (WayoutPoint_7.Active7 == true)
             {
-                Debug.Log("Corridor 7 Activate");
                 var wayout7 = GameObject.FindGameObjectWithTag("Room 7").GetComponent<WayoutPoint_7>();
                 if (WayoutPointindex <= wayout7.Waypoints_7.Length - 1)
                 {

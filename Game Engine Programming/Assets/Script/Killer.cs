@@ -11,7 +11,6 @@ public enum EnemyState
 
 public class Killer : Enemy
 {
-    // Start is called before the first frame update
     public float chaseRadius;
     public float attackRadius;
     public float chaseSmallDistance;
@@ -184,7 +183,34 @@ public class Killer : Enemy
 
         if (onSight == true)
         {
-            completed = false;
+            currPoint = 0;
+            WayoutPointindex = 0;
+            WayoutPoint.Active = false;
+            WayoutPoint_2.Active2 = false;
+            WayoutPoint_3.Active3 = false;
+            WayoutPoint_3_1.Active3_1 = false;
+            WayoutPoint_3_2.Active3_2 = false;
+            WayoutPoint_4.Active4 = false;
+            WayoutPoint_5.Active5 = false;
+            WayoutPoint_6.Active6 = false;
+            WayoutPoint_7.Active7 = false;
+            WayoutPoint_8.Active8 = false;
+            WayoutPoint_9.Active9 = false;
+            WayoutPoint_9_1.Active9_1 = false;
+            WayoutPoint_9_2.Active9_2 = false;
+            WayoutPoint_10.Active10 = false;
+            WayoutPoint_11.Active11 = false;
+            WayoutPoint_11_1.Active11_1 = false;
+            WayoutPoint_11_2.Active11_2 = false;
+            Corridor_1.ActiveCorridor = false;
+            Corridor_2.ActiveCorridor_2 = false;
+            Corridor_3.ActiveCorridor_3 = false;
+            Corridor_4.ActiveCorridor_4 = false;
+            Corridor_5.ActiveCorridor_5 = false;
+            Corridor_6.ActiveCorridor_6 = false;
+            Corridor_7.ActiveCorridor_7 = false;
+            Corridor_8.ActiveCorridor_8 = false;
+            Corridor_9.ActiveCorridor_9 = false;
             WayoutTriggerRooms.SetActive(false);
             Corridor.SetActive(false);
             if (tierUpTrigger == 0 && onSight == true)
@@ -310,13 +336,6 @@ public class Killer : Enemy
                         currPoint = 0;
                         currGoal = path[0];
                     }
-
-                    if (completed == false)
-                    {
-                        WayoutPoint.Active = false;
-                        currGoal = path[0];
-                        currPoint = 0;
-                    }
                 }
             }
             else if (WayoutPoint_2.Active2 == true)
@@ -340,13 +359,6 @@ public class Killer : Enemy
                         WayoutPoint_2.Active2 = false;
                         currPoint = 0;
                         currGoal = path[0];
-                    }
-
-                    if (completed == false)
-                    {
-                        WayoutPoint_2.Active2 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
                     }
                 }
             }
@@ -372,13 +384,6 @@ public class Killer : Enemy
                         currPoint = 0;
                         currGoal = path[0];
                     }
-
-                    if (completed == false)
-                    {
-                        WayoutPoint_3.Active3 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
-                    }
                 }
             }
             else if (WayoutPoint_3_1.Active3_1 == true)
@@ -403,13 +408,6 @@ public class Killer : Enemy
                         currPoint = 0;
                         currGoal = path[0];
                     }
-
-                    if (completed == false)
-                    {
-                        WayoutPoint_3_1.Active3_1 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
-                    }
                 }
             }
             else if (WayoutPoint_3_2.Active3_2 == true)
@@ -433,13 +431,6 @@ public class Killer : Enemy
                         WayoutPoint_3_2.Active3_2 = false;
                         currPoint = 0;
                         currGoal = path[0];
-                    }
-
-                    if (completed == false)
-                    {
-                        WayoutPoint_3_2.Active3_2 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
                     }
                 }
             }
@@ -466,13 +457,6 @@ public class Killer : Enemy
                         currGoal = path[0];
                     }
 
-                    if (completed == false)
-                    {
-                        WayoutPoint_4.Active4 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
-                    }
-
                 }
             }
             else if (WayoutPoint_5.Active5 == true)
@@ -489,13 +473,6 @@ public class Killer : Enemy
                     if (transform.position == wayout5.Waypoints_5[WayoutPointindex].transform.position)
                     {
                         WayoutPointindex++;
-                    }
-
-                    if (WayoutPointindex == wayout5.Waypoints_5.Length)
-                    {
-                        WayoutPoint_5.Active5 = false;
-                        currPoint = 0;
-                        currGoal = path[0];
                     }
                 }
             }
@@ -521,17 +498,11 @@ public class Killer : Enemy
                         currPoint = 0;
                         currGoal = path[0];
                     }
-
-                    if (completed == false)
-                    {
-                        WayoutPoint_6.Active6 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
-                    }
                 }
             }
             else if (WayoutPoint_7.Active7 == true)
             {
+                Debug.Log("Corridor 7 Activate");
                 var wayout7 = GameObject.FindGameObjectWithTag("Room 7").GetComponent<WayoutPoint_7>();
                 if (WayoutPointindex <= wayout7.Waypoints_7.Length - 1)
                 {
@@ -549,15 +520,8 @@ public class Killer : Enemy
                     if (WayoutPointindex == wayout7.Waypoints_7.Length)
                     {
                         WayoutPoint_7.Active7 = false;
-                        completed = true;
                         currPoint = 0;
                         currGoal = path[0];
-                    }
-
-                    if (completed == false) {
-                        WayoutPoint_7.Active7 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
                     }
                 }
             }
@@ -584,13 +548,6 @@ public class Killer : Enemy
                         currPoint = 0;
                         currGoal = path[0];
                     }
-
-                    if (completed == false)
-                    {
-                        WayoutPoint_8.Active8 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
-                    }
                 }
             }
             else if (WayoutPoint_9.Active9 == true)
@@ -614,12 +571,6 @@ public class Killer : Enemy
                         WayoutPoint_9.Active9 = false;
                         currPoint = 0;
                         currGoal = path[0];
-                    }
-                    if (completed == false)
-                    {
-                        WayoutPoint_9.Active9 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
                     }
                 }
             }
@@ -645,13 +596,6 @@ public class Killer : Enemy
                         currPoint = 0;
                         currGoal = path[0];
                     }
-
-                    if (completed == false)
-                    {
-                        WayoutPoint_9_1.Active9_1 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
-                    }
                 }
             }
             else if (WayoutPoint_9_2.Active9_2 == true)
@@ -675,13 +619,6 @@ public class Killer : Enemy
                         WayoutPoint_9_2.Active9_2 = false;
                         currPoint = 0;
                         currGoal = path[0];
-                    }
-
-                    if (completed == false)
-                    {
-                        WayoutPoint_9_2.Active9_2 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
                     }
                 }
             }
@@ -707,13 +644,6 @@ public class Killer : Enemy
                         currPoint = 0;
                         currGoal = path[0];
                     }
-
-                    if (completed == false)
-                    {
-                        WayoutPoint_10.Active10 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
-                    }
                 }
             }
             else if (WayoutPoint_10_1.Active10_1 == true)
@@ -737,13 +667,6 @@ public class Killer : Enemy
                         WayoutPoint_10_1.Active10_1 = false;
                         currPoint = 0;
                         currGoal = path[0];
-                    }
-
-                    if (completed == false)
-                    {
-                        WayoutPoint_10_1.Active10_1 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
                     }
                 }
             }
@@ -769,13 +692,6 @@ public class Killer : Enemy
                         currPoint = 0;
                         currGoal = path[0];
                     }
-
-                    if (completed == false)
-                    {
-                        WayoutPoint_10_2.Active10_2 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
-                    }
                 }
             }
             else if (WayoutPoint_11.Active11 == true)
@@ -799,13 +715,6 @@ public class Killer : Enemy
                         WayoutPoint_11.Active11 = false;
                         currPoint = 0;
                         currGoal = path[0];
-                    }
-
-                    if (completed == false)
-                    {
-                        WayoutPoint_11.Active11 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
                     }
                 }
             }
@@ -831,13 +740,6 @@ public class Killer : Enemy
                         currPoint = 0;
                         currGoal = path[0];
                     }
-
-                    if (completed == false)
-                    {
-                        WayoutPoint_11_1.Active11_1 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
-                    }
                 }
             }
             else if (WayoutPoint_11_2.Active11_2 == true)
@@ -861,13 +763,6 @@ public class Killer : Enemy
                         WayoutPoint_11_2.Active11_2 = false;
                         currPoint = 0;
                         currGoal = path[0];
-                    }
-
-                    if (completed == false)
-                    {
-                        WayoutPoint_11_2.Active11_2 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
                     }
                 }
             }
@@ -895,13 +790,6 @@ public class Killer : Enemy
                         currPoint = 0;
                         currGoal = path[0];
                     }
-
-                    if (completed == false)
-                    {
-                        Corridor_1.ActiveCorridor = false;
-                        currGoal = path[0];
-                        currPoint = 0;
-                    }
                 }
             }
             else if (Corridor_2.ActiveCorridor_2 == true)
@@ -927,13 +815,6 @@ public class Killer : Enemy
                         wayoutCorridor_2.Waypoint_2.SetActive(false);
                         currPoint = 0;
                         currGoal = path[0];
-                    }
-
-                    if (completed == false)
-                    {
-                        Corridor_2.ActiveCorridor_2 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
                     }
                 }
             }
@@ -961,13 +842,6 @@ public class Killer : Enemy
                         currPoint = 0;
                         currGoal = path[0];
                     }
-
-                    if (completed == false)
-                    {
-                        Corridor_3.ActiveCorridor_3 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
-                    }
                 }
             }
             else if (Corridor_4.ActiveCorridor_4 == true)
@@ -993,13 +867,6 @@ public class Killer : Enemy
                         wayoutCorridor_4.Waypoint_4.SetActive(false);
                         currPoint = 0;
                         currGoal = path[0];
-                    }
-
-                    if (completed == false)
-                    {
-                        Corridor_4.ActiveCorridor_4 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
                     }
                 }
             }
@@ -1027,13 +894,6 @@ public class Killer : Enemy
                         currPoint = 0;
                         currGoal = path[0];
                     }
-
-                    if (completed == false)
-                    {
-                        Corridor_5.ActiveCorridor_5 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
-                    }
                 }
             }
             else if (Corridor_6.ActiveCorridor_6 == true)
@@ -1060,19 +920,11 @@ public class Killer : Enemy
                         currPoint = 0;
                         currGoal = path[0];
                     }
-
-                    if (completed == false)
-                    {
-                        Corridor_6.ActiveCorridor_6 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
-                    }
                 }
             }
             else if (Corridor_7.ActiveCorridor_7 == true)
             {
                 var wayoutCorridor_7 = GameObject.FindGameObjectWithTag("Corridor 7").GetComponent<Corridor_7>();
-                Debug.Log(patrol);
                 if (WayoutPointindex <= wayoutCorridor_7.WaypointsCorridor_7.Length - 1)
                 {
                     Vector3 temp = Vector3.MoveTowards(transform.position, wayoutCorridor_7.WaypointsCorridor_7[WayoutPointindex].transform.position,
@@ -1089,17 +941,9 @@ public class Killer : Enemy
                     if (WayoutPointindex == wayoutCorridor_7.WaypointsCorridor_7.Length)
                     {
                         Corridor_7.ActiveCorridor_7 = false;
-                        completed = true;
                         wayoutCorridor_7.Waypoint_7.SetActive(false);
                         currPoint = 0;
                         currGoal = path[0];
-                    }
-
-                    if (completed == false)
-                    {
-                        Corridor_7.ActiveCorridor_7 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
                     }
                 }
             }
@@ -1127,19 +971,11 @@ public class Killer : Enemy
                         currPoint = 0;
                         currGoal = path[0];
                     }
-
-                    if (completed == false)
-                    {
-                        Corridor_8.ActiveCorridor_8 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
-                    }
                 }
             }
             else if (Corridor_9.ActiveCorridor_9 == true)
             {
                 var wayoutCorridor_9 = GameObject.FindGameObjectWithTag("Corridor 9").GetComponent<Corridor_9>();
-                Debug.Log(patrol);
                 if (WayoutPointindex <= wayoutCorridor_9.WaypointsCorridor_9.Length - 1)
                 {
                     Vector3 temp = Vector3.MoveTowards(transform.position, wayoutCorridor_9.WaypointsCorridor_9[WayoutPointindex].transform.position,
@@ -1159,13 +995,6 @@ public class Killer : Enemy
                         wayoutCorridor_9.Waypoint_9.SetActive(false);
                         currPoint = 0;
                         currGoal = path[0];
-                    }
-
-                    if (completed == false)
-                    {
-                        Corridor_9.ActiveCorridor_9 = false;
-                        currGoal = path[0];
-                        currPoint = 0;
                     }
                 }
             }

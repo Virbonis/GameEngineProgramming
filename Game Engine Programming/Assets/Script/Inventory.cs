@@ -5,8 +5,11 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public GameObject[] inventory;
+    public GameObject[] slots;
+    public GameObject[] text;
     public bool itemAdded;
     public int counter;
+    public int x;
 
     void Update()
     {
@@ -20,7 +23,7 @@ public class Inventory : MonoBehaviour
     }
     public void addItem(GameObject item)
     {
-        for (int x = 0; x < inventory.Length; x++)
+        for (x = 0; x < inventory.Length; x++)
         {
             if (inventory[x] == null)
             {

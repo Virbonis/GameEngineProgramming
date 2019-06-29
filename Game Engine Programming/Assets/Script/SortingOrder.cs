@@ -18,11 +18,11 @@ public class SortingOrder : MonoBehaviour
     {
         if (Killer.transform.position.y > transform.position.y)
         {
-            Object.sortingOrder = 1;
+            Object.sortingOrder = 500;
         }
         else
         {
-            Object.sortingOrder = 0;
+            Object.sortingOrder = 498;
         }
     }
 }

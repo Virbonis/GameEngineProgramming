@@ -9,6 +9,8 @@ public class InteractionObject : MonoBehaviour
     public GameObject player;
     public bool inventory;
     public static bool pause;
+    public GameObject itemButton;
+    public GameObject textButton;
 
     private void Start()
     {
@@ -22,6 +24,8 @@ public class InteractionObject : MonoBehaviour
         if (full.itemAdded == true)
         {
             gameObject.SetActive(false);
+            Instantiate(itemButton, full.slots[full.x].transform, false);
+            Instantiate(textButton, full.text[full.x].transform, false);
             keyGUI.SetActive(true);
             player.SetActive(false);
             SoundManager.PlaySound("Pickup Key");

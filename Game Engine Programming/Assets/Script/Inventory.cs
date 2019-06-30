@@ -21,6 +21,7 @@ public class Inventory : MonoBehaviour
             itemAdded = true;
         }
     }
+
     public void addItem(GameObject item)
     {
         for (x = 0; x < inventory.Length; x++)

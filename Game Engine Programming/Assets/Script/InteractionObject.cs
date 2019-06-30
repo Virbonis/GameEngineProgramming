@@ -5,6 +5,7 @@ using UnityEngine;
 public class InteractionObject : MonoBehaviour
 {
     private Inventory full;
+    private InteractionDoor finding;
     public GameObject keyGUI;
     public GameObject player;
     public bool inventory;
@@ -16,6 +17,11 @@ public class InteractionObject : MonoBehaviour
     {
         full = GameObject.Find("Player").GetComponent<Inventory>();
         player = GameObject.Find("Player");
+    }
+
+    private void Update()
+    {
+        
     }
 
     public void DoInteraction()

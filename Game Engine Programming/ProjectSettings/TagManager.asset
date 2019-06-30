@@ -40,6 +40,7 @@ TagManager:
   - Room 11
   - Room 11 Middle
   - Room 11 Right
+  - Slot
   layers:
   - Default
   - TransparentFX

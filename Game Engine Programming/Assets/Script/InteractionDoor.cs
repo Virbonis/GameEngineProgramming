@@ -10,12 +10,15 @@ public class InteractionDoor : MonoBehaviour
     public PlayerInteract playerInteraction;
     public GameObject itemNeeded;
     public Inventory finding;
-    private bool find;
+    private Slot used;
+    public bool find;
+    public static int temp;
 
     void Start()
     {
         playerInteraction = GameObject.Find("Player").GetComponent<PlayerInteract>();
         finding = GameObject.Find("Player").GetComponent<Inventory>();
+        used = GameObject.FindWithTag("Slot").GetComponent<Slot>();
     }
 
     public void DoorInteractionOpen()
@@ -32,12 +35,16 @@ public class InteractionDoor : MonoBehaviour
         SoundManager.PlaySound("Close Door");
     }
 
-    public void DoorInteractionLocked() {
+    public void DoorInteractionLocked()
+    {
         for (int x = 0; x < finding.inventory.Length; x++)
         {
             if (finding.inventory[x] == itemNeeded)
             {
+                temp = x;
                 finding.inventory[x] = null;
+                used.DoorInteraction();
+                used.DestroyTextUI();
                 find = true;
                 SoundManager.PlaySound("Unlock");
             }
@@ -48,7 +55,8 @@ public class InteractionDoor : MonoBehaviour
             doorLocked.SetActive(false);
             doorClosed.SetActive(true);
         }
-        else {
+        else
+        {
             SoundManager.PlaySound("Locked Door");
         }
     }

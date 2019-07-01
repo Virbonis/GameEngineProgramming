@@ -19,7 +19,6 @@ public class ItemPickup : MonoBehaviour
         {
             gameObject.SetActive(false);
             Instantiate(itemButton, full.slots[full.x].transform, false);
-            Instantiate(textButton, full.text[full.x].transform, false);
             SoundManager.PlaySound("Medicine Pickup");
         }
         else

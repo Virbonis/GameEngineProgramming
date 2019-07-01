@@ -134,7 +134,6 @@ public class Player : MonoBehaviour
             if (timerBoost >= 0)
             {
                 timerBoost -= Time.deltaTime;
-                Debug.Log(timerBoost);
             }
             else
             {

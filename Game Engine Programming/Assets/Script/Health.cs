@@ -24,7 +24,6 @@ public class Health : MonoBehaviour
         if (health > maxHealth) {
             health = maxHealth;
         }
-        Debug.Log(health);
 
         switch (health) {
             case 3:

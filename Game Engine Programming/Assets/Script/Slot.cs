@@ -7,7 +7,6 @@ public class Slot : MonoBehaviour
     private Inventory inventory;
     public GameObject[] slots;
     public GameObject[] texts;
-    private Spawn spawning;
     public int i;
 
     private void Start()
@@ -25,9 +24,15 @@ public class Slot : MonoBehaviour
 
     public void DropItem() {
         foreach (Transform child in transform) {
-            inventory.inventory[i] = null;
-            child.GetComponent<Spawn>().SpawnDroppedItem();
-            GameObject.Destroy(child.gameObject);
+            if (child.tag == "Key")
+            {
+                Debug.Log("KONTOL");
+            }
+            else
+            {
+                inventory.inventory[i] = null;
+                GameObject.Destroy(child.gameObject);
+            }
         }
     }
 
@@ -35,7 +40,14 @@ public class Slot : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            GameObject.Destroy(child.gameObject);
+            if (child.tag == "Key")
+            {
+                Debug.Log("KONTOL");
+            }
+            else
+            {
+                GameObject.Destroy(child.gameObject);
+            }
         }
     }
 }

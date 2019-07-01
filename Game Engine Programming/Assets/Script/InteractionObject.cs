@@ -12,16 +12,12 @@ public class InteractionObject : MonoBehaviour
     public static bool pause;
     public GameObject itemButton;
     public GameObject textButton;
+    private bool playBottle;
 
     private void Start()
     {
         full = GameObject.Find("Player").GetComponent<Inventory>();
         player = GameObject.Find("Player");
-    }
-
-    private void Update()
-    {
-        
     }
 
     public void DoInteraction()

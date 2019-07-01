@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerInteract : MonoBehaviour
 {
     public GameObject currentInterObj = null;
+    public GameObject currentItem = null;
     public GameObject DoorClose = null;
     public GameObject DoorOpen = null;
     public GameObject DoorLock = null;
@@ -28,6 +29,13 @@ public class PlayerInteract : MonoBehaviour
             inventory.addItem(currentInterObj);
             currentInterObj.SendMessage("DoInteraction");
             currentInterObj = null;
+        }
+
+        if (Input.GetButtonDown("Interact") && currentItem)
+        {
+            inventory.addItem(currentItem);
+            currentItem.SendMessage("MedicPickup");
+            currentItem = null;
         }
 
         if (Input.GetButtonDown("Interact") && pressed_Open == true)
@@ -57,6 +65,11 @@ public class PlayerInteract : MonoBehaviour
             currentInterScript = currentInterObj.GetComponent<InteractionObject>();
         }
 
+        if (other.CompareTag("Medicine"))
+        {
+            currentItem = other.gameObject;
+        }
+
         if (other.CompareTag("CloseDoor")) {
             pressed_Open = true;
             DoorClose = other.gameObject;
@@ -81,6 +94,14 @@ public class PlayerInteract : MonoBehaviour
             if (other.gameObject == currentInterObj)
             {
                 currentInterObj = null;
+            }
+        }
+
+        if (other.CompareTag("Medicine"))
+        {
+            if (other.gameObject == currentItem)
+            {
+                currentItem = null;
             }
         }
 

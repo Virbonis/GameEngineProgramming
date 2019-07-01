@@ -41,6 +41,8 @@ TagManager:
   - Room 11 Middle
   - Room 11 Right
   - Slot
+  - Key
+  - Medicine
   layers:
   - Default
   - TransparentFX

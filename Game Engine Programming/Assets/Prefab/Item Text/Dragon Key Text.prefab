@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8405369151988483891}
   - component: {fileID: 5016005486766567}
   m_Layer: 5
-  m_Name: Text (4)
-  m_TagString: Untagged
+  m_Name: Dragon Key Text
+  m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

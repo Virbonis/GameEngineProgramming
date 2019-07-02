@@ -5,7 +5,8 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
 
-    public static AudioClip EvilWithin2, EvilWithin3, playerBlood, death, pickupKey, openDoor, closeDoor, lockedDoor, unlockDoor, pickUpMedicine, Healing;
+    public static AudioClip EvilWithin2, EvilWithin3, playerBlood, death, pickupKey, 
+        openDoor, closeDoor, lockedDoor, unlockDoor, pickUpMedicine, Healing, notePickup, gainKnowledge;
     static AudioSource audioSource;
 
     void Start()
@@ -21,6 +22,8 @@ public class SoundManager : MonoBehaviour
         unlockDoor = Resources.Load<AudioClip>("Unlock");
         pickUpMedicine = Resources.Load<AudioClip>("Bottle Pickup");
         Healing = Resources.Load<AudioClip>("Healing");
+        notePickup = Resources.Load<AudioClip>("Note Pickup");
+        gainKnowledge = Resources.Load<AudioClip>("Gain Knowledge");
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -63,6 +66,12 @@ public class SoundManager : MonoBehaviour
                 break;
             case "Healing":
                 audioSource.PlayOneShot(Healing);
+                break;
+            case "Note Pickup":
+                audioSource.PlayOneShot(notePickup);
+                break;
+            case "Gain Knowledge":
+                audioSource.PlayOneShot(gainKnowledge);
                 break;
         }
     }

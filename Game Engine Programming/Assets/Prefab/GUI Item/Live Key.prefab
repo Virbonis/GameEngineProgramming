@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9114355394404975723}
   - component: {fileID: 8898100895301653145}
   m_Layer: 5
-  m_Name: Axe Key
+  m_Name: Live Key
   m_TagString: Key
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e43440924a2418148b331ca0c0489833, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3bea88de34e8a454297dfe11d115f978, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

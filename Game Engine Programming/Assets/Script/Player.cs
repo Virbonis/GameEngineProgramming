@@ -130,6 +130,7 @@ public class Player : MonoBehaviour
             }
             speedBoost = false;
         }
+
         if (Boost == true) {
             if (timerBoost >= 0)
             {

@@ -8,7 +8,7 @@ public class Inventory : MonoBehaviour
     public GameObject[] slots;
     public GameObject[] text;
     public bool itemAdded;
-    public int counter;
+    public static int counter = 0;
     public int x;
 
     void Update()
@@ -30,6 +30,7 @@ public class Inventory : MonoBehaviour
             {
                 inventory[x] = item;
                 counter++;
+                Debug.Log(counter);
                 itemAdded = true;
                 break;
             }

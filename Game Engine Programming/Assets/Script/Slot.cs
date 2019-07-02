@@ -16,6 +16,7 @@ public class Slot : MonoBehaviour
 
     public void DoorInteraction() {
         GameObject.Destroy(slots[InteractionDoor.temp].transform.GetChild(0).gameObject);
+        Inventory.counter -= 1;
     }
 
     public void DestroyTextUI() {
@@ -31,6 +32,7 @@ public class Slot : MonoBehaviour
             else
             {
                 inventory.inventory[i] = null;
+                Inventory.counter -= 1;
                 GameObject.Destroy(child.gameObject);
             }
         }

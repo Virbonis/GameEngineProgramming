@@ -6,6 +6,7 @@ public class PlayerInteract : MonoBehaviour
 {
     public GameObject currentInterObj = null;
     public GameObject currentItem = null;
+    public GameObject currentNote = null;
     public GameObject DoorClose = null;
     public GameObject DoorOpen = null;
     public GameObject DoorLock = null;
@@ -38,6 +39,12 @@ public class PlayerInteract : MonoBehaviour
             currentItem = null;
         }
 
+        if (Input.GetButtonDown("Interact") && currentNote)
+        {
+            currentNote.SendMessage("NotePickup");
+            currentNote = null;
+        }
+
         if (Input.GetButtonDown("Interact") && pressed_Open == true)
         {
             DoorClose.SendMessage("DoorInteractionOpen");
@@ -65,9 +72,14 @@ public class PlayerInteract : MonoBehaviour
             currentInterScript = currentInterObj.GetComponent<InteractionObject>();
         }
 
-        if (other.CompareTag("Medicine"))
+        if (other.CompareTag("Item"))
         {
             currentItem = other.gameObject;
+        }
+
+        if (other.CompareTag("Note"))
+        {
+            currentNote = other.gameObject;
         }
 
         if (other.CompareTag("CloseDoor")) {
@@ -97,11 +109,19 @@ public class PlayerInteract : MonoBehaviour
             }
         }
 
-        if (other.CompareTag("Medicine"))
+        if (other.CompareTag("Item"))
         {
             if (other.gameObject == currentItem)
             {
                 currentItem = null;
+            }
+        }
+
+        if (other.CompareTag("Note"))
+        {
+            if (other.gameObject == currentNote)
+            {
+                currentNote = null;
             }
         }
 

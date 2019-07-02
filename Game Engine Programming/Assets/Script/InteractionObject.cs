@@ -33,7 +33,7 @@ public class InteractionObject : MonoBehaviour
             SoundManager.PlaySound("Pickup Key");
         }
         else {
-            Debug.Log("full inventory");
+            Debug.Log("Inventory Full");
         }
     }
 }

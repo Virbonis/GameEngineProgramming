@@ -43,7 +43,9 @@ TagManager:
   - Slot
   - Key
   - Medicine
-  - Medicine 1
+  - Item
+  - Note
+  - Note GUI
   layers:
   - Default
   - TransparentFX

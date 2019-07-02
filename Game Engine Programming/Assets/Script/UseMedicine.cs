@@ -16,12 +16,13 @@ public class UseMedicine : MonoBehaviour
     }
 
     public void useMedicine() {
-        if (Health.health >= 3)
+        if (Health.health > 2)
         {
             Debug.Log("Your health is full");
         }
         else {
             Used();
+            Debug.Log(Inventory.counter);
             Health.health += 1;
             SoundManager.PlaySound("Healing");
             Destroy(gameObject);
@@ -34,9 +35,8 @@ public class UseMedicine : MonoBehaviour
         {
             if (inventory.inventory[x] == item.itemUsed)
             {
-                temp = x;
                 inventory.inventory[x] = null;
-                SoundManager.PlaySound("Unlock");
+                Inventory.counter -= 1;
             }
         }
     }

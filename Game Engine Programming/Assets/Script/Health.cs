@@ -14,6 +14,7 @@ public class Health : MonoBehaviour
     void Start()
     {
         health = maxHealth;
+        health = 2;
         heart1.gameObject.SetActive(true);
         heart2.gameObject.SetActive(true);
         heart3.gameObject.SetActive(true);

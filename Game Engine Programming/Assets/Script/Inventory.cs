@@ -20,6 +20,7 @@ public class Inventory : MonoBehaviour
         else {
             itemAdded = true;
         }
+        Debug.Log(counter);
     }
 
     public void addItem(GameObject item)
@@ -30,7 +31,6 @@ public class Inventory : MonoBehaviour
             {
                 inventory[x] = item;
                 counter++;
-                Debug.Log(counter);
                 itemAdded = true;
                 break;
             }

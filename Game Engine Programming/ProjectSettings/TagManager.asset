@@ -46,6 +46,8 @@ TagManager:
   - Item
   - Note
   - Note GUI
+  - Tutorial
+  - DeathButton
   layers:
   - Default
   - TransparentFX

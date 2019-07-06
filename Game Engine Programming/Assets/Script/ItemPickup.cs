@@ -8,11 +8,15 @@ public class ItemPickup : MonoBehaviour
     public GameObject itemButton;
     public GameObject itemUsed;
     public GameObject note;
+    public GameObject text;
     SpriteRenderer rend;
+    private FadeTutorial tutorial;
 
     private void Start()
     {
         full = GameObject.Find("Player").GetComponent<Inventory>();
+        tutorial = GameObject.FindWithTag("Tutorial").GetComponent<FadeTutorial>();
+        
     }
 
     public void MedicPickup()
@@ -23,6 +27,7 @@ public class ItemPickup : MonoBehaviour
             itemButton.SetActive(true);
             Instantiate(itemButton, full.slots[full.x].transform, false);
             SoundManager.PlaySound("Medicine Pickup");
+            tutorial.UseItem();
         }
         else {
             Debug.Log("Inventory Full");
@@ -31,6 +36,7 @@ public class ItemPickup : MonoBehaviour
 
     public void NotePickup() {
         gameObject.SetActive(false);
+        text.SetActive(true);
         note.SetActive(true);
     }
 }

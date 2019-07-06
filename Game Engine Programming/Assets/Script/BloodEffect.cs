@@ -11,6 +11,7 @@ public class BloodEffect : MonoBehaviour
     void Start()
     {
         BloodAnim = GetComponent<Animator>();
+        KillerHit.blood = false;
     }
 
     void Update()

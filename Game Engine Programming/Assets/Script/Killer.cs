@@ -54,13 +54,15 @@ public class Killer : Enemy
     public static bool patrol;
     public GameObject[] ActivatesCorridor;
     private bool completed = true;
+    private FadeTutorial tutorial;
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>();
         killerAnim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
-
+        tutorial = GameObject.FindWithTag("Tutorial").GetComponent<FadeTutorial>();
         speedTemp = moveSpeed - 2f;
+        onSight = false;
     }
 
     void Update()
@@ -183,6 +185,7 @@ public class Killer : Enemy
 
         if (onSight == true)
         {
+            tutorial.KillerTutorialChase();
             currPoint = 0;
             WayoutPointindex = 0;
             WayoutPoint.Active = false;

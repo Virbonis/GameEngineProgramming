@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public static bool DeathScene;
     public GameObject DeathSceneActivator;
     public GameObject DeathFontActivator;
+    public GameObject Buttons;
 
     void Start()
     {
@@ -46,6 +47,7 @@ public class Player : MonoBehaviour
             Destroy(this.gameObject);
             DeathSceneActivator.SetActive(true);
             DeathFontActivator.SetActive(true);
+            Buttons.SetActive(true);
             DeathScene = true;
         }
     }

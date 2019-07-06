@@ -13,12 +13,14 @@ public class InteractionDoor : MonoBehaviour
     private Slot used;
     public bool find;
     public static int temp;
+    private FadeTutorial tutorial;
 
     void Start()
     {
         playerInteraction = GameObject.Find("Player").GetComponent<PlayerInteract>();
         finding = GameObject.Find("Player").GetComponent<Inventory>();
         used = GameObject.FindWithTag("Slot").GetComponent<Slot>();
+        tutorial = GameObject.FindWithTag("Tutorial").GetComponent<FadeTutorial>();
     }
 
     public void DoorInteractionOpen()
@@ -57,6 +59,7 @@ public class InteractionDoor : MonoBehaviour
         }
         else
         {
+            tutorial.LockedDoor();
             SoundManager.PlaySound("Locked Door");
         }
     }

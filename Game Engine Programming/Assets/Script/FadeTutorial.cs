@@ -10,6 +10,7 @@ public class FadeTutorial : MonoBehaviour
     public Image fadeuseItem;
     public Image fadeinteractDoor;
     public Image fadeinDropitem;
+    public Image BackButton;
     public Text lockedDoor;
     public Text BlockTheKiller;
     public Text GetAway;
@@ -27,6 +28,7 @@ public class FadeTutorial : MonoBehaviour
         lockedDoor.canvasRenderer.SetAlpha(0.0f);
         BlockTheKiller.canvasRenderer.SetAlpha(0.0f);
         GetAway.canvasRenderer.SetAlpha(0.0f);
+        BackButton.canvasRenderer.SetAlpha(0.0f);
         if (counter == 0)
         {
             FadeInMove();
@@ -45,47 +47,6 @@ public class FadeTutorial : MonoBehaviour
         }
     }
 
-    IEnumerator WaitBlackScreen()
-    {
-        yield return new WaitForSeconds(2f);
-        fadeTargetMovement.CrossFadeAlpha(1f, 1f, false);
-        yield return new WaitForSeconds(5f);
-        fadeTargetMovement.CrossFadeAlpha(0f, 1f, false);
-        yield return new WaitForSeconds(2f);
-        fadeTargetInteract.CrossFadeAlpha(1f, 1f, false);
-        fadeinteractDoor.CrossFadeAlpha(1f, 1f, false);
-        yield return new WaitForSeconds(5f);
-        fadeTargetInteract.CrossFadeAlpha(0f, 1f, false);
-        fadeinteractDoor.CrossFadeAlpha(0f, 1f, false);
-    }
-
-    IEnumerator useItemTut() {
-        fadeuseItem.CrossFadeAlpha(1f, 1f, false);
-        yield return new WaitForSeconds(6f);
-        fadeuseItem.CrossFadeAlpha(0f, 1f, false);
-        yield return new WaitForSeconds(1f);
-        fadeinDropitem.CrossFadeAlpha(1f, 1f, false);
-        yield return new WaitForSeconds(5f);
-        fadeinDropitem.CrossFadeAlpha(0f, 1f, false);
-    }
-
-    IEnumerator LockedDoorWait() {
-        lockedDoor.CrossFadeAlpha(1f, 1f, false);
-        yield return new WaitForSeconds(3f);
-        lockedDoor.CrossFadeAlpha(0f, 1f, false);
-    }
-
-    IEnumerator KillerTutorial() {
-        yield return new WaitForSeconds(2f);
-        BlockTheKiller.CrossFadeAlpha(1f, 1f, false);
-        yield return new WaitForSeconds(5f);
-        BlockTheKiller.CrossFadeAlpha(0f, 1f, false);
-        yield return new WaitForSeconds(1f);
-        GetAway.CrossFadeAlpha(1f, 1f, false);
-        yield return new WaitForSeconds(5f);
-        GetAway.CrossFadeAlpha(0f, 1f, false);
-    }
-
     public void UseItem() {
         if (useItem == 0)
         {
@@ -102,5 +63,63 @@ public class FadeTutorial : MonoBehaviour
         StartCoroutine(LockedDoorWait());
     }
 
+    public void FadeInBack()
+    {
+        StartCoroutine(BackWait());
+    }
 
+    public void FadeOutBack()
+    {
+        BackButton.CrossFadeAlpha(0f, 0.15f, false);
+    }
+
+    IEnumerator WaitBlackScreen()
+    {
+        yield return new WaitForSeconds(2f);
+        fadeTargetMovement.CrossFadeAlpha(1f, 1f, false);
+        yield return new WaitForSeconds(5f);
+        fadeTargetMovement.CrossFadeAlpha(0f, 1f, false);
+        yield return new WaitForSeconds(2f);
+        fadeTargetInteract.CrossFadeAlpha(1f, 1f, false);
+        fadeinteractDoor.CrossFadeAlpha(1f, 1f, false);
+        yield return new WaitForSeconds(5f);
+        fadeTargetInteract.CrossFadeAlpha(0f, 1f, false);
+        fadeinteractDoor.CrossFadeAlpha(0f, 1f, false);
+    }
+
+    IEnumerator useItemTut()
+    {
+        fadeuseItem.CrossFadeAlpha(1f, 1f, false);
+        yield return new WaitForSeconds(6f);
+        fadeuseItem.CrossFadeAlpha(0f, 1f, false);
+        yield return new WaitForSeconds(1f);
+        fadeinDropitem.CrossFadeAlpha(1f, 1f, false);
+        yield return new WaitForSeconds(5f);
+        fadeinDropitem.CrossFadeAlpha(0f, 1f, false);
+    }
+
+    IEnumerator LockedDoorWait()
+    {
+        lockedDoor.CrossFadeAlpha(1f, 1f, false);
+        yield return new WaitForSeconds(3f);
+        lockedDoor.CrossFadeAlpha(0f, 1f, false);
+    }
+
+    IEnumerator KillerTutorial()
+    {
+        yield return new WaitForSeconds(2f);
+        BlockTheKiller.CrossFadeAlpha(1f, 1f, false);
+        yield return new WaitForSeconds(5f);
+        BlockTheKiller.CrossFadeAlpha(0f, 1f, false);
+        yield return new WaitForSeconds(1f);
+        GetAway.CrossFadeAlpha(1f, 1f, false);
+        yield return new WaitForSeconds(5f);
+        GetAway.CrossFadeAlpha(0f, 1f, false);
+    }
+
+    IEnumerator BackWait()
+    {
+        yield return new WaitForSeconds(0.0f);
+        BackButton.CrossFadeAlpha(1f, 0.15f, false);
+    }
 }

@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class ButtonsDeathScreen : MonoBehaviour
 {
-
     public Image retry;
     public Image quit;
+    public Button retryButton;
 
     void Start()
     {

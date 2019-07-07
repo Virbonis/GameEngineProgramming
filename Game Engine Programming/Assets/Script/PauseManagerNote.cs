@@ -7,6 +7,7 @@ public class PauseManagerNote : MonoBehaviour
     GameObject pause;
     public GameObject Player;
     public bool Note;
+    private float timer = 0.15f;
     FadeIn fade;
 
     private void Start()
@@ -21,7 +22,10 @@ public class PauseManagerNote : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Interact") && Note == true)
+        if (timer > 0) {
+            timer -= Time.deltaTime;
+        }
+        if (Input.GetButtonDown("Interact") && Note == true && timer < 0)
         {
             Player.SetActive(true);
             Time.timeScale = 1;

@@ -19,12 +19,14 @@ public class FadeIn : MonoBehaviour
 
     public void Fadein() {
         fadeInTarget.CrossFadeAlpha(1f, 0.15f, false);
+        tutorial.FadeInBack();
         SoundManager.PlaySound("Note Pickup");
     }
 
     public void FadeOut()
     {
         fadeTextTarget.CrossFadeAlpha(1f, 1f, false);
+        tutorial.FadeOutBack();
         DestroyObject();
         StartCoroutine(wait());
     }

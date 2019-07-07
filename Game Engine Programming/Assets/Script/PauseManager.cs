@@ -5,6 +5,7 @@ using UnityEngine;
 public class PauseManager: MonoBehaviour
 {
     GameObject pause;
+    public GameObject backButton;
     public GameObject Player;
     private bool keyGUI;
 
@@ -19,6 +20,7 @@ public class PauseManager: MonoBehaviour
         {
             Time.timeScale = 0;
             keyGUI = true;
+            backButton.SetActive(true);
         }
         if (Input.GetButtonDown("Interact") && keyGUI == true)
         {
@@ -26,6 +28,7 @@ public class PauseManager: MonoBehaviour
             Player.SetActive(true);
             Time.timeScale = 1;
             keyGUI = false;
+            backButton.SetActive(false);
         }
     }
 }

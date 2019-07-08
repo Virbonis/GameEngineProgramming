@@ -7,6 +7,8 @@ public class ButtonsDeathScreen : MonoBehaviour
 {
     public Image retry;
     public Image quit;
+    public GameObject retryObject;
+    public GameObject quitObject;
     public Button retryButton;
 
     void Start()
@@ -18,6 +20,8 @@ public class ButtonsDeathScreen : MonoBehaviour
 
     IEnumerator Wait() {
         yield return new WaitForSeconds(7f);
+        retryObject.SetActive(true);
+        quitObject.SetActive(true);
         retry.CrossFadeAlpha(1, 0.5f, false);
         quit.CrossFadeAlpha(1, 0.5f, false);
     }

@@ -5,6 +5,19 @@ using UnityEngine;
 public class Teleport : MonoBehaviour
 {
     public GameObject target;
+    private Transform killer;
+
+    private void Start()
+    {
+        killer = GameObject.Find("Killer").transform;
+    }
+
+    public void killerTeleport() {
+        if (InteractionObject.firstkey == 1)
+        {
+            killer.transform.position = target.transform.position;
+        }
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

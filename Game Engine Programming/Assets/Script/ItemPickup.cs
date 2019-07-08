@@ -9,14 +9,16 @@ public class ItemPickup : MonoBehaviour
     public GameObject itemUsed;
     public GameObject note;
     public GameObject text;
+    public GameObject map;
     SpriteRenderer rend;
+    FadeInClue clue;
     private FadeTutorial tutorial;
 
     private void Start()
     {
         full = GameObject.Find("Player").GetComponent<Inventory>();
         tutorial = GameObject.FindWithTag("Tutorial").GetComponent<FadeTutorial>();
-        
+        clue = GameObject.FindWithTag("Clue GUI").GetComponent<FadeInClue>();
     }
 
     public void MedicPickup()
@@ -38,5 +40,10 @@ public class ItemPickup : MonoBehaviour
         gameObject.SetActive(false);
         text.SetActive(true);
         note.SetActive(true);
+    }
+
+    public void MapPickup() {
+        note.SetActive(true);
+        SoundManager.PlaySound("Note Pickup");
     }
 }

@@ -48,6 +48,10 @@ TagManager:
   - Note GUI
   - Tutorial
   - DeathButton
+  - Teleport
+  - Scene Manager
+  - Clue
+  - Clue GUI
   layers:
   - Default
   - TransparentFX

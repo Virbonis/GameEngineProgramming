@@ -11,6 +11,11 @@ public class Inventory : MonoBehaviour
     public static int counter = 0;
     public int x;
 
+    private void Start()
+    {
+        counter = 0;
+    }
+
     void Update()
     {
         if (inventory.Length == counter)

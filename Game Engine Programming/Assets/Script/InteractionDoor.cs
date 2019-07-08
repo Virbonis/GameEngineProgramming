@@ -14,6 +14,7 @@ public class InteractionDoor : MonoBehaviour
     public bool find;
     public static int temp;
     private FadeTutorial tutorial;
+    public static int door;
 
     void Start()
     {
@@ -49,6 +50,7 @@ public class InteractionDoor : MonoBehaviour
                 used.DestroyTextUI();
                 find = true;
                 SoundManager.PlaySound("Unlock");
+
             }
         }
 

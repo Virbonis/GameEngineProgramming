@@ -43,7 +43,6 @@ public class Player : MonoBehaviour
         SpawnWayPoint();
 
         if (Health.health < 1) {
-
             Destroy(this.gameObject);
             DeathSceneActivator.SetActive(true);
             DeathFontActivator.SetActive(true);

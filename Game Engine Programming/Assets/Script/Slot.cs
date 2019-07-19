@@ -8,10 +8,12 @@ public class Slot : MonoBehaviour
     public GameObject[] slots;
     public GameObject[] texts;
     public int i;
+    private FadeTutorial displayText;
 
     private void Start()
     {
         inventory = GameObject.Find("Player").GetComponent<Inventory>();
+        displayText = GameObject.FindWithTag("Tutorial").GetComponent<FadeTutorial>();
     }
 
     public void DoorInteraction() {
@@ -27,10 +29,11 @@ public class Slot : MonoBehaviour
         foreach (Transform child in transform) {
             if (child.tag == "Key")
             {
-                Debug.Log("KONTOL");
+                displayText.CantDrop();   
             }
             else
             {
+                SoundManager.PlaySound("Drop Item");
                 inventory.inventory[i] = null;
                 Inventory.counter -= 1;
                 GameObject.Destroy(child.gameObject);
@@ -42,11 +45,7 @@ public class Slot : MonoBehaviour
     {
         foreach (Transform child in transform)
         {
-            if (child.tag == "Key")
-            {
-                Debug.Log("KONTOL");
-            }
-            else
+            if (child.tag != "Key")
             {
                 GameObject.Destroy(child.gameObject);
             }

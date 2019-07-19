@@ -92,3 +92,6 @@ TagManager:
   - name: Player
     uniqueID: 3367354671
     locked: 0
+  - name: Note
+    uniqueID: 3020014107
+    locked: 0

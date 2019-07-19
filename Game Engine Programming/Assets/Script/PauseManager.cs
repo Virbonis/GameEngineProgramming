@@ -7,6 +7,7 @@ public class PauseManager: MonoBehaviour
     GameObject pause;
     public GameObject backButton;
     public GameObject Player;
+    public GameObject tutorial;
     private bool keyGUI;
 
     private void Start()

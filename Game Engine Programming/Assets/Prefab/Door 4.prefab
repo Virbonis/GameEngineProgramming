@@ -13,20 +13,20 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.026751518, y: 0.05145684}
+  m_Offset: {x: -0.0010483414, y: -0.19620875}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.08}
+    oldSize: {x: 0.32, y: 0.48}
     newSize: {x: 0.08, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5896454, y: 0.5370863}
+  m_Size: {x: 0.3195906, y: 0.16520882}
   m_EdgeRadius: 0
---- !u!61 &8693643090159530345
+--- !u!61 &3609033196166746647
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -39,18 +39,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.20515081}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.08}
+    oldSize: {x: 0.32, y: 0.48}
     newSize: {x: 0.08, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.64, y: 0.08}
+  m_Size: {x: 0.32, y: 0.06969838}
   m_EdgeRadius: 0
 --- !u!114 &5953021730213355909
 MonoBehaviour:
@@ -122,7 +122,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1541618492771169723
 Transform:
   m_ObjectHideFlags: 0
@@ -171,8 +171,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -927612625
+  m_SortingLayer: 1
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300002, guid: 8c04a7990a95a724bb8c5b6537ff0967, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -336,7 +336,12 @@ PrefabInstance:
     - target: {fileID: 1562863409214875592, guid: beab6b31d6eebbd4093d01e5ce3e9e75,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1562863409214875592, guid: beab6b31d6eebbd4093d01e5ce3e9e75,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 1562863409214875606, guid: beab6b31d6eebbd4093d01e5ce3e9e75,
         type: 3}
@@ -357,8 +362,18 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 8c04a7990a95a724bb8c5b6537ff0967,
+      objectReference: {fileID: 21300036, guid: 8ee8ddaca3353f84295f96087ffed4d9,
         type: 3}
+    - target: {fileID: 1562863409214875593, guid: beab6b31d6eebbd4093d01e5ce3e9e75,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: -927612625
+      objectReference: {fileID: 0}
+    - target: {fileID: 1562863409214875593, guid: beab6b31d6eebbd4093d01e5ce3e9e75,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1562863409214875595, guid: beab6b31d6eebbd4093d01e5ce3e9e75,
         type: 3}
       propertyPath: door

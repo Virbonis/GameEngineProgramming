@@ -10,10 +10,12 @@ public class Inventory : MonoBehaviour
     public bool itemAdded;
     public static int counter = 0;
     public int x;
+    private FadeTutorial displayFullInventory;
 
     private void Start()
     {
         counter = 0;
+        displayFullInventory = GameObject.FindWithTag("Tutorial").GetComponent<FadeTutorial>();
     }
 
     void Update()
@@ -25,7 +27,6 @@ public class Inventory : MonoBehaviour
         else {
             itemAdded = true;
         }
-        Debug.Log(counter);
     }
 
     public void addItem(GameObject item)
@@ -39,6 +40,10 @@ public class Inventory : MonoBehaviour
                 itemAdded = true;
                 break;
             }
+        }
+
+        if (itemAdded == false) {
+            displayFullInventory.fullInventory();
         }
     }
 }

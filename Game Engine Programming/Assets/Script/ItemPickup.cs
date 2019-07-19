@@ -11,14 +11,12 @@ public class ItemPickup : MonoBehaviour
     public GameObject text;
     public GameObject map;
     SpriteRenderer rend;
-    FadeInClue clue;
     private FadeTutorial tutorial;
 
     private void Start()
     {
         full = GameObject.Find("Player").GetComponent<Inventory>();
         tutorial = GameObject.FindWithTag("Tutorial").GetComponent<FadeTutorial>();
-        clue = GameObject.FindWithTag("Clue GUI").GetComponent<FadeInClue>();
     }
 
     public void MedicPickup()
@@ -30,9 +28,6 @@ public class ItemPickup : MonoBehaviour
             Instantiate(itemButton, full.slots[full.x].transform, false);
             SoundManager.PlaySound("Medicine Pickup");
             tutorial.UseItem();
-        }
-        else {
-            Debug.Log("Inventory Full");
         }
     }
 

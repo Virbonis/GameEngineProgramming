@@ -8,17 +8,18 @@ public class UseMedicine : MonoBehaviour
     private Inventory inventory;
     public ItemPickup item;
     public int temp;
-
+    private FadeTutorial health;
     private void Start()
     {
         inventory = GameObject.Find("Player").GetComponent<Inventory>();
         slot = GameObject.FindWithTag("Slot").GetComponent<Slot>();
+        health = GameObject.FindWithTag("Tutorial").GetComponent<FadeTutorial>();
     }
 
     public void useMedicine() {
         if (Health.health > 2)
         {
-            Debug.Log("Your health is full");
+            health.fullHealthDisplay();
         }
         else {
             Used();

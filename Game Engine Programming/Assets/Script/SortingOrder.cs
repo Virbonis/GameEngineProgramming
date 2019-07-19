@@ -4,25 +4,11 @@ using UnityEngine;
 
 public class SortingOrder : MonoBehaviour
 {
-    private GameObject Killer;
-    SpriteRenderer Object;
-
-    void Start()
+    public void Update()
     {
-        Killer = GameObject.Find("Killer");
-        Object = GetComponent<SpriteRenderer>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Killer.transform.position.y > transform.position.y)
-        {
-            Object.sortingOrder = 500;
-        }
-        else
-        {
-            Object.sortingOrder = 498;
+        SpriteRenderer[] renderers = FindObjectsOfType<SpriteRenderer>();
+        foreach (SpriteRenderer renderer in renderers) {
+            renderer.sortingOrder = (int)(renderer.transform.position.y * -100);
         }
     }
 }

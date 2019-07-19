@@ -14,6 +14,10 @@ public class FadeTutorial : MonoBehaviour
     public Text lockedDoor;
     public Text BlockTheKiller;
     public Text GetAway;
+    public Text fullInven;
+    public Text fullHealth;
+    public Text DropItem;
+    public GameObject GainKnowledge;
     public static int counter = 0;
     public static int useItem = 0;
     public static int KillerTutorialCounter = 0;
@@ -22,13 +26,16 @@ public class FadeTutorial : MonoBehaviour
     {
         fadeTargetMovement.canvasRenderer.SetAlpha(0.0f);
         fadeTargetInteract.canvasRenderer.SetAlpha(0.0f);
+        fullInven.canvasRenderer.SetAlpha(0.0f);
         fadeuseItem.canvasRenderer.SetAlpha(0.0f);
         fadeinteractDoor.canvasRenderer.SetAlpha(0.0f);
         fadeinDropitem.canvasRenderer.SetAlpha(0.0f);
         lockedDoor.canvasRenderer.SetAlpha(0.0f);
         BlockTheKiller.canvasRenderer.SetAlpha(0.0f);
         GetAway.canvasRenderer.SetAlpha(0.0f);
+        fullHealth.canvasRenderer.SetAlpha(0.0f);
         BackButton.canvasRenderer.SetAlpha(0.0f);
+        DropItem.canvasRenderer.SetAlpha(0.0f);
         if (counter == 0)
         {
             FadeInMove();
@@ -42,6 +49,16 @@ public class FadeTutorial : MonoBehaviour
 
     public void KillerTutorialChase() {
         if (KillerTutorialCounter == 0) {
+            fadeTargetMovement.canvasRenderer.SetAlpha(0.0f);
+            fadeTargetInteract.canvasRenderer.SetAlpha(0.0f);
+            fullInven.canvasRenderer.SetAlpha(0.0f);
+            fadeuseItem.canvasRenderer.SetAlpha(0.0f);
+            fadeinteractDoor.canvasRenderer.SetAlpha(0.0f);
+            fadeinDropitem.canvasRenderer.SetAlpha(0.0f);
+            lockedDoor.canvasRenderer.SetAlpha(0.0f);
+            fullHealth.canvasRenderer.SetAlpha(0.0f);
+            BackButton.canvasRenderer.SetAlpha(0.0f);
+            DropItem.canvasRenderer.SetAlpha(0.0f);
             StartCoroutine(KillerTutorial());
             KillerTutorialCounter++;
         }
@@ -56,11 +73,35 @@ public class FadeTutorial : MonoBehaviour
     }
 
     public void LockedDoor() {
+        fadeTargetMovement.canvasRenderer.SetAlpha(0.0f);
+        fadeTargetInteract.canvasRenderer.SetAlpha(0.0f);
+        fullInven.canvasRenderer.SetAlpha(0.0f);
+        fadeuseItem.canvasRenderer.SetAlpha(0.0f);
+        fadeinteractDoor.canvasRenderer.SetAlpha(0.0f);
+        fadeinDropitem.canvasRenderer.SetAlpha(0.0f);
         lockedDoor.canvasRenderer.SetAlpha(0.0f);
-        fadeTargetMovement.CrossFadeAlpha(0f, 0.1f, false);
-        fadeTargetInteract.CrossFadeAlpha(0f, 0.1f, false);
-        fadeinteractDoor.CrossFadeAlpha(0f, 0.1f, false);
+        BlockTheKiller.canvasRenderer.SetAlpha(0.0f);
+        GetAway.canvasRenderer.SetAlpha(0.0f);
+        fullHealth.canvasRenderer.SetAlpha(0.0f);
+        BackButton.canvasRenderer.SetAlpha(0.0f);
+        DropItem.canvasRenderer.SetAlpha(0.0f);
         StartCoroutine(LockedDoorWait());
+    }
+
+    public void CantDrop() {
+        fadeTargetMovement.canvasRenderer.SetAlpha(0.0f);
+        fadeTargetInteract.canvasRenderer.SetAlpha(0.0f);
+        fullInven.canvasRenderer.SetAlpha(0.0f);
+        fadeuseItem.canvasRenderer.SetAlpha(0.0f);
+        fadeinteractDoor.canvasRenderer.SetAlpha(0.0f);
+        fadeinDropitem.canvasRenderer.SetAlpha(0.0f);
+        lockedDoor.canvasRenderer.SetAlpha(0.0f);
+        BlockTheKiller.canvasRenderer.SetAlpha(0.0f);
+        GetAway.canvasRenderer.SetAlpha(0.0f);
+        fullHealth.canvasRenderer.SetAlpha(0.0f);
+        BackButton.canvasRenderer.SetAlpha(0.0f);
+        DropItem.canvasRenderer.SetAlpha(0.0f);
+        StartCoroutine(DropItemDisplay());
     }
 
     public void FadeInBack()
@@ -73,16 +114,71 @@ public class FadeTutorial : MonoBehaviour
         BackButton.CrossFadeAlpha(0f, 0.15f, false);
     }
 
+    public void fullInventory() {
+        fadeTargetMovement.canvasRenderer.SetAlpha(0.0f);
+        fadeTargetInteract.canvasRenderer.SetAlpha(0.0f);
+        fullInven.canvasRenderer.SetAlpha(0.0f);
+        fadeuseItem.canvasRenderer.SetAlpha(0.0f);
+        fadeinteractDoor.canvasRenderer.SetAlpha(0.0f);
+        fadeinDropitem.canvasRenderer.SetAlpha(0.0f);
+        lockedDoor.canvasRenderer.SetAlpha(0.0f);
+        BlockTheKiller.canvasRenderer.SetAlpha(0.0f);
+        GetAway.canvasRenderer.SetAlpha(0.0f);
+        fullHealth.canvasRenderer.SetAlpha(0.0f);
+        BackButton.canvasRenderer.SetAlpha(0.0f);
+        DropItem.canvasRenderer.SetAlpha(0.0f);
+        StartCoroutine(fullInventoryText());
+    }
+
+    public void fullHealthDisplay() {
+        fadeTargetMovement.canvasRenderer.SetAlpha(0.0f);
+        fadeTargetInteract.canvasRenderer.SetAlpha(0.0f);
+        fullInven.canvasRenderer.SetAlpha(0.0f);
+        fadeuseItem.canvasRenderer.SetAlpha(0.0f);
+        fadeinteractDoor.canvasRenderer.SetAlpha(0.0f);
+        fadeinDropitem.canvasRenderer.SetAlpha(0.0f);
+        lockedDoor.canvasRenderer.SetAlpha(0.0f);
+        BlockTheKiller.canvasRenderer.SetAlpha(0.0f);
+        GetAway.canvasRenderer.SetAlpha(0.0f);
+        fullHealth.canvasRenderer.SetAlpha(0.0f);
+        BackButton.canvasRenderer.SetAlpha(0.0f);
+        DropItem.canvasRenderer.SetAlpha(0.0f);
+        StartCoroutine(fullHealthText());
+    }
+
+    IEnumerator DropItemDisplay() {
+        DropItem.CrossFadeAlpha(1f, 0.5f, false);
+        yield return new WaitForSeconds(4f);
+        DropItem.CrossFadeAlpha(0f, 1f, false);
+    }
+
+    IEnumerator fullInventoryText() {
+        fullInven.CrossFadeAlpha(1f, 0.5f, false);
+        yield return new WaitForSeconds(4f);
+        fullInven.CrossFadeAlpha(0f, 1f, false);
+    }
+
+    IEnumerator fullHealthText()
+    {
+        fullHealth.CrossFadeAlpha(1f, 0.5f, false);
+        yield return new WaitForSeconds(5f);
+        fullHealth.CrossFadeAlpha(0f, 1f, false);
+    }
+
     IEnumerator WaitBlackScreen()
     {
         yield return new WaitForSeconds(2f);
         fadeTargetMovement.CrossFadeAlpha(1f, 1f, false);
+        GainKnowledge.SetActive(false);
         yield return new WaitForSeconds(5f);
         fadeTargetMovement.CrossFadeAlpha(0f, 1f, false);
+        GainKnowledge.SetActive(true);
         yield return new WaitForSeconds(2f);
         fadeTargetInteract.CrossFadeAlpha(1f, 1f, false);
         fadeinteractDoor.CrossFadeAlpha(1f, 1f, false);
+        GainKnowledge.SetActive(false);
         yield return new WaitForSeconds(5f);
+        GainKnowledge.SetActive(true);
         fadeTargetInteract.CrossFadeAlpha(0f, 1f, false);
         fadeinteractDoor.CrossFadeAlpha(0f, 1f, false);
     }
@@ -107,6 +203,7 @@ public class FadeTutorial : MonoBehaviour
 
     IEnumerator KillerTutorial()
     {
+        lockedDoor.canvasRenderer.SetAlpha(0.0f);
         yield return new WaitForSeconds(2f);
         BlockTheKiller.CrossFadeAlpha(1f, 1f, false);
         yield return new WaitForSeconds(5f);

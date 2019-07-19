@@ -251,7 +251,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 392d2d8de6953924d9fe610e6d2361e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5633a573f95465e42afd377e440f117b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -275,18 +275,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.004659295, y: 0.12794466}
+  m_Offset: {x: -0.001443088, y: -0.14063612}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.07, y: 0.08}
+    oldSize: {x: 0.64, y: 0.48}
     newSize: {x: 0.64, y: 0.08}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0854247, y: 0.3536714}
+  m_Size: {x: 0.62871933, y: 0.18326126}
   m_EdgeRadius: 0
 --- !u!114 &1274560840
 MonoBehaviour:
@@ -333,18 +333,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.0032162666, y: -0.18654156}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.07, y: 0.08}
+    oldSize: {x: 0.64, y: 0.48}
     newSize: {x: 0.64, y: 0.08}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.07, y: 0.08}
+  m_Size: {x: 0.62615967, y: 0.092865646}
   m_EdgeRadius: 0
 --- !u!1 &1002929229109389204
 GameObject:
@@ -544,7 +544,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1270274815603593215
 Transform:
   m_ObjectHideFlags: 0
@@ -596,7 +596,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 392d2d8de6953924d9fe610e6d2361e7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5633a573f95465e42afd377e440f117b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -624,7 +624,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.07, y: 0.08}
+    oldSize: {x: 0.64, y: 0.48}
     newSize: {x: 0.64, y: 0.08}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -682,7 +682,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.07, y: 0.08}
+    oldSize: {x: 0.64, y: 0.48}
     newSize: {x: 0.64, y: 0.08}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class FadeInClue : MonoBehaviour
 {
     public Image UI;
+    public GameObject BackButton;
 
     void Start()
     {

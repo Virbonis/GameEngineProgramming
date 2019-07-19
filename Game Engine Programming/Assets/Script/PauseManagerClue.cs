@@ -20,6 +20,7 @@ public class PauseManagerClue : MonoBehaviour
     {
         if (pause.activeSelf)
         {
+            fade.BackButton.SetActive(true);
             StartCoroutine(wait());
         }
         if (timer > 0)
@@ -32,6 +33,7 @@ public class PauseManagerClue : MonoBehaviour
             Time.timeScale = 1;
             clue = false;
             gameObject.SetActive(false);
+            fade.BackButton.SetActive(false);
         }
     }
 

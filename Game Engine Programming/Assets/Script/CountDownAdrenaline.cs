@@ -28,6 +28,5 @@ public class CountDownAdrenaline : MonoBehaviour
             AdrenalineEffect = false;
             send = false;
         }
-        Debug.Log(AdrenalineEffect);
     }
 }

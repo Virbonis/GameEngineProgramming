@@ -39,7 +39,7 @@ public class Killer : Enemy
     public static bool resetWaypoint;
     private int tierUpTrigger = 0;
     private float speedTemp;
-    private float timerAnimKicking = 3.45f;
+    private float timerAnimKicking = 3f;
     private float timerAnimLaughing = 2.15f;
     private bool canAttack = true;
     private bool animTrigger;
@@ -1170,6 +1170,7 @@ public class Killer : Enemy
         killerAnim.SetBool("Kicking", true);
         kicking = true;
         animTrigger = true;
+        Debug.Log(timerAnimKicking);
         yield return new WaitForSeconds(timerAnimKicking);
         counter = 0;
         kicking = false;

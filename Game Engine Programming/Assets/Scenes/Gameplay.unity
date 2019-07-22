@@ -6085,7 +6085,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.09300232, y: -1.1591935}
+  m_Offset: {x: -0.0728035, y: -1.188051}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6096,7 +6096,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5893707, y: 0.24396801}
+  m_Size: {x: 0.5489731, y: 0.18625307}
   m_EdgeRadius: 0
 --- !u!1 &304192951
 GameObject:
@@ -13177,6 +13177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 690008075}
   - component: {fileID: 690008076}
+  - component: {fileID: 690008077}
   m_Layer: 0
   m_Name: Right Kicking Hit Box
   m_TagString: Untagged
@@ -13230,6 +13231,18 @@ PolygonCollider2D:
       - {x: 0.17686033, y: -0.8090172}
       - {x: 0.78602695, y: -0.82317686}
       - {x: 0.8236146, y: -0.22906637}
+--- !u!114 &690008077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690008074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee243fccba5b6c43b7ae9bea117fc34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &691709669 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1906615137, guid: cdacee704951926469af4d6f57252d1a,
@@ -14347,7 +14360,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 738709739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.17, y: 20.34, z: 0}
+  m_LocalPosition: {x: 20.13, y: 14.86, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 2074332556}
@@ -21574,6 +21587,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1190676760}
   - component: {fileID: 1190676761}
+  - component: {fileID: 1190676762}
   m_Layer: 0
   m_Name: Left Kicking Hit Box
   m_TagString: Untagged
@@ -21625,6 +21639,18 @@ PolygonCollider2D:
       - {x: -0.86054635, y: -0.85208464}
       - {x: -0.0008044243, y: -0.79466105}
       - {x: -0.19741082, y: -0.30828428}
+--- !u!114 &1190676762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190676759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee243fccba5b6c43b7ae9bea117fc34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1195643482
 GameObject:
   m_ObjectHideFlags: 0
@@ -26224,6 +26250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1441559221}
   - component: {fileID: 1441559222}
+  - component: {fileID: 1441559223}
   m_Layer: 0
   m_Name: Down Kicking Hit Box
   m_TagString: Untagged
@@ -26272,10 +26299,23 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -0.16338539, y: -0.48766756}
       - {x: -0.44370198, y: -0.4305172}
-      - {x: -0.44159865, y: -1.0841928}
-      - {x: -0.27765727, y: -1.1004276}
+      - {x: -0.41875458, y: -1.3525662}
+      - {x: -0.18628693, y: -1.3688011}
+      - {x: -0.18061829, y: -1.3649025}
       - {x: 0.020236015, y: -1.0669937}
       - {x: -0.0034585, y: -0.5079098}
+--- !u!114 &1441559223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441559220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee243fccba5b6c43b7ae9bea117fc34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1452330562
 GameObject:
   m_ObjectHideFlags: 0
@@ -30219,6 +30259,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1687853095}
   - component: {fileID: 1687853096}
+  - component: {fileID: 1687853097}
   m_Layer: 0
   m_Name: Up Kicking Hit Box
   m_TagString: Untagged
@@ -30272,6 +30313,18 @@ PolygonCollider2D:
       - {x: 0.12592077, y: -0.9210601}
       - {x: 0.45744514, y: -0.89883614}
       - {x: 0.41132975, y: -0.53033066}
+--- !u!114 &1687853097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687853094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dee243fccba5b6c43b7ae9bea117fc34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1693739833
 GameObject:
   m_ObjectHideFlags: 0

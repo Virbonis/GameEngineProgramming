@@ -54,6 +54,8 @@ TagManager:
   - Clue GUI
   - Save Room
   - TrapNote
+  - Syringe
+  - Countdown
   layers:
   - Default
   - TransparentFX

@@ -33,6 +33,17 @@ public class ItemPickup : MonoBehaviour
         }
     }
 
+    public void SyringePickup()
+    {
+        if (full.itemAdded == true)
+        {
+            gameObject.SetActive(false);
+            itemButton.SetActive(true);
+            Instantiate(itemButton, full.slots[full.x].transform, false);
+            SoundManager.PlaySound("Pickup Syringe");
+        }
+    }
+
     public void TrapPickUp() {
         gameObject.SetActive(false);
         doors.SetActive(false);

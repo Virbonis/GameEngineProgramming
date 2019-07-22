@@ -7,7 +7,7 @@ public class SoundManager : MonoBehaviour
 
     public static AudioClip EvilWithin2, EvilWithin3, playerBlood, death, pickupKey,
         openDoor, closeDoor, lockedDoor, unlockDoor, pickUpMedicine, Healing, notePickup, gainKnowledge, ponder,
-        police, dropItem;
+        police, dropItem, syringePickup, syringeUse;
     static AudioSource audioSource;
 
     void Start()
@@ -28,6 +28,8 @@ public class SoundManager : MonoBehaviour
         ponder = Resources.Load<AudioClip>("Ponder");
         police = Resources.Load<AudioClip>("Police Shoot");
         dropItem = Resources.Load<AudioClip>("Drop Item");
+        syringeUse = Resources.Load<AudioClip>("Syringe Injection");
+        syringePickup = Resources.Load<AudioClip>("Syringe Pickup");
         audioSource = GetComponent<AudioSource>();
     }
 
@@ -80,6 +82,12 @@ public class SoundManager : MonoBehaviour
                 break;
             case "Drop Item":
                 audioSource.PlayOneShot(dropItem);
+                break;
+            case "Use Syringe":
+                audioSource.PlayOneShot(syringeUse);
+                break;
+            case "Pickup Syringe":
+                audioSource.PlayOneShot(syringePickup);
                 break;
         }
     }

@@ -20,11 +20,13 @@ public class Player : MonoBehaviour
     public GameObject DeathSceneActivator;
     public GameObject DeathFontActivator;
     public GameObject Buttons;
+    CountDownAdrenaline Countdown;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
+        Countdown = GameObject.Find("Countdown").GetComponent<CountDownAdrenaline>();
     }
 
     void Update()
@@ -132,14 +134,14 @@ public class Player : MonoBehaviour
             speedBoost = false;
         }
 
-        if (Boost == true) {
+        if (Boost == true && Countdown.AdrenalineEffect == false) {
             if (timerBoost >= 0)
             {
                 timerBoost -= Time.deltaTime;
             }
             else
             {
-                speed = speed - 4f;
+                speed = 5f;
                 timerBoost = 3f;
                 Boost = false;
             }

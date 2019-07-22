@@ -10,6 +10,8 @@ public class ItemPickup : MonoBehaviour
     public GameObject note;
     public GameObject text;
     public GameObject map;
+    public GameObject doors;
+    public GameObject AoOni;
     SpriteRenderer rend;
     private FadeTutorial tutorial;
 
@@ -29,6 +31,13 @@ public class ItemPickup : MonoBehaviour
             SoundManager.PlaySound("Medicine Pickup");
             tutorial.UseItem();
         }
+    }
+
+    public void TrapPickUp() {
+        gameObject.SetActive(false);
+        doors.SetActive(false);
+        AoOni.SetActive(true);
+        note.SetActive(true);
     }
 
     public void NotePickup() {

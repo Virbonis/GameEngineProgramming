@@ -11,6 +11,7 @@ public class PlayerInteract : MonoBehaviour
     public GameObject DoorOpen = null;
     public GameObject DoorLock = null;
     public GameObject Clue = null;
+    public GameObject currentTrap = null;
     public InteractionObject currentInterScript = null;
     public Inventory inventory;
     public InteractionDoor key;
@@ -52,6 +53,11 @@ public class PlayerInteract : MonoBehaviour
             currentNote = null;
         }
 
+        if (Input.GetButtonDown("Interact") && currentTrap) {
+            currentTrap.SendMessage("TrapPickUp");
+            currentTrap = null;
+        }
+
         if (Input.GetButtonDown("Interact") && pressed_Open == true)
         {
             DoorClose.SendMessage("DoorInteractionOpen");
@@ -79,6 +85,10 @@ public class PlayerInteract : MonoBehaviour
             currentInterScript = currentInterObj.GetComponent<InteractionObject>();
         }
 
+        if (other.CompareTag("TrapNote")) {
+            currentTrap = other.gameObject;
+        }
+
         if (other.CompareTag("Item"))
         {
             currentItem = other.gameObject;
@@ -88,7 +98,6 @@ public class PlayerInteract : MonoBehaviour
         {
             currentNote = other.gameObject;
         }
-
 
         if (other.CompareTag("Clue"))
         {
@@ -119,6 +128,14 @@ public class PlayerInteract : MonoBehaviour
             if (other.gameObject == currentInterObj)
             {
                 currentInterObj = null;
+            }
+        }
+
+        if (other.CompareTag("TrapNote"))
+        {
+            if (other.gameObject == currentTrap)
+            {
+                currentTrap = null;
             }
         }
 

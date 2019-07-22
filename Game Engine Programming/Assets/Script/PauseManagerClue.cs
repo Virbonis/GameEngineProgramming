@@ -5,7 +5,6 @@ using UnityEngine;
 public class PauseManagerClue : MonoBehaviour
 {
     GameObject pause;
-    public GameObject Player;
     public bool clue;
     private float timer = 0.15f;
     FadeInClue fade;
@@ -29,7 +28,6 @@ public class PauseManagerClue : MonoBehaviour
         }
         if (Input.GetButtonDown("Interact") && clue == true && timer < 0)
         {
-            Player.SetActive(true);
             Time.timeScale = 1;
             clue = false;
             gameObject.SetActive(false);
@@ -41,7 +39,6 @@ public class PauseManagerClue : MonoBehaviour
     {
         yield return new WaitForSeconds(0.15f);
         Time.timeScale = 0;
-        Player.SetActive(false);
         clue = true;
     }
 }

@@ -13208,7 +13208,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -38577,6 +38577,16 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.39794993
       objectReference: {fileID: 0}
+    - target: {fileID: 1541618492849269096, guid: 7ba4225e47e5de146b77c3a08ad50490,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.008575916
+      objectReference: {fileID: 0}
+    - target: {fileID: 1541618492849269096, guid: 7ba4225e47e5de146b77c3a08ad50490,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.4017191
+      objectReference: {fileID: 0}
     - target: {fileID: 59824582952413840, guid: 7ba4225e47e5de146b77c3a08ad50490,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -38596,16 +38606,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingLayer
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1541618492849269096, guid: 7ba4225e47e5de146b77c3a08ad50490,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 0.008575916
-      objectReference: {fileID: 0}
-    - target: {fileID: 1541618492849269096, guid: 7ba4225e47e5de146b77c3a08ad50490,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 0.4017191
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1541618492849269095, guid: 7ba4225e47e5de146b77c3a08ad50490, type: 3}

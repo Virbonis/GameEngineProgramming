@@ -7,6 +7,8 @@ public class PauseManagerClue : MonoBehaviour
     GameObject pause;
     public bool clue;
     private float timer = 0.15f;
+    private float timerPause = 0.15f;
+    public static bool PauseClue = false;
     FadeInClue fade;
 
     private void Start()
@@ -20,6 +22,7 @@ public class PauseManagerClue : MonoBehaviour
         if (pause.activeSelf)
         {
             fade.BackButton.SetActive(true);
+            PauseClue = true;
             StartCoroutine(wait());
         }
         if (timer > 0)
@@ -29,6 +32,7 @@ public class PauseManagerClue : MonoBehaviour
         if (Input.GetButtonDown("Interact") && clue == true && timer < 0)
         {
             Time.timeScale = 1;
+            PauseClue = false;
             clue = false;
             gameObject.SetActive(false);
             fade.BackButton.SetActive(false);

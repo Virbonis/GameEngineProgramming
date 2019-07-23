@@ -20,6 +20,7 @@ public class Player : MonoBehaviour
     public GameObject DeathSceneActivator;
     public GameObject DeathFontActivator;
     public GameObject Buttons;
+    public GameObject BloodSplash;
     CountDownAdrenaline Countdown;
 
     void Start()
@@ -50,6 +51,7 @@ public class Player : MonoBehaviour
             DeathFontActivator.SetActive(true);
             Buttons.SetActive(true);
             DeathScene = true;
+            BloodSplash.SetActive(true);
         }
     }
 

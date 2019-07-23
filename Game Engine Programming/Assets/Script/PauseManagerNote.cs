@@ -8,6 +8,8 @@ public class PauseManagerNote : MonoBehaviour
     public GameObject Player;
     public bool Note;
     private float timer = 0.15f;
+    private float timerPause = 0.15f;
+    public static bool pauseNote = false;
     FadeIn fade;
 
     private void Start()
@@ -16,6 +18,7 @@ public class PauseManagerNote : MonoBehaviour
         fade = gameObject.GetComponent<FadeIn>();
         if (pause.activeSelf)
         {
+            pauseNote = true;
             StartCoroutine(wait());
         }
     }
@@ -30,7 +33,23 @@ public class PauseManagerNote : MonoBehaviour
             Player.SetActive(true);
             Time.timeScale = 1;
             Note = false;
+            pauseNote = false;
             gameObject.SendMessage("FadeOut");
+        }
+
+        if (pauseNote)
+        {
+            if (timerPause > 0)
+            {
+                timerPause -= Time.deltaTime;
+            }
+            else
+            {
+                Time.timeScale = 0;
+            }
+        }
+        else {
+            Time.timeScale = 1;
         }
     }
 

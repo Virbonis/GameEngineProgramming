@@ -1,26 +1,27 @@
 fileFormatVersion: 2
-guid: 04b81b8e40168d5438b1d59a5618ccfa
+guid: 075c73f85222e7f499887dfe7d8c919c
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Blood Explode_0
-    21300002: Blood Explode_5
-    21300004: Blood Explode_10
-    21300006: Blood Explode_13
-    21300008: Blood Explode_14
-    21300010: Blood Explode_17
-    21300012: Blood Explode_19
-    21300014: Blood Explode_20
-    21300016: Blood Explode_23
-    21300018: Blood Explode_33
-    21300020: Blood Explode_34
-    21300022: Blood Explode_35
-    21300024: Blood Explode_37
-    21300026: Blood Explode_38
-    21300028: Blood Explode_40
-    21300030: Blood Explode_41
-    21300032: Blood Explode_42
-    21300034: Blood Explode_43
-    21300036: Blood Explode_1
+    21300000: Blood Explode 1_7
+    21300002: Blood Explode 1_8
+    21300004: Blood Explode 1_10
+    21300006: Blood Explode 1_12
+    21300008: Blood Explode 1_15
+    21300010: Blood Explode 1_20
+    21300012: Blood Explode 1_21
+    21300014: Blood Explode 1_22
+    21300016: Blood Explode 1_23
+    21300018: Blood Explode 1_24
+    21300020: Blood Explode 1_25
+    21300022: Blood Explode 1_26
+    21300024: Blood Explode 1_27
+    21300026: Blood Explode 1_28
+    21300028: Blood Explode 1_29
+    21300030: Blood Explode 1_30
+    21300032: Blood Explode 1_31
+    21300034: Blood Explode 1_32
+    21300036: Blood Explode 1_33
+    21300038: Blood Explode 1_34
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -103,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Blood Explode_0
+      name: Blood Explode 1_7
       rect:
         serializedVersion: 2
-        x: 473
-        y: 512
-        width: 8
-        height: 5
+        x: 35
+        y: 376
+        width: 82
+        height: 78
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,19 +118,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6571455abce7cfd4ebc6e5d88457ec81
+      spriteID: 51f7f405ad7334b46854db77ae2ca0be
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blood Explode_5
+      name: Blood Explode 1_8
       rect:
         serializedVersion: 2
-        x: 394
-        y: 410
-        width: 139
-        height: 114
+        x: 128
+        y: 372
+        width: 111
+        height: 87
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,19 +138,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b02d6f350151b7d45a999e24d6af130d
+      spriteID: 65545da600729b84ba0b8bf87729f328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blood Explode_10
+      name: Blood Explode 1_10
       rect:
         serializedVersion: 2
         x: 256
-        y: 398
-        width: 114
-        height: 81
+        y: 372
+        width: 121
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -157,19 +158,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a0f695e1439c9748abe5096b1c9aa9b
+      spriteID: ce85bc7961e02c54c999217d89485e36
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blood Explode_13
+      name: Blood Explode 1_12
       rect:
         serializedVersion: 2
-        x: 38
-        y: 397
-        width: 75
-        height: 44
+        x: 384
+        y: 372
+        width: 151
+        height: 162
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,19 +178,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 06bd610207f3ca94eac6341e718eb7ba
+      spriteID: 5456f570b4a0acd458239fc4a3b72ce2
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blood Explode_14
+      name: Blood Explode 1_15
       rect:
         serializedVersion: 2
-        x: 143
-        y: 394
-        width: 80
-        height: 36
+        x: 23
+        y: 272
+        width: 120
+        height: 99
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -197,19 +198,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c47584d7ca4a9074b969416296122741
+      spriteID: 59d0fb40df8b3eb4d95327e4c410fe69
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blood Explode_17
+      name: Blood Explode 1_20
       rect:
         serializedVersion: 2
-        x: 22
-        y: 275
-        width: 119
-        height: 81
+        x: 448
+        y: 180
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -217,19 +218,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5a0ebd568835c644aaa854e7941e0fe
+      spriteID: 38e0f32a6abccc240a8fcf182bcdab7e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blood Explode_19
+      name: Blood Explode 1_21
       rect:
         serializedVersion: 2
-        x: 121
-        y: 324
-        width: 5
-        height: 7
+        x: 64
+        y: 116
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,19 +238,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a463e290668863f4daf64f1ea3dafbc0
+      spriteID: d6f2bb9af70f38c4991d909fd7e15d0f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blood Explode_20
+      name: Blood Explode 1_22
       rect:
         serializedVersion: 2
-        x: 27
-        y: 290
-        width: 4
-        height: 5
+        x: 128
+        y: 116
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,19 +258,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9170af845bb512a4a941c940ec7817ff
+      spriteID: 84156eebf19396f429928997605d2609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blood Explode_23
+      name: Blood Explode 1_23
       rect:
         serializedVersion: 2
-        x: 363
-        y: 160
-        width: 10
-        height: 4
+        x: 192
+        y: 116
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,19 +278,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8d35922bd360a5448b065e29d873417
+      spriteID: 86e04858ef841934b89ef108c1040327
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blood Explode_33
+      name: Blood Explode 1_24
       rect:
         serializedVersion: 2
-        x: 338
-        y: 30
-        width: 62
-        height: 49
+        x: 256
+        y: 116
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,19 +298,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5852ac09416549a4a915e4199bddc9a1
+      spriteID: 22b4a9cd7e44ea648bdea67614ce53df
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blood Explode_34
+      name: Blood Explode 1_25
       rect:
         serializedVersion: 2
-        x: 390
-        y: 74
-        width: 14
-        height: 6
+        x: 320
+        y: 116
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -317,19 +318,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7223c700d8e44a6438f2105cefe37733
+      spriteID: af913e3d0aea1234eb477230aff89422
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blood Explode_35
+      name: Blood Explode 1_26
       rect:
         serializedVersion: 2
-        x: 405
-        y: 76
-        width: 8
-        height: 4
+        x: 384
+        y: 116
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -337,19 +338,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ab29aba81f5ec848be819b329522053
+      spriteID: 5f05508226e0326478e227c5d77f0d6a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blood Explode_37
+      name: Blood Explode 1_27
       rect:
         serializedVersion: 2
-        x: 401
-        y: 69
-        width: 29
-        height: 7
+        x: 448
+        y: 116
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -357,119 +358,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ac9764e1ee2ccf42a0d5d9e8ece3649
+      spriteID: bc95a60acd3a20144ba748b3de085f20
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Blood Explode_38
-      rect:
-        serializedVersion: 2
-        x: 403
-        y: 61
-        width: 12
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afeba08e77c602640bcef408f495c4a2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blood Explode_40
-      rect:
-        serializedVersion: 2
-        x: 395
-        y: 52
-        width: 6
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: abfcd43ea7a14134c8dd35c080dd6850
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blood Explode_41
-      rect:
-        serializedVersion: 2
-        x: 312
-        y: 4
-        width: 6
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1513ce1b51231a4dba84149d6d8d41c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blood Explode_42
-      rect:
-        serializedVersion: 2
-        x: 321
-        y: 4
-        width: 6
-        height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e62cda8ebf55b74582c3a39ea118870
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blood Explode_43
-      rect:
-        serializedVersion: 2
-        x: 328
-        y: 4
-        width: 6
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f2d480b6be602a04380fe2093f925b87
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Blood Explode_1
+      name: Blood Explode 1_28
       rect:
         serializedVersion: 2
         x: 0
-        y: 8
-        width: 535
-        height: 224
+        y: 52
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -477,7 +378,127 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6d3a6f892ada7eb4fbf75c4e8cf8b120
+      spriteID: 0ea9eed4fa9b2f944b527f0db1864c2f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blood Explode 1_29
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 52
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37145bf6362a7334a95fb087a5ac2f36
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blood Explode 1_30
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 52
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df6867d894bd3a14fbf631ccf602297a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blood Explode 1_31
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 52
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eba333574a61d364ca925bc6b200fe78
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blood Explode 1_32
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 52
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41954efc2a22a294ebb406e453644b09
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blood Explode 1_33
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 52
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1074f60d2f2a4248b1ba5a9a543190d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blood Explode 1_34
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 52
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2fe0542a20366b47a60d527188b4cde
       vertices: []
       indices: 
       edges: []
@@ -485,7 +506,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 589808ff97af81344bfd0b274dfd15fa
+    spriteID: 4affb7a95f9faed4db87c5da111717bf
     vertices: []
     indices: 
     edges: []

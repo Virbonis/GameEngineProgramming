@@ -15,10 +15,10 @@ public class FadeInClue : MonoBehaviour
     }
 
     public void FadeIn() {
-        UI.CrossFadeAlpha(1f, 0.2f, false);
+        UI.CrossFadeAlpha(1f, 0.15f, false);
     }
 
     public void FadeOutClue() {
-        UI.CrossFadeAlpha(0f, 0.2f, false);
+        UI.CrossFadeAlpha(0f, 0.15f, false);
     }
 }

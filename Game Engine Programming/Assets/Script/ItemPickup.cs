@@ -12,6 +12,7 @@ public class ItemPickup : MonoBehaviour
     public GameObject map;
     public GameObject doors;
     public GameObject AoOni;
+    public GameObject Pause;
     SpriteRenderer rend;
     private FadeTutorial tutorial;
 
@@ -49,6 +50,7 @@ public class ItemPickup : MonoBehaviour
         doors.SetActive(false);
         AoOni.SetActive(true);
         note.SetActive(true);
+        Pause.SetActive(false);
     }
 
     public void NotePickup() {

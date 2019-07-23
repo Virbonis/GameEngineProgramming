@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 741600721}
   - component: {fileID: 741600725}
   - component: {fileID: 741600726}
+  - component: {fileID: 741600727}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Scene Manager
@@ -292,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e103e91b13dc1a2428a4619af02ac0e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  setActive: []
 --- !u!114 &741600726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,6 +307,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 1191601352}
+--- !u!114 &741600727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741600720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2374b88c9cab274ca6ec6243a12c3a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 0}
+  resolutionDropdown: {fileID: 0}
 --- !u!1 &1096404080
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +363,8 @@ AudioSource:
   m_GameObject: {fileID: 1096404080}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 13f57f9579f0ba04d93e9e30ea6330d5,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

@@ -14465,6 +14465,7 @@ MonoBehaviour:
   DeathFontActivator: {fileID: 137864992}
   Buttons: {fileID: 579155259}
   BloodSplash: {fileID: 2133680239}
+  Pause: {fileID: 807874755}
 --- !u!61 &738709741
 BoxCollider2D:
   m_ObjectHideFlags: 0

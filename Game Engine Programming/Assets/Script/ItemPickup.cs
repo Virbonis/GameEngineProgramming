@@ -42,6 +42,7 @@ public class ItemPickup : MonoBehaviour
             itemButton.SetActive(true);
             Instantiate(itemButton, full.slots[full.x].transform, false);
             SoundManager.PlaySound("Pickup Syringe");
+            tutorial.useSyringe();
         }
     }
 

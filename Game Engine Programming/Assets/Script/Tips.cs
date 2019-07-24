@@ -11,6 +11,7 @@ public class Tips : MonoBehaviour
     public Text tips2;
     public Text tips3;
     public Text tips4;
+    public Text tips5;
     
     void Start()
     {
@@ -18,11 +19,12 @@ public class Tips : MonoBehaviour
         tips2.canvasRenderer.SetAlpha(0.0f);
         tips3.canvasRenderer.SetAlpha(0.0f);
         tips4.canvasRenderer.SetAlpha(0.0f);
+        tips5.canvasRenderer.SetAlpha(0.0f);
         TipsDisplay();
     }
 
     void TipsDisplay() {
-        int random = Random.Range(1, 5);
+        int random = Random.Range(1, 6);
         if (random == 1)
         {
             StartCoroutine(Wait_1());
@@ -38,14 +40,18 @@ public class Tips : MonoBehaviour
         else if (random == 4) {
             StartCoroutine(Wait_4());
         }
+        else if (random == 5)
+        {
+            StartCoroutine(Wait_4());
+        }
     }
 
     IEnumerator Wait_1() {
         yield return new WaitForSeconds(3f);
         tips1.CrossFadeAlpha(1f, 1f, false);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(8f);
         tips1.CrossFadeAlpha(0f, 1f, false);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         Loading.CrossFadeAlpha(0f, 1f, false);
         yield return new WaitForSeconds(1f);
         StartCoroutine(Wait());
@@ -55,9 +61,9 @@ public class Tips : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         tips2.CrossFadeAlpha(1f, 1f, false);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(6f);
         tips2.CrossFadeAlpha(0f, 1f, false);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         Loading.CrossFadeAlpha(0f, 1f, false);
         yield return new WaitForSeconds(1f);
         StartCoroutine(Wait());
@@ -67,9 +73,9 @@ public class Tips : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         tips3.CrossFadeAlpha(1f, 1f, false);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(6f);
         tips3.CrossFadeAlpha(0f, 1f, false);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         Loading.CrossFadeAlpha(0f, 1f, false);
         yield return new WaitForSeconds(1f);
         StartCoroutine(Wait());
@@ -79,9 +85,21 @@ public class Tips : MonoBehaviour
     {
         yield return new WaitForSeconds(3f);
         tips4.CrossFadeAlpha(1f, 1f, false);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(6f);
         tips4.CrossFadeAlpha(0f, 1f, false);
+        yield return new WaitForSeconds(2f);
+        Loading.CrossFadeAlpha(0f, 1f, false);
         yield return new WaitForSeconds(1f);
+        StartCoroutine(Wait());
+    }
+
+    IEnumerator Wait_5()
+    {
+        yield return new WaitForSeconds(3f);
+        tips5.CrossFadeAlpha(1f, 1f, false);
+        yield return new WaitForSeconds(6f);
+        tips5.CrossFadeAlpha(0f, 1f, false);
+        yield return new WaitForSeconds(2f);
         Loading.CrossFadeAlpha(0f, 1f, false);
         yield return new WaitForSeconds(1f);
         StartCoroutine(Wait());

@@ -36,6 +36,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         isPaused = false;
+        SoundManager.PlaySound("Resume");
     }
 
     public void Pause()
@@ -43,6 +44,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         isPaused = true;
+        SoundManager.PlaySound("Pause");
     }
 
     public void DeactivateObject() {
@@ -59,6 +61,7 @@ public class PauseMenu : MonoBehaviour
     public void MenuScreen() {
         Time.timeScale = 1;
         sceneManager.MenuScreen();
+        isPaused = false;
     }
 
     public void Menu() {
@@ -74,6 +77,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Yes() {
         SceneManager.LoadScene("Loading Tips");
+        isPaused = false;
         Time.timeScale = 1;
     }
 

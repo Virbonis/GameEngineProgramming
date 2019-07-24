@@ -71,6 +71,19 @@ public class FadeTutorial : MonoBehaviour
     public void useSyringe() {
         if (syringe == 0)
         {
+            fadeTargetMovement.canvasRenderer.SetAlpha(0.0f);
+            fadeTargetInteract.canvasRenderer.SetAlpha(0.0f);
+            fullInven.canvasRenderer.SetAlpha(0.0f);
+            fadeuseItem.canvasRenderer.SetAlpha(0.0f);
+            fadeinteractDoor.canvasRenderer.SetAlpha(0.0f);
+            fadeinDropitem.canvasRenderer.SetAlpha(0.0f);
+            lockedDoor.canvasRenderer.SetAlpha(0.0f);
+            BlockTheKiller.canvasRenderer.SetAlpha(0.0f);
+            GetAway.canvasRenderer.SetAlpha(0.0f);
+            fullHealth.canvasRenderer.SetAlpha(0.0f);
+            BackButton.canvasRenderer.SetAlpha(0.0f);
+            DropItem.canvasRenderer.SetAlpha(0.0f);
+            Syringe.canvasRenderer.SetAlpha(0.0f);
             StartCoroutine(useSyringeWait());
             syringe++;
         }

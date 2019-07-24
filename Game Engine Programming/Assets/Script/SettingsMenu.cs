@@ -17,6 +17,10 @@ public class SettingsMenu : MonoBehaviour
     public Image Back;
     public GameObject[] interactableSett;
     public Slider slider;
+    public GameObject[] inGameText;
+    public GameObject[] system;
+    public static float currVolume = 0f;
+    private static bool change;
 
     private void Start()
     {
@@ -37,9 +41,9 @@ public class SettingsMenu : MonoBehaviour
 
         resolutionDropdown.ClearOptions();
 
-        List<string> options = new List<string>();
-
         int currentResolutionIndex = 0;
+
+        List<string> options = new List<string>();
 
         for (int x = 0; x < resolutions.Length; x++) {
             string option = resolutions[x].width + " x " + resolutions[x].height + " " + resolutions[x].refreshRate + " Hz";
@@ -51,9 +55,13 @@ public class SettingsMenu : MonoBehaviour
                 currentResolutionIndex = x;
             }
         }
-
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
+    }
+
+    private void Update()
+    {
+        slider.value = currVolume;
     }
 
     public void SetResolution(int resolutionIndex) {
@@ -62,7 +70,8 @@ public class SettingsMenu : MonoBehaviour
     }
 
     public void SetVolume(float volume) {
-        audioMixer.SetFloat("volume", volume);
+        currVolume = volume;
+        audioMixer.SetFloat("volume", currVolume);
     }
 
     public void Settings()

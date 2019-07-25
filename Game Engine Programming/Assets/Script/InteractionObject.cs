@@ -21,7 +21,6 @@ public class InteractionObject : MonoBehaviour
         full = GameObject.Find("Player").GetComponent<Inventory>();
         teleport = GameObject.FindWithTag("Teleport").GetComponent<Teleport>();
         player = GameObject.Find("Player");
-        firstkey = 0;
     }
 
     public void DoInteraction()

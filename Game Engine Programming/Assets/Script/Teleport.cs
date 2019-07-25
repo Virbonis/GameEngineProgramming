@@ -7,6 +7,7 @@ public class Teleport : MonoBehaviour
     public GameObject target;
     public GameObject targetOutside;
     private Transform killer;
+    public GameObject Killer;
 
     private void Start()
     {
@@ -17,6 +18,9 @@ public class Teleport : MonoBehaviour
         if (InteractionObject.firstkey == 1)
         {
             killer.transform.position = target.transform.position;
+        }
+        else if (InteractionObject.firstkey == 11) {
+            Killer.SetActive(false);
         }
     }
 

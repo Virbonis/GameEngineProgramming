@@ -14,15 +14,11 @@ public class FinalChase : MonoBehaviour
         radius = GameObject.Find("Killer").GetComponent<Killer>();
     }
 
-    void Update()
-    {
-
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
+            killer.SetActive(true);
             killer.transform.position = target.transform.position;
             gameObject.SetActive(false);
             radius.chaseRadius = 24f;

@@ -237,7 +237,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Use First Aid for emergencies only
+  m_Text: Use First Aid and Syringe for emergencies only
 --- !u!222 &216711987
 CanvasRenderer:
   m_ObjectHideFlags: 0

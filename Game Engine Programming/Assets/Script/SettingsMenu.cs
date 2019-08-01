@@ -19,7 +19,7 @@ public class SettingsMenu : MonoBehaviour
     public Slider slider;
     public GameObject[] inGameText;
     public GameObject[] system;
-    public static float currVolume = 0f;
+    public static float currVolume = 1f;
     private static bool change;
 
     private void Start()
@@ -71,7 +71,7 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetVolume(float volume) {
         currVolume = volume;
-        audioMixer.SetFloat("volume", currVolume);
+        audioMixer.SetFloat("volume", Mathf.Log10(currVolume) * 20);
     }
 
     public void Settings()

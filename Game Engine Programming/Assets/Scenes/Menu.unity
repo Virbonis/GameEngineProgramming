@@ -1310,6 +1310,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: Settings
       objectReference: {fileID: 0}
+    - target: {fileID: 6644117998491099151, guid: 6d4def0c43e81fe4d84b1488715f7169,
+        type: 3}
+      propertyPath: sprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 1736216668}
+    - target: {fileID: 6644117998491099151, guid: 6d4def0c43e81fe4d84b1488715f7169,
+        type: 3}
+      propertyPath: sprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 1766400505}
+    - target: {fileID: 6644117998491099151, guid: 6d4def0c43e81fe4d84b1488715f7169,
+        type: 3}
+      propertyPath: buttons.Array.data[0]
+      value: 
+      objectReference: {fileID: 1736216667}
+    - target: {fileID: 6644117998491099151, guid: 6d4def0c43e81fe4d84b1488715f7169,
+        type: 3}
+      propertyPath: buttons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1766400504}
+    - target: {fileID: 6644117998491099151, guid: 6d4def0c43e81fe4d84b1488715f7169,
+        type: 3}
+      propertyPath: audioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: 13f57f9579f0ba04d93e9e30ea6330d5,
+        type: 2}
     - target: {fileID: 6644117998491099150, guid: 6d4def0c43e81fe4d84b1488715f7169,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1420,32 +1446,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 608384229}
-    - target: {fileID: 6644117998491099151, guid: 6d4def0c43e81fe4d84b1488715f7169,
-        type: 3}
-      propertyPath: sprite.Array.data[0]
-      value: 
-      objectReference: {fileID: 1736216668}
-    - target: {fileID: 6644117998491099151, guid: 6d4def0c43e81fe4d84b1488715f7169,
-        type: 3}
-      propertyPath: sprite.Array.data[1]
-      value: 
-      objectReference: {fileID: 1766400505}
-    - target: {fileID: 6644117998491099151, guid: 6d4def0c43e81fe4d84b1488715f7169,
-        type: 3}
-      propertyPath: buttons.Array.data[0]
-      value: 
-      objectReference: {fileID: 1736216667}
-    - target: {fileID: 6644117998491099151, guid: 6d4def0c43e81fe4d84b1488715f7169,
-        type: 3}
-      propertyPath: buttons.Array.data[1]
-      value: 
-      objectReference: {fileID: 1766400504}
-    - target: {fileID: 6644117998491099151, guid: 6d4def0c43e81fe4d84b1488715f7169,
-        type: 3}
-      propertyPath: audioMixer
-      value: 
-      objectReference: {fileID: 24100000, guid: 13f57f9579f0ba04d93e9e30ea6330d5,
-        type: 2}
     - target: {fileID: 6644117998781549315, guid: 6d4def0c43e81fe4d84b1488715f7169,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -1480,6 +1480,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644117998781549312, guid: 6d4def0c43e81fe4d84b1488715f7169,
+        type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644117998781549312, guid: 6d4def0c43e81fe4d84b1488715f7169,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6644117998781549312, guid: 6d4def0c43e81fe4d84b1488715f7169,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6644117998491099148, guid: 6d4def0c43e81fe4d84b1488715f7169, type: 3}

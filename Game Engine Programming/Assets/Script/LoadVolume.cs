@@ -17,6 +17,6 @@ public class LoadVolume : MonoBehaviour
     public void SetVolume(float volume)
     {
         SettingsMenu.currVolume = volume;
-        audioMixer.SetFloat("volume", SettingsMenu.currVolume);
+        audioMixer.SetFloat("volume", Mathf.Log10(SettingsMenu.currVolume) * 20);
     }
 }

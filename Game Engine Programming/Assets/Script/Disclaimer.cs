@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class Disclaimer : MonoBehaviour
 {
-    public Text UI;
+    public Text UIDisclaimer;
+    public Text UIHeadphone;
     private SceneManagement changeScene;
 
     void Start()
     {
-        UI.canvasRenderer.SetAlpha(0.0f);
+        UIHeadphone.canvasRenderer.SetAlpha(0.0f);
+        UIDisclaimer.canvasRenderer.SetAlpha(0.0f);
         changeScene = GameObject.FindWithTag("Scene Manager").GetComponent<SceneManagement>();
         DisplayText();
     }
@@ -22,9 +24,13 @@ public class Disclaimer : MonoBehaviour
 
     IEnumerator Wait() {
         yield return new WaitForSeconds(6f);
-        UI.CrossFadeAlpha(1f, 1f, false);
+        UIHeadphone.CrossFadeAlpha(1f, 1f, false);
         yield return new WaitForSeconds(5f);
-        UI.CrossFadeAlpha(0f, 1f, false);
+        UIHeadphone.CrossFadeAlpha(0f, 1f, false);
+        yield return new WaitForSeconds(2f);
+        UIDisclaimer.CrossFadeAlpha(1f, 1f, false);
+        yield return new WaitForSeconds(5f);
+        UIDisclaimer.CrossFadeAlpha(0f, 1f, false);
         yield return new WaitForSeconds(3f);
         changeScene.MenuScreen();
     }

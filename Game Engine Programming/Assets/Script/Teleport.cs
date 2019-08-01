@@ -8,6 +8,7 @@ public class Teleport : MonoBehaviour
     public GameObject targetOutside;
     private Transform killer;
     public GameObject Killer;
+    public GameObject Photo;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class Teleport : MonoBehaviour
         }
         else if (InteractionObject.firstkey == 11) {
             Killer.SetActive(false);
+            Photo.SetActive(false);
         }
     }
 

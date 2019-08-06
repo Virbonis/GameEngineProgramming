@@ -49,60 +49,75 @@ public class Tips : MonoBehaviour
     IEnumerator Wait_1() {
         yield return new WaitForSeconds(3f);
         tips1.CrossFadeAlpha(1f, 1f, false);
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(2f);
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Gameplay");
+        operation.allowSceneActivation = false;
+        yield return new WaitForSeconds(6f);
         tips1.CrossFadeAlpha(0f, 1f, false);
         yield return new WaitForSeconds(2f);
         Loading.CrossFadeAlpha(0f, 1f, false);
-        yield return new WaitForSeconds(1f);
-        StartCoroutine(Wait());
+        yield return new WaitForSeconds(2f);
+        operation.allowSceneActivation = true;
     }
 
     IEnumerator Wait_2()
     {
         yield return new WaitForSeconds(3f);
         tips2.CrossFadeAlpha(1f, 1f, false);
+        yield return new WaitForSeconds(2f);
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Gameplay");
+        operation.allowSceneActivation = false;
         yield return new WaitForSeconds(6f);
         tips2.CrossFadeAlpha(0f, 1f, false);
         yield return new WaitForSeconds(2f);
         Loading.CrossFadeAlpha(0f, 1f, false);
-        yield return new WaitForSeconds(1f);
-        StartCoroutine(Wait());
+        yield return new WaitForSeconds(2f);
+        operation.allowSceneActivation = true;
     }
 
     IEnumerator Wait_3()
     {
         yield return new WaitForSeconds(3f);
         tips3.CrossFadeAlpha(1f, 1f, false);
+        yield return new WaitForSeconds(2f);
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Gameplay");
+        operation.allowSceneActivation = false;
         yield return new WaitForSeconds(6f);
         tips3.CrossFadeAlpha(0f, 1f, false);
         yield return new WaitForSeconds(2f);
         Loading.CrossFadeAlpha(0f, 1f, false);
-        yield return new WaitForSeconds(1f);
-        StartCoroutine(Wait());
+        yield return new WaitForSeconds(2f);
+        operation.allowSceneActivation = true;
     }
 
     IEnumerator Wait_4()
     {
         yield return new WaitForSeconds(3f);
         tips4.CrossFadeAlpha(1f, 1f, false);
+        yield return new WaitForSeconds(2f);
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Gameplay");
+        operation.allowSceneActivation = false;
         yield return new WaitForSeconds(6f);
         tips4.CrossFadeAlpha(0f, 1f, false);
         yield return new WaitForSeconds(2f);
         Loading.CrossFadeAlpha(0f, 1f, false);
-        yield return new WaitForSeconds(1f);
-        StartCoroutine(Wait());
+        yield return new WaitForSeconds(2f);
+        operation.allowSceneActivation = true;
     }
 
     IEnumerator Wait_5()
     {
         yield return new WaitForSeconds(3f);
         tips5.CrossFadeAlpha(1f, 1f, false);
+        yield return new WaitForSeconds(2f);
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Gameplay");
+        operation.allowSceneActivation = false;
         yield return new WaitForSeconds(6f);
         tips5.CrossFadeAlpha(0f, 1f, false);
         yield return new WaitForSeconds(2f);
         Loading.CrossFadeAlpha(0f, 1f, false);
-        yield return new WaitForSeconds(1f);
-        StartCoroutine(Wait());
+        yield return new WaitForSeconds(2f);
+        operation.allowSceneActivation = true;
     }
 
     IEnumerator Wait()

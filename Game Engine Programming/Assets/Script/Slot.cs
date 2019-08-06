@@ -34,6 +34,7 @@ public class Slot : MonoBehaviour
             else
             {
                 SoundManager.PlaySound("Drop Item");
+                displayText.pointerDestroy();
                 inventory.inventory[i] = null;
                 Inventory.counter -= 1;
                 GameObject.Destroy(child.gameObject);

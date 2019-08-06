@@ -182,9 +182,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'This place is not safe
+  m_Text: 'This place is not safe.
 
-    I have to get out of here'
+    I have to get out of here.'
 --- !u!222 &212782251
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -439,11 +439,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Then soon I heard a guy screaming from the next of my room. There was
+  m_Text: 'Then I heard a guy screaming from the next room.
 
-    another person was laughing while twisting something inside his body
+    Another person was laughing while twisting something inside his body
 
-    and it made disgusting sounds'
+    and it made disgusting sounds.'
 --- !u!222 &381567228
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -522,7 +522,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Once there was a light, I opened my eyes from sleeping
+  m_Text: Once, there was a light. I opened my eyes from sleeping.
 --- !u!222 &420832561
 CanvasRenderer:
   m_ObjectHideFlags: 0

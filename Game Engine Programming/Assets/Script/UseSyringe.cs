@@ -11,18 +11,20 @@ public class UseSyringe : MonoBehaviour
     public ItemPickup item;
     private CountDownAdrenaline countDown;
     private RadialTimer radial;
-
+    private FadeTutorial pointer;
     void Start()
     {
         inventory = GameObject.Find("Player").GetComponent<Inventory>();
         player = GameObject.Find("Player").GetComponent<Player>();
         countDown = GameObject.Find("Countdown").GetComponent<CountDownAdrenaline>();
         radial = GameObject.Find("Radial Timer").GetComponent<RadialTimer>();
+        pointer = GameObject.FindWithTag("Tutorial").GetComponent<FadeTutorial>();
     }
 
     public void useSyringe()
     {
         Used();
+        pointer.pointerDestroy();
         countDown.timer = 7f;
         player.speed = 9f;
         radial.timerRadial = 7f;

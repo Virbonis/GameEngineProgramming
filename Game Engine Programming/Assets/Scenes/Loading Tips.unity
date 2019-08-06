@@ -237,7 +237,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Use First Aid and Syringe for emergencies only
+  m_Text: Use First Aid and Syringes for emergencies only!
 --- !u!222 &216711987
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -335,7 +335,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Use doors to slow down your enemy
+  m_Text: Use doors to slow down your enemy.
 --- !u!222 &340995472
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -395,7 +395,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: The killer can deliver critical hit, don't get too close with him
+  m_Text: The killer can deliver critical hits, don't get too close.
 --- !u!222 &493417220
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -474,9 +474,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Once you get spotted, the killer will track your trail to chase you
-
-    Get away from him as far as you can to stop the chase'
+  m_Text: "Once you get spotted, the killer will follow your trail. \nGet as far away
+    as possible to lose them."
 --- !u!222 &860495595
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -658,7 +657,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Your speed will be increased for a few seconds, once you get hit
+  m_Text: Once you get hit, your speed will increase for a few seconds.
 --- !u!222 &1008577708
 CanvasRenderer:
   m_ObjectHideFlags: 0

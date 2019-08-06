@@ -23,6 +23,7 @@ public class UseMedicine : MonoBehaviour
         }
         else {
             Used();
+            health.pointerDestroy();
             Debug.Log(Inventory.counter);
             Health.health += 1;
             SoundManager.PlaySound("Healing");

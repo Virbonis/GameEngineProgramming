@@ -6,12 +6,16 @@ public class JumpScare : MonoBehaviour
 {
     private AudioSource jumpscare;
     private AudioClip jumpScareClip;
+    public GameObject[] deactivateSound;
 
     void Start()
     {
         jumpScareClip = Resources.Load<AudioClip>("JumpScare Pictures");
         jumpscare = GetComponent<AudioSource>();
         jumpscare.PlayOneShot(jumpScareClip);
+        for (int x = 0; x < deactivateSound.Length; x++) {
+            deactivateSound[x].SetActive(false);
+        }
         StartCoroutine(Wait());
     }
 

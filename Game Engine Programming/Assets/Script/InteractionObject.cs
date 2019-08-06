@@ -28,14 +28,13 @@ public class InteractionObject : MonoBehaviour
         pause = true;
         if (full.itemAdded == true)
         {
-            firstkey++;
-            teleport.killerTeleport();
             gameObject.SetActive(false);
             Instantiate(itemButton, full.slots[full.x].transform, false);
             Instantiate(textButton, full.text[full.x].transform, false);
             keyGUI.SetActive(true);
             player.SetActive(false);
             SoundManager.PlaySound("Pickup Key");
+            full.SearchItem();
         }
         else {
             Debug.Log("Inventory Full");

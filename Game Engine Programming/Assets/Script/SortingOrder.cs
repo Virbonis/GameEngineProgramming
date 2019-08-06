@@ -8,7 +8,10 @@ public class SortingOrder : MonoBehaviour
     {
         SpriteRenderer[] renderers = FindObjectsOfType<SpriteRenderer>();
         foreach (SpriteRenderer renderer in renderers) {
-            renderer.sortingOrder = (int)(renderer.transform.position.y * -100);
+            if (!renderer.CompareTag("Blood"))
+            {
+                renderer.sortingOrder = (int)(renderer.transform.position.y * -100);
+            }
         }
     }
 }

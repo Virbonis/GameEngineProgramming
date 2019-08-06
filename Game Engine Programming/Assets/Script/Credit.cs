@@ -30,7 +30,7 @@ public class Credit : MonoBehaviour
         Thanks.CrossFadeAlpha(0f, 3f, false);
         yield return new WaitForSeconds(4.5f);
         credit.SetActive(true);
-        yield return new WaitForSeconds(86f);
+        yield return new WaitForSeconds(94f);
         changeScene.MenuScreen();
     }
 }

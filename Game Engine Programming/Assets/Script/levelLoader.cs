@@ -26,7 +26,10 @@ public class levelLoader : MonoBehaviour
     }
 
     IEnumerator WaitForSeconds() {
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(3.5f);
+        AsyncOperation operation = SceneManager.LoadSceneAsync("Gameplay");
+        operation.allowSceneActivation = false;
+        yield return new WaitForSeconds(12f);
         Wire.CrossFadeAlpha(0, 0.5f, false);
         yield return new WaitForSeconds(3f);
         SoundManager.PlaySound("Ponder");
@@ -42,14 +45,7 @@ public class levelLoader : MonoBehaviour
         hearing.CrossFadeAlpha(0f, 0.5f, false);
         yield return new WaitForSeconds(1f);
         getout.CrossFadeAlpha(1f, 4f, false);
-        yield return new WaitForSeconds(4f);
-        StartCoroutine(Wait());
-    }
-
-    IEnumerator Wait() {
-        AsyncOperation operation = SceneManager.LoadSceneAsync("Gameplay");
-        while (!operation.isDone) {
-            yield return null;
-        }
+        yield return new WaitForSeconds(5f);
+        operation.allowSceneActivation = true;
     }
 }

@@ -11,11 +11,15 @@ public class Inventory : MonoBehaviour
     public static int counter = 0;
     public int x;
     private FadeTutorial displayFullInventory;
+    private Teleport teleport;
+    public GameObject[] keys;
+    public GameObject[] items;
 
     private void Start()
     {
         counter = 0;
         displayFullInventory = GameObject.FindWithTag("Tutorial").GetComponent<FadeTutorial>();
+        teleport = GameObject.FindWithTag("Teleport").GetComponent<Teleport>();
     }
 
     void Update()
@@ -44,6 +48,20 @@ public class Inventory : MonoBehaviour
 
         if (itemAdded == false) {
             displayFullInventory.fullInventory();
+        }
+    }
+
+    public void SearchItem()
+    {
+        for (int x = 0; x < inventory.Length; x++)
+        {
+            if (inventory[x] == keys[0])
+            {
+                teleport.killerTeleport();
+            }
+            else if (inventory[x] == keys[1]) {
+                teleport.SetActiveObject();
+            }
         }
     }
 }

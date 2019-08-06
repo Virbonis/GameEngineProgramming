@@ -10,6 +10,7 @@ public class SoundAmbienceManager : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        JumpScareDoor.changeSuspense = true;
     }
 
     void Update()
@@ -18,6 +19,10 @@ public class SoundAmbienceManager : MonoBehaviour
         {
             played = false;
             audioSource.Play();
+        }
+
+        if (JumpScareDoor.changeSuspense == true) {
+            JumpScareDoor.jumpscare.volume -= Time.deltaTime * 0.3f;
         }
     }
 }

@@ -7,8 +7,8 @@ public class Teleport : MonoBehaviour
     public GameObject target;
     public GameObject targetOutside;
     private Transform killer;
-    public GameObject Killer;
-    public GameObject Photo;
+    public GameObject[] DeactivateObjects;
+    public GameObject[] ActivateObjects;
 
     private void Start()
     {
@@ -16,13 +16,17 @@ public class Teleport : MonoBehaviour
     }
 
     public void killerTeleport() {
-        if (InteractionObject.firstkey == 1)
-        {
-            killer.transform.position = target.transform.position;
+        killer.transform.position = target.transform.position;
+    }
+
+    public void SetActiveObject() {
+        for (int x = 0; x < DeactivateObjects.Length; x++) {
+            DeactivateObjects[x].SetActive(false);
         }
-        else if (InteractionObject.firstkey == 11) {
-            Killer.SetActive(false);
-            Photo.SetActive(false);
+
+        for (int x = 0; x < ActivateObjects.Length; x++)
+        {
+            ActivateObjects[x].SetActive(true);
         }
     }
 

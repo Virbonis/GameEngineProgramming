@@ -4,28 +4,48 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-
-    AudioSource myAudio;
+    public static AudioSource myAudio;
+    public static bool played;
+    private bool musicPlayed = true;
+    private float timer;
 
     void Start()
     {
         myAudio = GetComponent<AudioSource>();
         myAudio.clip = Resources.Load<AudioClip>("Menu Theme");
-        Play();
+        myAudio.volume = SettingsMenu.currVolume;
+        timer = 3f;
+        played = false;
     }
 
     private void Update()
     {
-        if (SceneManagement.stopMusic == true)
+        if (SceneManagement.stopMusic == true && played == true)
         {
             if (myAudio.volume > 0)
             {
-                myAudio.volume -= Time.deltaTime * 0.1f;
+                myAudio.volume -= Time.deltaTime * 0.05f;
                 Debug.Log(myAudio.volume);
             }
+            else {
+                myAudio.Stop();
+                musicPlayed = true;
+                timer = 3f;
+                Debug.Log("Stop Playing");
+            }
         }
-        else {
-            myAudio.volume += Time.deltaTime * 0.3f;
+        else if (SceneManagement.stopMusic == false && played == false && musicPlayed == true) {
+            if (musicPlayed) {
+                if (timer > 0)
+                {
+                    timer -= Time.deltaTime;
+                }
+                else {
+                    myAudio.Play();
+                    musicPlayed = false;
+                }
+            }
+            myAudio.volume += Time.deltaTime * 0.5f;
         }
     }
 

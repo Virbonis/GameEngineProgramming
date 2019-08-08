@@ -9,16 +9,23 @@ public class PauseManagerClue : MonoBehaviour
     private float timer = 0.15f;
     private float timerPause = 0.15f;
     public static bool PauseClue = false;
+    private bool played;
     FadeInClue fade;
 
     private void Start()
     {
         pause = GameObject.FindWithTag("Clue GUI");
         fade = gameObject.GetComponent<FadeInClue>();
+        played = true;
     }
 
     private void Update()
     {
+        if (played) {
+            SoundManager.PlaySound("Note Pickup");
+            played = false;
+        }
+
         if (pause.activeSelf)
         {
             fade.BackButton.SetActive(true);
@@ -36,6 +43,7 @@ public class PauseManagerClue : MonoBehaviour
             clue = false;
             gameObject.SetActive(false);
             fade.BackButton.SetActive(false);
+            played = true;
         }
     }
 

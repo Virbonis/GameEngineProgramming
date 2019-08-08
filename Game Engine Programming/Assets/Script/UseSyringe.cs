@@ -25,9 +25,9 @@ public class UseSyringe : MonoBehaviour
     {
         Used();
         pointer.pointerDestroy();
-        countDown.timer = 7f;
+        countDown.timer = 8f;
         player.speed = 9f;
-        radial.timerRadial = 7f;
+        radial.timerRadial = 8f;
         SoundManager.PlaySound("Use Syringe");
         timer.SetActive(true);
         Destroy(gameObject);

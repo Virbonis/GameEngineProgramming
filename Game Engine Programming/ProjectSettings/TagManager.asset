@@ -58,6 +58,7 @@ TagManager:
   - Countdown
   - Blood
   - Suspense
+  - ClueTrap
   layers:
   - Default
   - TransparentFX

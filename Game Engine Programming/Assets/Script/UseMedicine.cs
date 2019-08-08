@@ -14,6 +14,7 @@ public class UseMedicine : MonoBehaviour
         inventory = GameObject.Find("Player").GetComponent<Inventory>();
         slot = GameObject.FindWithTag("Slot").GetComponent<Slot>();
         health = GameObject.FindWithTag("Tutorial").GetComponent<FadeTutorial>();
+        item = GetComponent<ItemPickup>();
     }
 
     public void useMedicine() {

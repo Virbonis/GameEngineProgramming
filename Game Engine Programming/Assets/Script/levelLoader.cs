@@ -45,7 +45,7 @@ public class levelLoader : MonoBehaviour
         hearing.CrossFadeAlpha(0f, 0.5f, false);
         yield return new WaitForSeconds(1f);
         getout.CrossFadeAlpha(1f, 4f, false);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(4f);
         operation.allowSceneActivation = true;
     }
 }

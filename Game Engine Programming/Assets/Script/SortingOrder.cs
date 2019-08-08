@@ -8,7 +8,7 @@ public class SortingOrder : MonoBehaviour
     {
         SpriteRenderer[] renderers = FindObjectsOfType<SpriteRenderer>();
         foreach (SpriteRenderer renderer in renderers) {
-            if (!renderer.CompareTag("Blood"))
+            if (!renderer.CompareTag("Blood") && !renderer.CompareTag("ClueTrap"))
             {
                 renderer.sortingOrder = (int)(renderer.transform.position.y * -100);
             }

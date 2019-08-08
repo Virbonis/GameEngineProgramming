@@ -20,7 +20,7 @@ public class RadialTimer : MonoBehaviour
     {
         if (timerRadial > 0) {
             timerRadial -= Time.deltaTime;
-            Radial.fillAmount = timerRadial / 7f;
+            Radial.fillAmount = timerRadial / 8f;
         }
     }
 }

@@ -7,13 +7,18 @@ public class Slot : MonoBehaviour
     private Inventory inventory;
     public GameObject[] slots;
     public GameObject[] texts;
+    public GameObject item;
     public int i;
     private FadeTutorial displayText;
+    private Transform player;
+    Collider2D colliderItem;
+    ItemPickup itemPickUp;
 
     private void Start()
     {
         inventory = GameObject.Find("Player").GetComponent<Inventory>();
         displayText = GameObject.FindWithTag("Tutorial").GetComponent<FadeTutorial>();
+        player = GameObject.Find("Player").transform;
     }
 
     public void DoorInteraction() {
@@ -33,6 +38,8 @@ public class Slot : MonoBehaviour
             }
             else
             {
+                spawnItem();
+                Destroy(inventory.inventory[i]);
                 SoundManager.PlaySound("Drop Item");
                 displayText.pointerDestroy();
                 inventory.inventory[i] = null;
@@ -40,6 +47,12 @@ public class Slot : MonoBehaviour
                 GameObject.Destroy(child.gameObject);
             }
         }
+    }
+
+    public void spawnItem() {
+        inventory.inventory[i].SetActive(true);
+        Vector2 playerPos = new Vector2(player.position.x, player.position.y);
+        Instantiate(inventory.inventory[i], playerPos, Quaternion.identity);
     }
 
     public void DestroyTextItem()

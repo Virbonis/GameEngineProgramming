@@ -13,6 +13,7 @@ public class PlayerInteract : MonoBehaviour
     public GameObject Clue = null;
     public GameObject currentTrap = null;
     public GameObject Syringe = null;
+    public GameObject ClueTrap = null;
     public InteractionObject currentInterScript = null;
     public Inventory inventory;
     public InteractionDoor key;
@@ -50,8 +51,15 @@ public class PlayerInteract : MonoBehaviour
 
         if (Input.GetButtonDown("Interact") && Clue)
         {
+            inventory.addItem(Clue);
             Clue.SendMessage("MapPickup");
             Clue = null;
+        }
+
+        if (Input.GetButtonDown("Interact") && ClueTrap)
+        {
+            ClueTrap.SendMessage("ClueTrapPickup");
+            ClueTrap = null;
         }
 
         if (Input.GetButtonDown("Interact") && currentNote)
@@ -115,6 +123,11 @@ public class PlayerInteract : MonoBehaviour
             Clue = other.gameObject;
         }
 
+        if (other.CompareTag("ClueTrap"))
+        {
+            ClueTrap = other.gameObject;
+        }
+
         if (other.CompareTag("CloseDoor")) {
             pressed_Open = true;
             DoorClose = other.gameObject;
@@ -147,6 +160,14 @@ public class PlayerInteract : MonoBehaviour
             if (other.gameObject == Syringe)
             {
                 Syringe = null;
+            }
+        }
+
+        if (other.CompareTag("ClueTrap"))
+        {
+            if (other.gameObject == ClueTrap)
+            {
+                ClueTrap = null;
             }
         }
 

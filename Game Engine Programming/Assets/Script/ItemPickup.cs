@@ -27,6 +27,10 @@ public class ItemPickup : MonoBehaviour
         if (full.itemAdded == true)
         {
             gameObject.SetActive(false);
+            for (int a = 0; a < transform.childCount; a++)
+            {
+                transform.GetChild(a).gameObject.SetActive(false);
+            }
             itemButton.SetActive(true);
             Instantiate(itemButton, full.slots[full.x].transform, false);
             SoundManager.PlaySound("Medicine Pickup");
@@ -39,6 +43,10 @@ public class ItemPickup : MonoBehaviour
         if (full.itemAdded == true)
         {
             gameObject.SetActive(false);
+            for (int a = 0; a < transform.childCount; a++)
+            {
+                transform.GetChild(a).gameObject.SetActive(false);
+            }
             itemButton.SetActive(true);
             Instantiate(itemButton, full.slots[full.x].transform, false);
             SoundManager.PlaySound("Pickup Syringe");
@@ -60,8 +68,21 @@ public class ItemPickup : MonoBehaviour
         note.SetActive(true);
     }
 
-    public void MapPickup() {
+    public void ClueTrapPickup() {
         note.SetActive(true);
-        SoundManager.PlaySound("Note Pickup");
+    }
+
+    public void MapPickup() {
+        if (full.itemAdded == true)
+        {
+            gameObject.SetActive(false);
+            for (int a = 0; a < transform.childCount; a++)
+            {
+                transform.GetChild(a).gameObject.SetActive(false);
+            }
+            itemButton.SetActive(true);
+            Instantiate(itemButton, full.slots[full.x].transform, false);
+            SoundManager.PlaySound("Map");
+        }
     }
 }

@@ -46,15 +46,6 @@ public class FadeTutorial : MonoBehaviour
         BackButton.canvasRenderer.SetAlpha(0.0f);
         DropItem.canvasRenderer.SetAlpha(0.0f);
         Syringe.canvasRenderer.SetAlpha(0.0f);
-        if (counter == 0)
-        {
-            FadeInMove();
-        }
-    }
-
-    public void FadeInMove() {
-        StartCoroutine(WaitBlackScreen());
-        counter++;
     }
 
     public void KillerTutorialChase() {

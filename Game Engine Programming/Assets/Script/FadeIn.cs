@@ -39,6 +39,9 @@ public class FadeIn : MonoBehaviour
         SoundManager.PlaySound("Gain Knowledge");
         tutorial.fadeTargetMovement.CrossFadeAlpha(0f, 0.1f, false);
         tutorial.fadeTargetInteract.CrossFadeAlpha(0f, 0.1f, false);
+        tutorial.fadeinteractDoor.CrossFadeAlpha(0f, 0.1f, false);
+        tutorial.Syringe.CrossFadeAlpha(0f, 0.1f, false);
+        tutorial.fewSeconds.CrossFadeAlpha(0f, 0.1f, false);
         tutorial.fadeuseItem.CrossFadeAlpha(0f, 0.1f, false);
         tutorial.lockedDoor.CrossFadeAlpha(0f, 0.1f, false);
         fadeInTarget.CrossFadeAlpha(0f, 0.15f, false);

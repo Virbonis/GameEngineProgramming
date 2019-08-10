@@ -18,6 +18,7 @@ public class FadeTutorial : MonoBehaviour
     public Text fullHealth;
     public Text DropItem;
     public Text Syringe;
+    public Text fewSeconds;
     public Image pointerImage;
     public Transform[] transforms;
     public GameObject GainKnowledge;
@@ -46,6 +47,7 @@ public class FadeTutorial : MonoBehaviour
         BackButton.canvasRenderer.SetAlpha(0.0f);
         DropItem.canvasRenderer.SetAlpha(0.0f);
         Syringe.canvasRenderer.SetAlpha(0.0f);
+        fewSeconds.canvasRenderer.SetAlpha(0.0f);
         if (counter == 0)
         {
             FadeInMove();
@@ -70,6 +72,7 @@ public class FadeTutorial : MonoBehaviour
             BackButton.canvasRenderer.SetAlpha(0.0f);
             Syringe.canvasRenderer.SetAlpha(0.0f);
             DropItem.canvasRenderer.SetAlpha(0.0f);
+            fewSeconds.canvasRenderer.SetAlpha(0.0f);
             StartCoroutine(KillerTutorial());
             KillerTutorialCounter++;
         }
@@ -90,6 +93,7 @@ public class FadeTutorial : MonoBehaviour
             BackButton.canvasRenderer.SetAlpha(0.0f);
             DropItem.canvasRenderer.SetAlpha(0.0f);
             Syringe.canvasRenderer.SetAlpha(0.0f);
+            fewSeconds.canvasRenderer.SetAlpha(0.0f);
             StartCoroutine(useSyringeWait());
             UseItem();
         }
@@ -122,6 +126,7 @@ public class FadeTutorial : MonoBehaviour
         fadeTargetInteract.canvasRenderer.SetAlpha(0.0f);
         fullInven.canvasRenderer.SetAlpha(0.0f);
         fadeuseItem.canvasRenderer.SetAlpha(0.0f);
+        fewSeconds.canvasRenderer.SetAlpha(0.0f);
         fadeinteractDoor.canvasRenderer.SetAlpha(0.0f);
         fadeinDropitem.canvasRenderer.SetAlpha(0.0f);
         lockedDoor.canvasRenderer.SetAlpha(0.0f);
@@ -138,6 +143,7 @@ public class FadeTutorial : MonoBehaviour
         fadeTargetMovement.canvasRenderer.SetAlpha(0.0f);
         fadeTargetInteract.canvasRenderer.SetAlpha(0.0f);
         fullInven.canvasRenderer.SetAlpha(0.0f);
+        fewSeconds.canvasRenderer.SetAlpha(0.0f);
         fadeuseItem.canvasRenderer.SetAlpha(0.0f);
         fadeinteractDoor.canvasRenderer.SetAlpha(0.0f);
         fadeinDropitem.canvasRenderer.SetAlpha(0.0f);
@@ -169,6 +175,7 @@ public class FadeTutorial : MonoBehaviour
         fadeinteractDoor.canvasRenderer.SetAlpha(0.0f);
         fadeinDropitem.canvasRenderer.SetAlpha(0.0f);
         lockedDoor.canvasRenderer.SetAlpha(0.0f);
+        fewSeconds.canvasRenderer.SetAlpha(0.0f);
         BlockTheKiller.canvasRenderer.SetAlpha(0.0f);
         GetAway.canvasRenderer.SetAlpha(0.0f);
         fullHealth.canvasRenderer.SetAlpha(0.0f);
@@ -188,6 +195,7 @@ public class FadeTutorial : MonoBehaviour
         lockedDoor.canvasRenderer.SetAlpha(0.0f);
         BlockTheKiller.canvasRenderer.SetAlpha(0.0f);
         GetAway.canvasRenderer.SetAlpha(0.0f);
+        fewSeconds.canvasRenderer.SetAlpha(0.0f);
         fullHealth.canvasRenderer.SetAlpha(0.0f);
         BackButton.canvasRenderer.SetAlpha(0.0f);
         DropItem.canvasRenderer.SetAlpha(0.0f);
@@ -205,8 +213,10 @@ public class FadeTutorial : MonoBehaviour
 
     IEnumerator useSyringeWait() {
         Syringe.CrossFadeAlpha(1f, 1f, false);
+        fewSeconds.CrossFadeAlpha(1f, 1f, false);
         yield return new WaitForSeconds(5f);
         Syringe.CrossFadeAlpha(0f, 1f, false);
+        fewSeconds.CrossFadeAlpha(0f, 1f, false);
     }
 
     IEnumerator DropItemDisplay() {

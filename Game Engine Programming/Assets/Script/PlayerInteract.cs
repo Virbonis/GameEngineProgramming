@@ -21,6 +21,7 @@ public class PlayerInteract : MonoBehaviour
     public bool pressed_Open;
     public bool pressed_Locked;
     public bool pressed_Close;
+    public static float timer;
 
     void Start()
     {
@@ -29,29 +30,39 @@ public class PlayerInteract : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Interact") && currentInterObj)
+        if (timer > 0)
         {
+            timer -= Time.deltaTime;
+        }
+        Debug.Log(timer);
+
+        if (Input.GetButtonDown("Interact") && currentInterObj && timer <= 0)
+        {
+            timer = 0.1f;
             inventory.addItem(currentInterObj);
             currentInterObj.SendMessage("DoInteraction");
             currentInterObj = null;
         }
 
-        if (Input.GetButtonDown("Interact") && currentItem)
+        if (Input.GetButtonDown("Interact") && currentItem && timer <= 0)
         {
+            timer = 0.1f;
             inventory.addItem(currentItem);
             currentItem.SendMessage("MedicPickup");
             currentItem = null;
         }
 
-        if (Input.GetButtonDown("Interact") && Syringe) {
+        if (Input.GetButtonDown("Interact") && Syringe && timer <= 0) {
+            timer = 0.1f;
             inventory.addItem(Syringe);
             Syringe.SendMessage("SyringePickup");
             Syringe = null;
         }
 
-        if (Input.GetButtonDown("Interact") && Clue)
+        if (Input.GetButtonDown("Interact") && Clue && timer <= 0)
         {
             inventory.addItem(Clue);
+            timer = 0.1f;
             Clue.SendMessage("MapPickup");
             Clue = null;
         }
